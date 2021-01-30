@@ -965,14 +965,7 @@ export default {
     chain() {
 
 
-
-this.$axios.setBaseURL('https://jendela.data.kemdikbud.go.id')
-      // alert(this.provinceData.mst_kode_wilayah)
-
-      // console.log(this.provinceData)
-
-
-fetch("/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+this.provinceData.kode_wilayah)
+fetch("http://jendela.data.kemdikbud.go.id/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+this.provinceData.kode_wilayah)
         .then((response) =>{
 
             alert("Works !")
