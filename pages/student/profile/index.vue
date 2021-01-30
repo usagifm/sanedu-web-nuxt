@@ -965,6 +965,9 @@ export default {
     chain() {
 
 
+      console.log(this.provinceData)
+
+
 fetch("http://jendela.data.kemdikbud.go.id/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+this.provinceData.kode_wilayah)
         .then((response) =>{
 

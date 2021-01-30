@@ -11318,6 +11318,20 @@ const actions = {
         reject(e.response.data.email[0]); // console.log(e.response.data.message);
       });
     });
+  },
+
+  getCity({
+    dispatch
+  }, payload) {
+    console.log(payload);
+    return new Promise((resolve, reject) => {
+      fetch("http://jendela.data.kemdikbud.go.id/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah=" + payload).then(response => {
+        resolve(response.data);
+      }).catch(e => {
+        // console.log("Search Class : ");
+        reject(e); // console.log(e.response.data.message);
+      });
+    });
   }
 
 };
