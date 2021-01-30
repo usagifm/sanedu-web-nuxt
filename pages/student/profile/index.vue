@@ -966,7 +966,7 @@ export default {
 
 
 
-this.$axios.setBaseURL('http://jendela.data.kemdikbud.go.id')
+this.$axios.setBaseURL('https://jendela.data.kemdikbud.go.id')
       // alert(this.provinceData.mst_kode_wilayah)
 
       // console.log(this.provinceData)
