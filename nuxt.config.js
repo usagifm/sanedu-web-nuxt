@@ -1,8 +1,5 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  render: {
-    csp: true
-  },
   head: {
     title: 'sanedu-nuxt',
     meta: [

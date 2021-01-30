@@ -965,10 +965,12 @@ export default {
     chain() {
 
 
-      console.log(this.provinceData)
 
 
-fetch("http://jendela.data.kemdikbud.go.id/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+this.provinceData.kode_wilayah)
+      // console.log(this.provinceData)
+
+
+this.getCity(this.provinceData.kode_wilayah)
         .then((response) =>{
 
             alert("Works !")
@@ -1018,6 +1020,7 @@ fetch("http://jendela.data.kemdikbud.go.id/api/index.php/cwilayah/wilayahKabGet?
       "editPersonalData",
       "editWhatsapp",
       "editEmail",
+      "getCity"
     ]),
 
     personalData() {
