@@ -972,8 +972,7 @@ this.$axios.setBaseURL('https://jendela.data.kemdikbud.go.id')
       // console.log(this.provinceData)
 
 
-  this.$axios
-        .get("/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+this.provinceData.kode_wilayah)
+fetch("/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+this.provinceData.kode_wilayah)
         .then((response) =>{
 
             alert("Works !")
