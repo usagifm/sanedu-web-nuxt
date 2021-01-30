@@ -95,7 +95,8 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/toast',
     'nuxt-material-design-icons',
-    'vue-sweetalert2/nuxt'
+    'vue-sweetalert2/nuxt',
+    '@nuxtjs/proxy',
     
 
  

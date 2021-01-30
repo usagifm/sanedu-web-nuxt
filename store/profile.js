@@ -158,7 +158,10 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            fetch("http://jendela.data.kemdikbud.go.id/api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+payload).then((response) => {
+
+            this.$axios.setBaseURL("http://jendela.data.kemdikbud.go.id/");
+
+            this.$axios.get("api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah="+payload).then((response) => {
           
                resolve(response.data);
            
