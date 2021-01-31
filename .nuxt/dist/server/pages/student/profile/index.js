@@ -4960,7 +4960,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(5).default
 module.exports.__inject__ = function (context) {
-  add("02743ab9", content, true, context)
+  add("3de79a9a", content, true, context)
 };
 
 /***/ }),
@@ -4997,9 +4997,9 @@ module.exports = exports;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_556d633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(303);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_556d633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_556d633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_556d633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_556d633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_44ee5760_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(303);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_44ee5760_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_44ee5760_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_44ee5760_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_nuxt_webpack_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_44ee5760_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -5013,7 +5013,7 @@ exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;600&display=swap);"]);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap);"]);
 // Module
-exports.push([module.i, ".bold[data-v-556d633c]{font-weight:900;color:#686666;font-family:\"Open Sans\",sans-serif}", ""]);
+exports.push([module.i, ".bold[data-v-44ee5760]{font-weight:900;color:#686666;font-family:\"Open Sans\",sans-serif}", ""]);
 // Exports
 module.exports = exports;
 
@@ -7046,8 +7046,8 @@ const VAutocomplete_defaultMenuProps = { ...defaultMenuProps,
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/student/profile/index.vue?vue&type=template&id=556d633c&scoped=true&
-var profilevue_type_template_id_556d633c_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-layout',[_c('v-container',{attrs:{"fill-height":"","fluid":""}},[_c('v-row',{attrs:{"justify":"center"}},[_c('v-col',{attrs:{"align":"center","cols":"12","lg":"2","md":"2"}},[_c('v-img',{staticStyle:{"border-radius":"50%"},attrs:{"lazy-src":"https://picsum.photos/id/11/10/6","height":"120","width":"120","src":this.$auth.$state.user.profile_image}})],1),_vm._v(" "),_c('v-col',{attrs:{"align":"left","cols":"12","lg":"5","md":"5"}},[(_vm.$vuetify.breakpoint.mobile)?_c('h4',{staticClass:"text-center bold"},[_vm._v("\n          "+_vm._s(this.$auth.$state.user.name)+"\n        ")]):_vm._e(),_vm._v(" "),(!_vm.$vuetify.breakpoint.mobile)?_c('h4',{staticClass:"text-left bold"},[_vm._v("\n          "+_vm._s(this.$auth.$state.user.name)+"\n        ")]):_vm._e(),_vm._v(" "),(_vm.$vuetify.breakpoint.mobile)?_c('h5',{staticClass:"text-center"},[_vm._v("\n          San Student\n        ")]):_vm._e(),_vm._v(" "),(!_vm.$vuetify.breakpoint.mobile)?_c('h5',{staticClass:"text-left"},[_vm._v("\n          San Student\n        ")]):_vm._e(),_vm._v(" "),_c('v-btn',{staticClass:"mt-4 mb-4",staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","depressed":""},on:{"click":function($event){_vm.dialogPersonalData = true}}},[_vm._v("EDIT YOUR PERSONAL DATA"),_c('v-icon',{attrs:{"right":""}},[_vm._v("\n            mdi-circle-edit-outline")])],1),_vm._v(" "),_c('v-row',{staticClass:"text-left"},[_c('v-col',{attrs:{"cols":"6"}},[_c('h6',{staticClass:"bold"},[_vm._v("\n              PHONE\n              "),_c('v-btn',{staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","left":"","icon":"","depressed":""},on:{"click":function($event){_vm.dialogWhatsapp = true}}},[_c('v-icon',[_vm._v("mdi-circle-edit-outline")])],1)],1),_vm._v(" "),_c('h6',{staticClass:"mb-7"},[_vm._v("0"+_vm._s(this.$auth.$state.user.whatsapp))]),_vm._v(" "),_c('h6',{staticClass:"bold"},[_vm._v("PARENT PHONE NUMBER")]),_vm._v(" "),_c('h6',[_vm._v("0"+_vm._s(this.$auth.$state.user.parent_phone_number))])]),_vm._v(" "),_c('v-col',{attrs:{"cols":"6"}},[_c('h6',{staticClass:"bold"},[_vm._v("\n              EMAIL\n              "),_c('v-btn',{staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","left":"","icon":"","depressed":""},on:{"click":function($event){_vm.dialogEmail = true}}},[_c('v-icon',[_vm._v("mdi-circle-edit-outline")])],1)],1),_vm._v(" "),_c('h6',{staticClass:"mb-7"},[_vm._v(_vm._s(this.$auth.$state.user.email))]),_vm._v(" "),_c('h6',{staticClass:"bold"},[_vm._v("BIRTH DATE")]),_vm._v(" "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.birth_date))])])],1)],1),_vm._v(" "),_c('v-col',{attrs:{"cols":"12","lg":"5","md":"5"}},[_c('v-row',{attrs:{"justify":"center"}},[_c('v-col',{attrs:{"align":"end","cols":"12"}},[_c('v-btn',{attrs:{"depressed":""},on:{"click":function($event){_vm.dialogProfileImage = true}}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-account-circle")]),_vm._v(" Change Profile Image\n            ")],1),_vm._v(" "),_c('v-btn',{attrs:{"depressed":""},on:{"click":function($event){_vm.dialogPassword = true}}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-lock")]),_vm._v(" Change Password\n            ")],1)],1)],1),_vm._v(" "),_c('v-row',{attrs:{"justify":"end"}},[_c('v-col',{attrs:{"cols":"12","md":"8","lg":"8"}},[_c('v-card',{staticClass:"mx-auto",attrs:{"width":"100%","outlined":""}},[_c('v-progress-linear',{attrs:{"indeterminate":"","color":"primary"}}),_vm._v(" "),_c('v-list-item',{attrs:{"three-line":""}},[_c('v-list-item-content',[_c('div',{staticClass:"overline mb-4"},[_vm._v("Sanclass Overview")]),_vm._v(" "),_c('v-list-item-title',{staticClass:"headline mb-1"},[_vm._v("\n                    Class Count\n                  ")]),_vm._v(" "),_c('v-list-item-subtitle',[_vm._v("You're signed as a San Student")])],1),_vm._v(" "),_c('v-list-item-avatar',{staticClass:"bold",staticStyle:{"font-size":"27px","color":"white"},attrs:{"size":"50","color":"primary"}},[_vm._v(_vm._s(_vm.classes.length))])],1),_vm._v(" "),_c('v-card-actions',[_c('v-btn',{attrs:{"outlined":"","rounded":"","text":""}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-google-classroom")]),_vm._v(" Go To Sanclass\n                ")],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-col',{attrs:{"cols":"12"}},[_c('v-tabs',{attrs:{"left":"","slider-size":"4","background-color":"rgba(0,0,0,0)"}},[_c('v-tab',{staticClass:"bold",staticStyle:{"left":"0","color":"#1e88e5"}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-account")]),_vm._v(" PERSONAL INFORMATION")],1)],1)],1),_vm._v(" "),_c('v-col',{staticClass:"text-left",attrs:{"cols":"12"}},[_c('v-banner',{staticClass:"mb-8",attrs:{"two-line":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-btn',{staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","depressed":""},on:{"click":function($event){_vm.dialogRegionData = true}}},[_vm._v("EDIT YOUR REGION DATA"),_c('v-icon',{attrs:{"right":""}},[_vm._v("\n                mdi-circle-edit-outline")])],1)]},proxy:true}])},[_vm._v(" "),_c('v-avatar',{attrs:{"slot":"icon","color":"primary","size":"40"},slot:"icon"},[_c('v-icon',{attrs:{"icon":"mdi-lock","color":"white"}},[_vm._v(" mdi-castle ")])],1),_vm._v(" "),_c('h6',{staticClass:"bold mt-3"},[_vm._v("REGION AND INSTITUTION DATA")])],1),_vm._v(" "),_c('v-row',{attrs:{"justify":"center"}},[_c('v-col',{attrs:{"cols":"6"}},[_c('div',{staticClass:"ml-4 mb-7"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                PROVINCE\n                "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.province_name))])])]),_vm._v(" "),_c('div',{staticClass:"ml-4"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                CITY\n                "),_c('h6',[_vm._v("\n                  "+_vm._s(this.$auth.$state.user.city_name)+"\n                ")])])])]),_vm._v(" "),_c('v-col',{attrs:{"cols":"6"}},[_c('div',{staticClass:"ml-4 mb-7"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                SCHOOL\n                "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.school))])])]),_vm._v(" "),_c('div',{staticClass:"ml-4"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                GRADE LEVEL\n                "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.grade_level))])])])])],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"width":"500"},model:{value:(_vm.dialogPassword),callback:function ($$v) {_vm.dialogPassword=$$v},expression:"dialogPassword"}},[_c('v-card',[(_vm.isLoading == true)?_c('v-progress-linear',{attrs:{"indeterminate":"","color":"cyan"}}):_vm._e(),_vm._v(" "),_c('validation-observer',{ref:"observer",scopedSlots:_vm._u([{key:"default",fn:function(ref){
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/student/profile/index.vue?vue&type=template&id=44ee5760&scoped=true&
+var profilevue_type_template_id_44ee5760_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-layout',[_c('v-container',{attrs:{"fill-height":"","fluid":""}},[_c('v-row',{attrs:{"justify":"center"}},[_c('v-col',{attrs:{"align":"center","cols":"12","lg":"2","md":"2"}},[_c('v-img',{staticStyle:{"border-radius":"50%"},attrs:{"lazy-src":"https://picsum.photos/id/11/10/6","height":"120","width":"120","src":this.$auth.$state.user.profile_image}})],1),_vm._v(" "),_c('v-col',{attrs:{"align":"left","cols":"12","lg":"5","md":"5"}},[(_vm.$vuetify.breakpoint.mobile)?_c('h4',{staticClass:"text-center bold"},[_vm._v("\n          "+_vm._s(this.$auth.$state.user.name)+"\n        ")]):_vm._e(),_vm._v(" "),(!_vm.$vuetify.breakpoint.mobile)?_c('h4',{staticClass:"text-left bold"},[_vm._v("\n          "+_vm._s(this.$auth.$state.user.name)+"\n        ")]):_vm._e(),_vm._v(" "),(_vm.$vuetify.breakpoint.mobile)?_c('h5',{staticClass:"text-center"},[_vm._v("\n          San Student\n        ")]):_vm._e(),_vm._v(" "),(!_vm.$vuetify.breakpoint.mobile)?_c('h5',{staticClass:"text-left"},[_vm._v("\n          San Student\n        ")]):_vm._e(),_vm._v(" "),_c('v-btn',{staticClass:"mt-4 mb-4",staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","depressed":""},on:{"click":function($event){_vm.dialogPersonalData = true}}},[_vm._v("EDIT YOUR PERSONAL DATA"),_c('v-icon',{attrs:{"right":""}},[_vm._v("\n            mdi-circle-edit-outline")])],1),_vm._v(" "),_c('v-row',{staticClass:"text-left"},[_c('v-col',{attrs:{"cols":"6"}},[_c('code',[_vm._v(_vm._s(_vm.kontol)+" ")]),_vm._v(" "),_c('h6',{staticClass:"bold"},[_vm._v("\n              PHONE\n              "),_c('v-btn',{staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","left":"","icon":"","depressed":""},on:{"click":function($event){_vm.dialogWhatsapp = true}}},[_c('v-icon',[_vm._v("mdi-circle-edit-outline")])],1)],1),_vm._v(" "),_c('h6',{staticClass:"mb-7"},[_vm._v("0"+_vm._s(this.$auth.$state.user.whatsapp))]),_vm._v(" "),_c('h6',{staticClass:"bold"},[_vm._v("PARENT PHONE NUMBER")]),_vm._v(" "),_c('h6',[_vm._v("0"+_vm._s(this.$auth.$state.user.parent_phone_number))])]),_vm._v(" "),_c('v-col',{attrs:{"cols":"6"}},[_c('h6',{staticClass:"bold"},[_vm._v("\n              EMAIL\n              "),_c('v-btn',{staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","left":"","icon":"","depressed":""},on:{"click":function($event){_vm.dialogEmail = true}}},[_c('v-icon',[_vm._v("mdi-circle-edit-outline")])],1)],1),_vm._v(" "),_c('h6',{staticClass:"mb-7"},[_vm._v(_vm._s(this.$auth.$state.user.email))]),_vm._v(" "),_c('h6',{staticClass:"bold"},[_vm._v("BIRTH DATE")]),_vm._v(" "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.birth_date))])])],1)],1),_vm._v(" "),_c('v-col',{attrs:{"cols":"12","lg":"5","md":"5"}},[_c('v-row',{attrs:{"justify":"center"}},[_c('v-col',{attrs:{"align":"end","cols":"12"}},[_c('v-btn',{attrs:{"depressed":""},on:{"click":function($event){_vm.dialogProfileImage = true}}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-account-circle")]),_vm._v(" Change Profile Image\n            ")],1),_vm._v(" "),_c('v-btn',{attrs:{"depressed":""},on:{"click":function($event){_vm.dialogPassword = true}}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-lock")]),_vm._v(" Change Password\n            ")],1)],1)],1),_vm._v(" "),_c('v-row',{attrs:{"justify":"end"}},[_c('v-col',{attrs:{"cols":"12","md":"8","lg":"8"}},[_c('v-card',{staticClass:"mx-auto",attrs:{"width":"100%","outlined":""}},[_c('v-progress-linear',{attrs:{"indeterminate":"","color":"primary"}}),_vm._v(" "),_c('v-list-item',{attrs:{"three-line":""}},[_c('v-list-item-content',[_c('div',{staticClass:"overline mb-4"},[_vm._v("Sanclass Overview")]),_vm._v(" "),_c('v-list-item-title',{staticClass:"headline mb-1"},[_vm._v("\n                    Class Count\n                  ")]),_vm._v(" "),_c('v-list-item-subtitle',[_vm._v("You're signed as a San Student")])],1),_vm._v(" "),_c('v-list-item-avatar',{staticClass:"bold",staticStyle:{"font-size":"27px","color":"white"},attrs:{"size":"50","color":"primary"}},[_vm._v(_vm._s(_vm.classes.length))])],1),_vm._v(" "),_c('v-card-actions',[_c('v-btn',{attrs:{"outlined":"","rounded":"","text":""}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-google-classroom")]),_vm._v(" Go To Sanclass\n                ")],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-col',{attrs:{"cols":"12"}},[_c('v-tabs',{attrs:{"left":"","slider-size":"4","background-color":"rgba(0,0,0,0)"}},[_c('v-tab',{staticClass:"bold",staticStyle:{"left":"0","color":"#1e88e5"}},[_c('v-icon',{attrs:{"left":""}},[_vm._v("mdi-account")]),_vm._v(" PERSONAL INFORMATION")],1)],1)],1),_vm._v(" "),_c('v-col',{staticClass:"text-left",attrs:{"cols":"12"}},[_c('v-banner',{staticClass:"mb-8",attrs:{"two-line":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-btn',{staticStyle:{"color":"#1e88e5"},attrs:{"rounded":"","small":"","depressed":""},on:{"click":function($event){_vm.dialogRegionData = true}}},[_vm._v("EDIT YOUR REGION DATA"),_c('v-icon',{attrs:{"right":""}},[_vm._v("\n                mdi-circle-edit-outline")])],1)]},proxy:true}])},[_vm._v(" "),_c('v-avatar',{attrs:{"slot":"icon","color":"primary","size":"40"},slot:"icon"},[_c('v-icon',{attrs:{"icon":"mdi-lock","color":"white"}},[_vm._v(" mdi-castle ")])],1),_vm._v(" "),_c('h6',{staticClass:"bold mt-3"},[_vm._v("REGION AND INSTITUTION DATA")])],1),_vm._v(" "),_c('v-row',{attrs:{"justify":"center"}},[_c('v-col',{attrs:{"cols":"6"}},[_c('div',{staticClass:"ml-4 mb-7"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                PROVINCE\n                "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.province_name))])])]),_vm._v(" "),_c('div',{staticClass:"ml-4"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                CITY\n                "),_c('h6',[_vm._v("\n                  "+_vm._s(this.$auth.$state.user.city_name)+"\n                ")])])])]),_vm._v(" "),_c('v-col',{attrs:{"cols":"6"}},[_c('div',{staticClass:"ml-4 mb-7"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                SCHOOL\n                "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.school))])])]),_vm._v(" "),_c('div',{staticClass:"ml-4"},[_c('h6',{staticClass:"bold"},[_vm._v("\n                GRADE LEVEL\n                "),_c('h6',[_vm._v(_vm._s(this.$auth.$state.user.grade_level))])])])])],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"width":"500"},model:{value:(_vm.dialogPassword),callback:function ($$v) {_vm.dialogPassword=$$v},expression:"dialogPassword"}},[_c('v-card',[(_vm.isLoading == true)?_c('v-progress-linear',{attrs:{"indeterminate":"","color":"cyan"}}):_vm._e(),_vm._v(" "),_c('validation-observer',{ref:"observer",scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var invalid = ref.invalid;
 return [_c('form',{on:{"submit":function($event){$event.preventDefault();return _vm.changePassword($event)}}},[_c('v-card-title',{staticClass:"headline"},[_vm._v(" Change Password ")]),_vm._v(" "),_c('v-card-text',[_c('v-col',{attrs:{"cols":"12"}},[_c('v-row',[_c('v-col',{attrs:{"cols":"12"}},[_c('validation-provider',{attrs:{"name":"Current Password","rules":"required"},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var errors = ref.errors;
@@ -7086,7 +7086,7 @@ return [_c('v-autocomplete',{attrs:{"outlined":"","error-messages":errors,"requi
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/student/profile/index.vue?vue&type=template&id=556d633c&scoped=true&
+// CONCATENATED MODULE: ./pages/student/profile/index.vue?vue&type=template&id=44ee5760&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/vee-validate/dist/rules.js
 var rules = __webpack_require__(289);
@@ -7109,6 +7109,8 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_vuex_ = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/student/profile/index.vue?vue&type=script&lang=js&
+//
+//
 //
 //
 //
@@ -7868,146 +7870,106 @@ external_vue_default.a.component("VueCtkDateTimePicker", external_vue_ctk_date_t
       cities: null,
       schools: null,
       provinceData: null,
-      provinces: [{
-        kode_wilayah: "010000 ",
-        nama: "Prov. D.K.I. Jakarta",
-        mst_kode_wilayah: "000000 "
+      kontol: null,
+      provinces: [{}, {
+        id: 12,
+        nama: "Sumatera Utara"
       }, {
-        kode_wilayah: "020000 ",
-        nama: "Prov. Jawa Barat",
-        mst_kode_wilayah: "000000 "
+        id: 13,
+        nama: "Sumatera Barat"
       }, {
-        kode_wilayah: "030000 ",
-        nama: "Prov. Jawa Tengah",
-        mst_kode_wilayah: "000000 "
+        id: 14,
+        nama: "Riau"
       }, {
-        kode_wilayah: "040000 ",
-        nama: "Prov. D.I. Yogyakarta",
-        mst_kode_wilayah: "000000 "
+        id: 15,
+        nama: "Jambi"
       }, {
-        kode_wilayah: "050000 ",
-        nama: "Prov. Jawa Timur",
-        mst_kode_wilayah: "000000 "
+        id: 16,
+        nama: "Sumatera Selatan"
       }, {
-        kode_wilayah: "060000 ",
-        nama: "Prov. Aceh",
-        mst_kode_wilayah: "000000 "
+        id: 17,
+        nama: "Bengkulu"
       }, {
-        kode_wilayah: "070000 ",
-        nama: "Prov. Sumatera Utara",
-        mst_kode_wilayah: "000000 "
+        id: 18,
+        nama: "Lampung"
       }, {
-        kode_wilayah: "080000 ",
-        nama: "Prov. Sumatera Barat",
-        mst_kode_wilayah: "000000 "
+        id: 19,
+        nama: "Kepulauan Bangka Belitung"
       }, {
-        kode_wilayah: "090000 ",
-        nama: "Prov. Riau",
-        mst_kode_wilayah: "000000 "
+        id: 21,
+        nama: "Kepulauan Riau"
       }, {
-        kode_wilayah: "100000 ",
-        nama: "Prov. Jambi",
-        mst_kode_wilayah: "000000 "
+        id: 31,
+        nama: "Dki Jakarta"
       }, {
-        kode_wilayah: "110000 ",
-        nama: "Prov. Sumatera Selatan",
-        mst_kode_wilayah: "000000 "
+        id: 32,
+        nama: "Jawa Barat"
       }, {
-        kode_wilayah: "120000 ",
-        nama: "Prov. Lampung",
-        mst_kode_wilayah: "000000 "
+        id: 33,
+        nama: "Jawa Tengah"
       }, {
-        kode_wilayah: "130000 ",
-        nama: "Prov. Kalimantan Barat",
-        mst_kode_wilayah: "000000 "
+        id: 34,
+        nama: "Di Yogyakarta"
       }, {
-        kode_wilayah: "140000 ",
-        nama: "Prov. Kalimantan Tengah",
-        mst_kode_wilayah: "000000 "
+        id: 35,
+        nama: "Jawa Timur"
       }, {
-        kode_wilayah: "150000 ",
-        nama: "Prov. Kalimantan Selatan",
-        mst_kode_wilayah: "000000 "
+        id: 36,
+        nama: "Banten"
       }, {
-        kode_wilayah: "160000 ",
-        nama: "Prov. Kalimantan Timur",
-        mst_kode_wilayah: "000000 "
+        id: 51,
+        nama: "Bali"
       }, {
-        kode_wilayah: "170000 ",
-        nama: "Prov. Sulawesi Utara",
-        mst_kode_wilayah: "000000 "
+        id: 52,
+        nama: "Nusa Tenggara Barat"
       }, {
-        kode_wilayah: "180000 ",
-        nama: "Prov. Sulawesi Tengah",
-        mst_kode_wilayah: "000000 "
+        id: 53,
+        nama: "Nusa Tenggara Timur"
       }, {
-        kode_wilayah: "190000 ",
-        nama: "Prov. Sulawesi Selatan",
-        mst_kode_wilayah: "000000 "
+        id: 61,
+        nama: "Kalimantan Barat"
       }, {
-        kode_wilayah: "200000 ",
-        nama: "Prov. Sulawesi Tenggara",
-        mst_kode_wilayah: "000000 "
+        id: 62,
+        nama: "Kalimantan Tengah"
       }, {
-        kode_wilayah: "210000 ",
-        nama: "Prov. Maluku",
-        mst_kode_wilayah: "000000 "
+        id: 63,
+        nama: "Kalimantan Selatan"
       }, {
-        kode_wilayah: "220000 ",
-        nama: "Prov. Bali",
-        mst_kode_wilayah: "000000 "
+        id: 64,
+        nama: "Kalimantan Timur"
       }, {
-        kode_wilayah: "230000 ",
-        nama: "Prov. Nusa Tenggara Barat",
-        mst_kode_wilayah: "000000 "
+        id: 65,
+        nama: "Kalimantan Utara"
       }, {
-        kode_wilayah: "240000 ",
-        nama: "Prov. Nusa Tenggara Timur",
-        mst_kode_wilayah: "000000 "
+        id: 71,
+        nama: "Sulawesi Utara"
       }, {
-        kode_wilayah: "250000 ",
-        nama: "Prov. Papua",
-        mst_kode_wilayah: "000000 "
+        id: 72,
+        nama: "Sulawesi Tengah"
       }, {
-        kode_wilayah: "260000 ",
-        nama: "Prov. Bengkulu",
-        mst_kode_wilayah: "000000 "
+        id: 73,
+        nama: "Sulawesi Selatan"
       }, {
-        kode_wilayah: "270000 ",
-        nama: "Prov. Maluku Utara",
-        mst_kode_wilayah: "000000 "
+        id: 74,
+        nama: "Sulawesi Tenggara"
       }, {
-        kode_wilayah: "280000 ",
-        nama: "Prov. Banten",
-        mst_kode_wilayah: "000000 "
+        id: 75,
+        nama: "Gorontalo"
       }, {
-        kode_wilayah: "290000 ",
-        nama: "Prov. Kepulauan Bangka Belitung",
-        mst_kode_wilayah: "000000 "
+        id: 76,
+        nama: "Sulawesi Barat"
       }, {
-        kode_wilayah: "300000 ",
-        nama: "Prov. Gorontalo",
-        mst_kode_wilayah: "000000 "
+        id: 81,
+        nama: "Maluku"
       }, {
-        kode_wilayah: "310000 ",
-        nama: "Prov. Kepulauan Riau",
-        mst_kode_wilayah: "000000 "
+        id: 82,
+        nama: "Maluku Utara"
       }, {
-        kode_wilayah: "320000 ",
-        nama: "Prov. Papua Barat",
-        mst_kode_wilayah: "000000 "
+        id: 91,
+        nama: "Papua Barat"
       }, {
-        kode_wilayah: "330000 ",
-        nama: "Prov. Sulawesi Barat",
-        mst_kode_wilayah: "000000 "
-      }, {
-        kode_wilayah: "340000 ",
-        nama: "Prov. Kalimantan Utara",
-        mst_kode_wilayah: "000000 "
-      }, {
-        kode_wilayah: "350000 ",
-        nama: "Luar Negeri",
-        mst_kode_wilayah: "000000 "
+        id: 94,
+        nama: "Papua"
       }]
     };
   },
@@ -8025,9 +7987,10 @@ external_vue_default.a.component("VueCtkDateTimePicker", external_vue_ctk_date_t
   methods: {
     chain() {
       // console.log(this.provinceData)
-      this.getCity(this.provinceData.kode_wilayah).then(response => {
+      this.$axios.setBaseURL("https://dev.farizdotid.com/");
+      this.$axios.get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id).then(response => {
         alert("Works !");
-        console.log(response);
+        console.log(response.data.kota_kabupaten);
       }).catch(error => {
         alert("Error !");
         console.log(error);
@@ -11556,11 +11519,11 @@ if (style0.__inject__) style0.__inject__(context)
 
 var component = Object(componentNormalizer["a" /* default */])(
   student_profilevue_type_script_lang_js_,
-  profilevue_type_template_id_556d633c_scoped_true_render,
+  profilevue_type_template_id_44ee5760_scoped_true_render,
   staticRenderFns,
   false,
   injectStyles,
-  "556d633c",
+  "44ee5760",
   "76a88f54"
   
 )

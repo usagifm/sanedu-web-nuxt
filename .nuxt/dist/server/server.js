@@ -11325,9 +11325,8 @@ const actions = {
   }, payload) {
     console.log(payload);
     return new Promise((resolve, reject) => {
-      this.$axios.setBaseURL("http://jendela.data.kemdikbud.go.id/");
-      this.$axios.get("api/index.php/cwilayah/wilayahKabGet?mst_kode_wilayah=" + payload).then(response => {
-        resolve(response.data);
+      fetch("https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=" + payload).then(response => {
+        resolve(response);
       }).catch(e => {
         // console.log("Search Class : ");
         reject(e); // console.log(e.response.data.message);

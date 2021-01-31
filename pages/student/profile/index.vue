@@ -55,6 +55,8 @@
 
           <v-row class="text-left">
             <v-col cols="6">
+
+              <code>{{kontol}} </code>
               <h6 class="bold">
                 PHONE
                 <v-btn
@@ -771,181 +773,141 @@ export default {
       cities: null,
       schools: null,
       provinceData: null,
+      kontol: null,
+
       provinces: [
+        {},
         {
-          kode_wilayah: "010000 ",
-          nama: "Prov. D.K.I. Jakarta",
-          mst_kode_wilayah: "000000 ",
+          id: 12,
+          nama: "Sumatera Utara",
         },
         {
-          kode_wilayah: "020000 ",
-          nama: "Prov. Jawa Barat",
-          mst_kode_wilayah: "000000 ",
+          id: 13,
+          nama: "Sumatera Barat",
         },
         {
-          kode_wilayah: "030000 ",
-          nama: "Prov. Jawa Tengah",
-          mst_kode_wilayah: "000000 ",
+          id: 14,
+          nama: "Riau",
         },
         {
-          kode_wilayah: "040000 ",
-          nama: "Prov. D.I. Yogyakarta",
-          mst_kode_wilayah: "000000 ",
+          id: 15,
+          nama: "Jambi",
         },
         {
-          kode_wilayah: "050000 ",
-          nama: "Prov. Jawa Timur",
-          mst_kode_wilayah: "000000 ",
+          id: 16,
+          nama: "Sumatera Selatan",
         },
         {
-          kode_wilayah: "060000 ",
-          nama: "Prov. Aceh",
-          mst_kode_wilayah: "000000 ",
+          id: 17,
+          nama: "Bengkulu",
         },
         {
-          kode_wilayah: "070000 ",
-          nama: "Prov. Sumatera Utara",
-          mst_kode_wilayah: "000000 ",
+          id: 18,
+          nama: "Lampung",
         },
         {
-          kode_wilayah: "080000 ",
-          nama: "Prov. Sumatera Barat",
-          mst_kode_wilayah: "000000 ",
+          id: 19,
+          nama: "Kepulauan Bangka Belitung",
         },
         {
-          kode_wilayah: "090000 ",
-          nama: "Prov. Riau",
-          mst_kode_wilayah: "000000 ",
+          id: 21,
+          nama: "Kepulauan Riau",
         },
         {
-          kode_wilayah: "100000 ",
-          nama: "Prov. Jambi",
-          mst_kode_wilayah: "000000 ",
+          id: 31,
+          nama: "Dki Jakarta",
         },
         {
-          kode_wilayah: "110000 ",
-          nama: "Prov. Sumatera Selatan",
-          mst_kode_wilayah: "000000 ",
+          id: 32,
+          nama: "Jawa Barat",
         },
         {
-          kode_wilayah: "120000 ",
-          nama: "Prov. Lampung",
-          mst_kode_wilayah: "000000 ",
+          id: 33,
+          nama: "Jawa Tengah",
         },
         {
-          kode_wilayah: "130000 ",
-          nama: "Prov. Kalimantan Barat",
-          mst_kode_wilayah: "000000 ",
+          id: 34,
+          nama: "Di Yogyakarta",
         },
         {
-          kode_wilayah: "140000 ",
-          nama: "Prov. Kalimantan Tengah",
-          mst_kode_wilayah: "000000 ",
+          id: 35,
+          nama: "Jawa Timur",
         },
         {
-          kode_wilayah: "150000 ",
-          nama: "Prov. Kalimantan Selatan",
-          mst_kode_wilayah: "000000 ",
+          id: 36,
+          nama: "Banten",
         },
         {
-          kode_wilayah: "160000 ",
-          nama: "Prov. Kalimantan Timur",
-          mst_kode_wilayah: "000000 ",
+          id: 51,
+          nama: "Bali",
         },
         {
-          kode_wilayah: "170000 ",
-          nama: "Prov. Sulawesi Utara",
-          mst_kode_wilayah: "000000 ",
+          id: 52,
+          nama: "Nusa Tenggara Barat",
         },
         {
-          kode_wilayah: "180000 ",
-          nama: "Prov. Sulawesi Tengah",
-          mst_kode_wilayah: "000000 ",
+          id: 53,
+          nama: "Nusa Tenggara Timur",
         },
         {
-          kode_wilayah: "190000 ",
-          nama: "Prov. Sulawesi Selatan",
-          mst_kode_wilayah: "000000 ",
+          id: 61,
+          nama: "Kalimantan Barat",
         },
         {
-          kode_wilayah: "200000 ",
-          nama: "Prov. Sulawesi Tenggara",
-          mst_kode_wilayah: "000000 ",
+          id: 62,
+          nama: "Kalimantan Tengah",
         },
         {
-          kode_wilayah: "210000 ",
-          nama: "Prov. Maluku",
-          mst_kode_wilayah: "000000 ",
+          id: 63,
+          nama: "Kalimantan Selatan",
         },
         {
-          kode_wilayah: "220000 ",
-          nama: "Prov. Bali",
-          mst_kode_wilayah: "000000 ",
+          id: 64,
+          nama: "Kalimantan Timur",
         },
         {
-          kode_wilayah: "230000 ",
-          nama: "Prov. Nusa Tenggara Barat",
-          mst_kode_wilayah: "000000 ",
+          id: 65,
+          nama: "Kalimantan Utara",
         },
         {
-          kode_wilayah: "240000 ",
-          nama: "Prov. Nusa Tenggara Timur",
-          mst_kode_wilayah: "000000 ",
+          id: 71,
+          nama: "Sulawesi Utara",
         },
         {
-          kode_wilayah: "250000 ",
-          nama: "Prov. Papua",
-          mst_kode_wilayah: "000000 ",
+          id: 72,
+          nama: "Sulawesi Tengah",
         },
         {
-          kode_wilayah: "260000 ",
-          nama: "Prov. Bengkulu",
-          mst_kode_wilayah: "000000 ",
+          id: 73,
+          nama: "Sulawesi Selatan",
         },
         {
-          kode_wilayah: "270000 ",
-          nama: "Prov. Maluku Utara",
-          mst_kode_wilayah: "000000 ",
+          id: 74,
+          nama: "Sulawesi Tenggara",
         },
         {
-          kode_wilayah: "280000 ",
-          nama: "Prov. Banten",
-          mst_kode_wilayah: "000000 ",
+          id: 75,
+          nama: "Gorontalo",
         },
         {
-          kode_wilayah: "290000 ",
-          nama: "Prov. Kepulauan Bangka Belitung",
-          mst_kode_wilayah: "000000 ",
+          id: 76,
+          nama: "Sulawesi Barat",
         },
         {
-          kode_wilayah: "300000 ",
-          nama: "Prov. Gorontalo",
-          mst_kode_wilayah: "000000 ",
+          id: 81,
+          nama: "Maluku",
         },
         {
-          kode_wilayah: "310000 ",
-          nama: "Prov. Kepulauan Riau",
-          mst_kode_wilayah: "000000 ",
+          id: 82,
+          nama: "Maluku Utara",
         },
         {
-          kode_wilayah: "320000 ",
-          nama: "Prov. Papua Barat",
-          mst_kode_wilayah: "000000 ",
+          id: 91,
+          nama: "Papua Barat",
         },
         {
-          kode_wilayah: "330000 ",
-          nama: "Prov. Sulawesi Barat",
-          mst_kode_wilayah: "000000 ",
-        },
-        {
-          kode_wilayah: "340000 ",
-          nama: "Prov. Kalimantan Utara",
-          mst_kode_wilayah: "000000 ",
-        },
-        {
-          kode_wilayah: "350000 ",
-          nama: "Luar Negeri",
-          mst_kode_wilayah: "000000 ",
+          id: 94,
+          nama: "Papua",
         },
       ],
     };
@@ -961,36 +923,21 @@ export default {
     }),
   },
   methods: {
-
     chain() {
-
-
-
-
       // console.log(this.provinceData)
+      this.$axios.setBaseURL("https://dev.farizdotid.com/");
 
-
-this.getCity(this.provinceData.kode_wilayah)
-        .then((response) =>{
-
-            alert("Works !")
-          console.log(response)
-
-
-
-        }).catch((error) => {
-
-          alert("Error !")
-          console.log(error)
+      this.$axios.get("api/daerahindonesia/kota?id_provinsi="+this.provinceData.id)
+        .then((response) => {
+          alert("Works !");
+              console.log(response.data.kota_kabupaten);
         })
-
-
-
-
+        .catch((error) => {
+          alert("Error !");
+          console.log(error);
+        });
     },
 
-
-    
     uploadImage(e) {
       const image = e.target.files[0];
 
@@ -1020,7 +967,7 @@ this.getCity(this.provinceData.kode_wilayah)
       "editPersonalData",
       "editWhatsapp",
       "editEmail",
-      "getCity"
+      "getCity",
     ]),
 
     personalData() {

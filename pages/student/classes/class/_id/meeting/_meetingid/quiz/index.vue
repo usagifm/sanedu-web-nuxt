@@ -1376,9 +1376,13 @@ export default {
                 self.timer = "Time Up !";
 
      
-          location.reload();
-                // window.location.href = 'https://sanedu.id/AccountSanClass/kelas/'+ classId +'/pertemuan/'+ meetingId
-                // alert("Waktu pengerjaan kamu sudah habis !");
+        
+                   this.$router.push(
+        "/student/classes/class/" +
+          this.$store.state.class.classDetail.id +
+          "/meeting/" +
+          this.$store.state.class.meetingDetail.id + "/quiz"
+      );
 
             }
 
