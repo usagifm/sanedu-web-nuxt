@@ -1377,12 +1377,15 @@ export default {
 
      
         
-                   this.$router.push(
+                             this.$router.push(
         "/student/classes/class/" +
           this.$store.state.class.classDetail.id +
           "/meeting/" +
-          this.$store.state.class.meetingDetail.id + "/quiz"
+          this.$store.state.class.meetingDetail.id
       );
+
+           this.$toast.success('Times Up !');
+
 
             }
 

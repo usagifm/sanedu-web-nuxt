@@ -3,72 +3,84 @@
     "name": "dashboard",
     "path": "/dashboard",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/dashboard/index.vue",
-    "chunkName": "pages/dashboard/index"
+    "chunkName": "pages/dashboard/index",
+    "_name": "_38003676"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/login/index.vue",
-    "chunkName": "pages/login/index"
+    "chunkName": "pages/login/index",
+    "_name": "_a01a1eea"
   },
   {
     "name": "student",
     "path": "/student",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/index.vue",
-    "chunkName": "pages/student/index"
+    "chunkName": "pages/student/index",
+    "_name": "_2e1a6f1d"
   },
   {
     "name": "student-classes",
     "path": "/student/classes",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/index.vue",
-    "chunkName": "pages/student/classes/index"
+    "chunkName": "pages/student/classes/index",
+    "_name": "_56119174"
   },
   {
     "name": "student-profile",
     "path": "/student/profile",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/profile/index.vue",
-    "chunkName": "pages/student/profile/index"
+    "chunkName": "pages/student/profile/index",
+    "_name": "_2bd5c992"
   },
   {
     "name": "student-classes-taro dulu",
     "path": "/student/classes/taro%20dulu",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/taro dulu.vue",
-    "chunkName": "pages/student/classes/taro dulu"
+    "chunkName": "pages/student/classes/taro dulu",
+    "_name": "_20ef6b72"
   },
   {
     "name": "student-classes-class-id",
     "path": "/student/classes/class/:id",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/index.vue",
-    "chunkName": "pages/student/classes/class/_id/index"
+    "chunkName": "pages/student/classes/class/_id/index",
+    "_name": "_296b5e88"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid",
     "path": "/student/classes/class/:id?/meeting/:meetingid",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/index"
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/index",
+    "_name": "_57e35830"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-quiz",
     "path": "/student/classes/class/:id?/meeting/:meetingid?/quiz",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/quiz/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/index"
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/index",
+    "_name": "_6bc2f072"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-quiz-result",
     "path": "/student/classes/class/:id?/meeting/:meetingid?/quiz/result",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index"
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index",
+    "_name": "_2674c7f0"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-lesson-lessonid",
     "path": "/student/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index"
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index",
+    "_name": "_78ece538"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_3c0e261e"
   }
 ]
