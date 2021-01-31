@@ -311,7 +311,7 @@ textarea {
               <v-card class="pa-4">
                 <v-card outlined > 
                   <v-card-title v-if="soal.question_type == 1" class="title">
-                    Question {{ noSoal }} : Multiple Choice Kontol
+                    Question {{ noSoal }} : Multiple Choice 
                   </v-card-title>
 
                     <v-card-title v-if="soal.question_type == 2" class="title">
@@ -1381,10 +1381,10 @@ export default {
         "/student/classes/class/" +
           this.$store.state.class.classDetail.id +
           "/meeting/" +
-          this.$store.state.class.meetingDetail.id
+          this.$store.state.class.meetingDetail.id + "/quiz"
       );
 
-           this.$toast.success('Times Up !');
+          
 
 
             }
