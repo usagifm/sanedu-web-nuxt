@@ -311,7 +311,7 @@ textarea {
               <v-card class="pa-4">
                 <v-card outlined > 
                   <v-card-title v-if="soal.question_type == 1" class="title">
-                    Question {{ noSoal }} : Multiple Choice 
+                    Question {{ noSoal }} : Multiple Choice KONTOL
                   </v-card-title>
 
                     <v-card-title v-if="soal.question_type == 2" class="title">
