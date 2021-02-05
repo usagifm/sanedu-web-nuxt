@@ -62,7 +62,7 @@
       :class="{ expand: flat }"
     >
       <v-toolbar-title>
-        <v-img :src="require('@/assets/img/logolanding.png')" max-width="300px" />
+        <v-img :src="require('@/static/images/landingpage/logolanding.png')" max-width="300px" />
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon
@@ -132,6 +132,7 @@
         <nuxt />
         
     </v-main>
+
     <v-scale-transition>
       <v-btn
         fab
@@ -157,14 +158,14 @@
 
 <script>
 import navigation from "@/components/Navigation";
-import foote from "@/components/Footer";
+
 
 import { mapState} from 'vuex'
 export default {
 
   components: {
     navigation,
-    foote,
+
 
   },
   
