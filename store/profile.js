@@ -153,6 +153,30 @@ export const actions = {
 
     },
 
+    editRegionData({ dispatch } , payload){
+
+
+        console.log(payload)
+        return new Promise((resolve, reject) => {
+            this.$axios.post('/profile/edit', payload).then((response) => {
+          
+               resolve(response.data);
+           
+            })
+            .catch((e) => {
+                // console.log("Search Class : ");
+                reject(e.response.data.email[0]);
+                // console.log(e.response.data.message);
+
+            })
+
+        })
+
+
+
+    },
+
+
     getCity({dispatch}, payload){
 
 

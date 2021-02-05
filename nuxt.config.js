@@ -1,5 +1,6 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  target: 'static',
   head: {
     title: 'sanedu-nuxt',
     meta: [
@@ -8,7 +9,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet' ,  href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap' }
     ],
     script: [
       { src: "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" },
@@ -18,18 +20,37 @@ export default {
       { src: "/vendor/bootstrap/js/bootstrap.bundle.min.js" },
       { src: "/vendor/jquery-easing/jquery.easing.min.js" },
       { src: "/js/sb-admin-2.min.js" },
-      { src: "/landingpage/lib/jquery/jquery.min.js"},
-      { src: "/landingpage/lib/jquery/jquery-migrate.min.js"},
-      { src: "/landingpage/lib/bootstrap/js/bootstrap.bundle.min.js"},
-      { src: "/landingpage/lib/easing/easing.min.js"},
-      { src: "/landingpage/lib/mobile-nav/mobile-nav.js"},
-      { src: "/landingpage/lib/wow/wow.min.js"},
-      { src: "/landingpage/lib/waypoints/waypoints.min.js"},
-      { src: "/landingpage/lib/counterup/counterup.min.js"},
-      { src: "/landingpage/lib/owlcarousel/owl.carousel.min.js"},
-      { src: "/landingpage/lib/lightbox/js/lightbox.min.js"},
-      { src: "/landingpage/contactform/contactform.js"},
+      { src: "/jquery.min.js"},
+      { src: "/jquery-migrate.min.js"},
+      { src: "/bootstrap.bundle.min.js"},
+      { src: "/easing.min.js"},
+      { src: "/mobile-nav.js"},
+      { src: "/wow.min.js"},
+      { src: "/wow.js"},
+      { src: "/main.js"},
+      { src: "/waypoints.min.js"},
+      { src: "/counterup.min.js"},
+      { src: "/owl.carousel.min.js"},
+      { src: "/isotope.pkgd.min.js"},
+
+      { src: "/owl.carousel.js"},
+      // { src: "/contactform.js"},
       
+
+      // { src: "~/assets/css/landingpage/lib/jquery/jquery.min.js"},
+      // { src: "~/assets/css/landingpage/lib/jquery/jquery-migrate.min.js"},
+      // { src: "~/assets/css/landingpage/lib/bootstrap/js/bootstrap.bundle.min.js"},
+      // { src: "~/assets/css/landingpage/lib/easing/easing.min.js"},
+      // { src: "~/assets/css/landingpage/lib/mobile-nav/mobile-nav.js"},
+      // { src: "~/assets/css/landingpage/lib/wow/wow.min.js"},
+      // { src: "~/assets/css/landingpage/js/main.js"},
+      // { src: "~/assets/css/landingpage/lib/waypoints/waypoints.min.js"},
+      // { src: "~/assets/css/landingpage/lib/counterup/counterup.min.js"},
+      // { src: "~/assets/css/landingpage/lib/owlcarousel/owl.carousel.min.js"},
+
+      // { src: "~/assets/css/landingpage/contactform/contactform.js"}
+    
+
 
 
   
@@ -48,6 +69,7 @@ export default {
     '@/assets/css/sb-admin-2.min.css',
     '@/assets/css/wave.css',
     'vuesax/dist/vuesax.css',
+    
 
   ],
 
@@ -63,9 +85,12 @@ export default {
     {src:'plugins/vue-notification.js' , ssr:false},
     {src:'plugins/vuesax.js'},
     '@/plugins/axios.js',
+
     // '@plugins/vuetify'
 
+
   ],
+
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -75,7 +100,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module'
     '@nuxtjs/vuetify',
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
 
     // With options
   
@@ -155,7 +180,10 @@ export default {
       'vee-validate'
     ],
     vendor: ['external_library']
-  }
+
+    
+  },
+
 
   // extend(config, ctx) {
     //   if (ctx.isDev && ctx.isClient) {

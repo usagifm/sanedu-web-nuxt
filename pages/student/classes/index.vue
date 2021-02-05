@@ -37,7 +37,7 @@
             <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">Student Account</div>
-                <v-list-item-title class="headline mb-1">
+                <v-list-item-title  class="headline mb-1 font-weight-bold">
                   Enrolled Classes
                 </v-list-item-title>
                 <v-list-item-subtitle class="my-4"

@@ -39,7 +39,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title"></v-list-item-title>
+            <v-list-item-title style="color: #455A64" class="font-weight-bold" v-text="item.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -98,7 +98,15 @@
                 {{ user.email }}
               </p>
               <v-divider class="my-3"></v-divider>
+                <nuxt-link
+                        style="text-decoration: none"
+                        :to="{
+                          name: 'student-profile',
+                          
+                        }"
+                      >
               <v-btn depressed rounded text> Edit Account </v-btn>
+                </nuxt-link>
               <v-divider class="my-3"></v-divider>
               <v-btn @click="logout" depressed rounded text> Logout </v-btn>
             </div>

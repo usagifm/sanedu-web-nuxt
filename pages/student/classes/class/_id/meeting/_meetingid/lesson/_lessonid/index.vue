@@ -177,7 +177,7 @@
 
         </v-row>
 
-          <v-row justify="center" align="center">
+          <!-- <v-row justify="center" align="center">
         
                             <v-col cols="12" lg="9" md="9" sm="12" xs="12">
                            
@@ -247,7 +247,7 @@
 
         </v-row>
        
- 
+  -->
       </v-flex>
     </v-container>
   </v-layout>
@@ -316,41 +316,6 @@ export default {
 
     this.ytvid = "https://www.youtube.com/embed/" + id.id;
 
-
-   fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyC_xbHwrDwgEZn4zin8XCwZ3dIjZmGGyVs&type=video&q='+id.id)
-  .then(response => response.json())
-  .then(json => {
-    
-      this.videoProp.title = json.items[0].snippet.title;
-
-
-      const video = json.items[0].snippet;
-               console.log(video);
-
-
- 
-
-          fetch('https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id='+ video.channelId +'&key=AIzaSyBm3Xv_KkQ2aMe4y5q8BcXb6ISbKdko0To')
-            .then(res1 => res1.json())
-            .then((data1) => {
-
-                console.log(data1.items[0].snippet);
-
-                this.channelProp.title = data1.items[0].snippet.title;
-                this.channelProp.photo = data1.items[0].snippet.thumbnails.default.url;
-                
-                
-                });
-
-
-      
-      
-      });
-
-
-    fetch('https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyAVDJHxKk4ZLpy1BIrwb5sSytCsQ-J1pdM&textFormat=plainText&part=snippet&videoId='+ id.id + '&maxResults=20')
-  .then(res => res.json())
-  .then(data => this.vidComments = data.items);
 
 
 

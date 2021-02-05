@@ -3,6 +3,7 @@ import Vue from 'vue'
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
+import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
@@ -30,12 +31,15 @@ import '../node_modules/vuesax/dist/vuesax.css'
 
 import '../node_modules/material-design-icons/iconfont/material-icons.css'
 
+import '../node_modules/vuetify/dist/vuetify.css'
+
 import _6b4fb138 from '../layouts/backup.vue'
 import _6f6c098b from '../layouts/default.vue'
 import _2d2495d5 from '../layouts/home.vue'
+import _d06d9120 from '../layouts/landingpage.vue'
 import _e2e90fcc from '../layouts/vuesax.vue'
 
-const layouts = { "_backup": sanitizeComponent(_6b4fb138),"_default": sanitizeComponent(_6f6c098b),"_home": sanitizeComponent(_2d2495d5),"_vuesax": sanitizeComponent(_e2e90fcc) }
+const layouts = { "_backup": sanitizeComponent(_6b4fb138),"_default": sanitizeComponent(_6f6c098b),"_home": sanitizeComponent(_2d2495d5),"_landingpage": sanitizeComponent(_d06d9120),"_vuesax": sanitizeComponent(_e2e90fcc) }
 
 export default {
   render (h, props) {
@@ -70,7 +74,7 @@ export default {
       }
     }, [
       loadingEl,
-
+      h(NuxtBuildIndicator),
       transitionEl
     ])
   },
@@ -210,6 +214,10 @@ export default {
     },
 
     setLayout (layout) {
+      if(layout && typeof layout !== 'string') {
+        throw new Error('[nuxt] Avoid using non-string value as layout property.')
+      }
+
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }

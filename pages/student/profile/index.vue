@@ -55,8 +55,6 @@
 
           <v-row class="text-left">
             <v-col cols="6">
-
-              <code>{{kontol}} </code>
               <h6 class="bold">
                 PHONE
                 <v-btn
@@ -117,7 +115,7 @@
               <v-card class="mx-auto" width="100%" outlined>
                 <v-progress-linear
                   indeterminate
-                  color="primary"
+                  color="cyan"
                 ></v-progress-linear>
 
                 <v-list-item three-line>
@@ -134,16 +132,25 @@
                   <v-list-item-avatar
                     size="50"
                     color="primary"
-                    class="bold"
-                    style="font-size: 27px; color: white"
+                    class="bold text-center" 
+                    style="text-align: center; font-size: 27px; color: white"
                     >{{ classes.length }}</v-list-item-avatar
                   >
                 </v-list-item>
 
                 <v-card-actions>
+                    <nuxt-link
+                        style="text-decoration: none"
+                        :to="{
+                          name: 'student-classes',
+                          
+                        }"
+                      >
                   <v-btn outlined rounded text
                     ><v-icon left>mdi-google-classroom</v-icon> Go To Sanclass
                   </v-btn>
+
+                    </nuxt-link>
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -239,7 +246,6 @@
                     >
                       <v-text-field
                         :counter="20"
-                        prepend-inner-icon="mdi-lock-clock"
                         :error-messages="errors"
                         outlined
                         :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -263,7 +269,6 @@
                         ref="password"
                         :counter="20"
                         name="password"
-                        prepend-inner-icon="mdi-lock"
                         :error-messages="errors"
                         outlined
                         :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -286,7 +291,6 @@
                       <v-text-field
                         :counter="20"
                         outlined
-                        prepend-inner-icon="mdi-lock"
                         :error-messages="errors"
                         :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
                         @click:append="show3 = !show3"
@@ -535,7 +539,6 @@
                   rules="required|numeric|min:6|max:15"
                 >
                   <v-text-field
-                    prepend-inner-icon="mdi-whatsapp"
                     :counter="15"
                     :error-messages="errors"
                     label="Phone/Whatsapp Number"
@@ -579,7 +582,6 @@
                   rules="required|email"
                 >
                   <v-text-field
-                    prepend-inner-icon="mdi-email"
                     :counter="30"
                     :error-messages="errors"
                     label="Email"
@@ -625,7 +627,7 @@
         ></v-progress-linear>
 
         <validation-observer ref="observer" v-slot="{ invalid }">
-          <form @submit.prevent="email">
+          <form @submit.prevent="regionData">
             <v-card-title class="headline">
               Change Region and Institution Data
             </v-card-title>
@@ -650,17 +652,71 @@
                   ></v-autocomplete>
                 </validation-provider>
               </v-col>
+
+              <v-col v-if="cities" cols="12">
+                <validation-provider
+                  v-slot="{ errors }"
+                  name="City"
+                  rules="required"
+                >
+                  <v-autocomplete
+                    outlined
+                    :error-messages="errors"
+                    required
+                    :items="cities"
+                    v-model="cityData"
+                    return-object
+                    color="white"
+                    item-text="nama"
+                    label="City"
+                  ></v-autocomplete>
+                </validation-provider>
+              </v-col>
+
+              <v-col v-if="cityData" cols="12">
+                <v-row>
+                  <v-col cols="6">
+                    <validation-provider
+                      v-slot="{ errors }"
+                      name="School"
+                      rules="required"
+                    >
+                      <v-text-field
+                        :counter="100"
+                        :error-messages="errors"
+                        required
+                        v-model="regionDataPayload.school"
+                        label="School"
+                      ></v-text-field>
+                    </validation-provider>
+                  </v-col>
+
+                  <v-col cols="6">
+                    <v-select
+                      v-model="regionDataPayload.grade_level"
+                      :items="grades"
+                      item-text="grade"
+                      item-value="value"
+                      label="Grade Level"
+                      persistent-hint
+                      return-object
+                      single-line
+                    ></v-select>
+                  </v-col>
+                </v-row>
+              </v-col>
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn
-                color="red darken-1"
-                text
-                @click="dialogRegionData = false"
-              >
+              <v-btn color="red darken-1" text @click="cancelRegion">
                 CANCEL
               </v-btn>
-              <v-btn @click="email" :disabled="invalid" color="primary" text>
+              <v-btn
+                @click="regionData"
+                :disabled="invalid"
+                color="primary"
+                text
+              >
                 UPDATE
               </v-btn>
             </v-card-actions>
@@ -750,7 +806,14 @@ export default {
       dialogWhatsapp: false,
       dialogEmail: false,
       dialogRegionData: false,
-
+      regionDataPayload: {
+        province_id: null,
+        province_name: null,
+        city_id: null,
+        city_name: null,
+        school: this.$auth.$state.user.school,
+        grade_level: this.$auth.$state.user.grade_level,
+      },
       whatsappPayload: {
         whatsapp: this.$auth.$state.user.whatsapp,
       },
@@ -773,10 +836,21 @@ export default {
       cities: null,
       schools: null,
       provinceData: null,
-      kontol: null,
+      cities: null,
+      cityData: null,
+
+      grades: [
+        { grade: 7 , value: 7 },
+        { grade: 8, value: 8 },
+        { grade: 9, value: 9 },
+        { grade: 10, value: 10 },
+        { grade: 11, value: 11 },
+        { grade: 12, value: 12 },
+        { grade: "University Student", value: 13 },
+        { grade: "General", value: 14 },
+      ],
 
       provinces: [
-        {},
         {
           id: 12,
           nama: "Sumatera Utara",
@@ -924,18 +998,18 @@ export default {
   },
   methods: {
     chain() {
-      // console.log(this.provinceData)
+      this.isLoading = true;
+
       this.$axios.setBaseURL("https://dev.farizdotid.com/");
 
-      this.$axios.get("api/daerahindonesia/kota?id_provinsi="+this.provinceData.id)
+      this.$axios
+        .get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id)
         .then((response) => {
-          alert("Works !");
-              console.log(response.data.kota_kabupaten);
+          this.isLoading = false;
+
+          this.cities = response.data.kota_kabupaten;
         })
-        .catch((error) => {
-          alert("Error !");
-          console.log(error);
-        });
+        .catch((error) => {});
     },
 
     uploadImage(e) {
@@ -969,6 +1043,49 @@ export default {
       "editEmail",
       "getCity",
     ]),
+
+    cancelRegion() {
+      this.dialogRegionData = false;
+
+      this.provinceData = null;
+      this.cityData = null;
+    },
+    regionData() {
+
+      this.$axios.setBaseURL("https://api.sanedu.id/");
+
+      this.isLoading = true;
+      this.regionDataPayload.province_id = this.provinceData.id;
+      this.regionDataPayload.province_name = this.provinceData.nama;
+      this.regionDataPayload.city_id = this.cityData.id;
+      this.regionDataPayload.city_name = this.cityData.nama;
+         this.regionDataPayload.grade_level =  this.regionDataPayload.grade_level.value
+
+      this.editRegionData(this.regionDataPayload)
+
+        .then((response) => {
+
+        this.$auth.setUser(response);
+
+          this.dialogRegionData = false;
+          this.isLoading = false;
+
+          this.text = "Region Data Updated Successfully !";
+          this.snackbar = true;
+
+
+      this.provinceData = null;
+      this.cityData = null;
+
+        })
+        .catch((error) => {
+          this.isLoading = false;
+
+          this.text = error;
+          this.snackbar = true;
+
+        });
+    },
 
     personalData() {
       // console.log(this.personalDataPayload);
@@ -1047,10 +1164,12 @@ export default {
     },
 
     profileImage() {
-      // console.log(this.personalDataPayload);
+      this.isLoading == true;
+
       $("#imageButton").attr("disabled", true);
       this.isLoading = true;
       this.profileImagePayload.profile_image = this.previewImage;
+
       this.editProfileImage(this.profileImagePayload)
 
         .then((response) => {
@@ -1067,12 +1186,16 @@ export default {
           $("#imageButton").attr("disabled", false);
 
           location.reload();
+
+          this.isLoading == false;
         })
         .catch((error) => {
           this.isLoading = false;
 
           this.text = error;
           this.snackbar = true;
+
+          this.isLoading == false;
         });
     },
 

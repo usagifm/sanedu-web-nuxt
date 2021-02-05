@@ -296,6 +296,10 @@ textarea {
               {{ meetingDetail.quiz.name }}
             </v-card-title>
 
+   <v-card-subtitle style="font-weight: bold">{{
+                classDetail.teacher_name
+              }}</v-card-subtitle>
+
             <!-- <v-card-subtitle style="font-weight: bold">{{
               classDetail.teacher_name
             }}</v-card-subtitle> -->
@@ -311,7 +315,7 @@ textarea {
               <v-card class="pa-4">
                 <v-card outlined > 
                   <v-card-title v-if="soal.question_type == 1" class="title">
-                    Question {{ noSoal }} : Multiple Choice KONTOL
+                    Question {{ noSoal }} : Multiple Choice 
                   </v-card-title>
 
                     <v-card-title v-if="soal.question_type == 2" class="title">
@@ -482,8 +486,14 @@ textarea {
         </v-col>
 
         <v-col  v-if="!isFinish && isMounted && this.$store.state.class.meetingDetail.quiz" align="center" cols="12" sm="12" md="3" xl="3" xm="12">
-          <v-card class="pa-4">
+          <v-card class="pb-4 " >
 
+                 <v-progress-linear
+                 
+                 class="mb-4"
+                  indeterminate
+                  color="primary"
+                ></v-progress-linear>
               
 
             <div
@@ -522,6 +532,7 @@ textarea {
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
+            class="mt-4"
             color="primary"
             v-bind="attrs"
             v-on="on"
@@ -1372,17 +1383,28 @@ export default {
             var p = 1;
 			if (distance < 0 && p == 1) {
 
+
                 p++;
                 self.timer = "Time Up !";
 
-     
+
+            // this.$swal(
+            //     'Your Quiz is Done !!',
+            //     'Your Answers has been saved.',
+            //     'success'
+            //   )
+
+
         
                              this.$router.push(
         "/student/classes/class/" +
           this.$store.state.class.classDetail.id +
           "/meeting/" +
-          this.$store.state.class.meetingDetail.id
+          this.$store.state.class.meetingDetail.id+"/quiz/result"
       );
+
+
+
 
           
 

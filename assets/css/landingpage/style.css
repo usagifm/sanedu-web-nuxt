@@ -223,8 +223,7 @@ h6 {
 .main-nav a {
   display: block;
   position: relative;
-  color: #c2c2c7;
-  color: #c2c2c7;
+  color: #413e66;
   padding: 10px 15px;
   transition: 0.3s;
   font-size: 14px;
@@ -253,7 +252,6 @@ h6 {
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: ease all 0.3s;
 }
-
 
 .main-nav .drop-down:hover > ul {
   opacity: 1;

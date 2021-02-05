@@ -38,10 +38,13 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/vuetify": "^1.11.3",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.0.1",
     "eslint": "^7.18.0",
     "eslint-plugin-nuxt": "^1.0.0",
+    "postcss": "^7.0.35",
     "webpack": "^4.46.0"
   }
 }
