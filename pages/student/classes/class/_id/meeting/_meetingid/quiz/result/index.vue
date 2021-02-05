@@ -20,6 +20,7 @@ sub {
 <template>
   <v-layout>
     <v-container>
+      
       <v-container fluid v-if="isLoaded == false">
         <v-row align="center" justify="center">
           <v-col cols="6">
@@ -80,7 +81,9 @@ sub {
             </v-alert>
           </v-flex>
         </v-col>
+      </v-row>
 
+ <v-row justify="center" align="center">
         <v-col
           cols="12"
           v-if="isLoaded == true && this.$store.state.class.meetingDetail.quiz"
@@ -319,7 +322,10 @@ sub {
 
                 </v-card> -->
         </v-col>
-      </v-row>
+
+ </v-row>
+
+
 
       <v-dialog
         v-if="detailModal == true"
