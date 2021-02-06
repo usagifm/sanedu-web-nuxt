@@ -34,12 +34,11 @@ sub {
         </v-row>
       </v-container>
 
-      <v-row>
-        <v-col
-          cols="12"
-          v-if="isLoaded == true && this.$store.state.class.meetingDetail.quiz"
-        >
-          <v-flex>
+
+        <!-- <div
+          
+        > -->
+          <v-flex v-if="isLoaded == true && this.$store.state.class.meetingDetail.quiz">
             <v-alert
               style="text-decoration: none; font-weight: bold"
               border="top"
@@ -79,9 +78,8 @@ sub {
                 divider="/"
               ></v-breadcrumbs>
             </v-alert>
-          </v-flex>
-        </v-col>
-      </v-row>
+        <!-- </div> -->
+
 
  <v-row justify="center" align="center">
         <v-col
@@ -326,7 +324,7 @@ sub {
  </v-row>
 
 
-
+          </v-flex>
       <v-dialog
         v-if="detailModal == true"
         v-model="detailModal"

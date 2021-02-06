@@ -90,18 +90,20 @@
         style="text-decoration: none; color: #263238;" text href="#footer">
           <span class="mr-2">Contact Us</span>
         </v-btn>
-           <nuxt-link
+           <!-- <nuxt-link
                         style="text-decoration: none"
                         :to="{
                           name: 'login',
                           
                         }"
-                      >
+                      > -->
         <v-btn 
+
+         href="https://nuxt.sanedu.id/login"
         style="text-decoration: none; color: #263238;" rounded outlined text >
           <span class="mr-2">Login</span>
         </v-btn>
-           </nuxt-link>
+           <!-- </nuxt-link> -->
             <v-btn 
         style="text-decoration: none; color: #263238;" rounded outlined text >
           <span class="mr-2">Register</span>
