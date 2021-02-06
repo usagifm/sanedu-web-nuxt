@@ -99,7 +99,7 @@
                       > -->
         <v-btn 
 
-         href="https://nuxt.sanedu.id/login"
+         href="https://nuxt.sanedu.id/student/classes"
         style="text-decoration: none; color: #263238;" rounded outlined text >
           <span class="mr-2">Login</span>
         </v-btn>
