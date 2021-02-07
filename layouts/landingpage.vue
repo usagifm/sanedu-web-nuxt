@@ -2,17 +2,15 @@
 <template>
   <v-app>
     <navigation :color="color" :flat="flat" />
-<body>
-  
 
-
+    
     <v-main class="pt-0">
     
     
         <nuxt />
         
     </v-main>
-    <v-scale-transition>
+    <!-- <v-scale-transition>
       <v-btn
         fab
         v-show="fab"
@@ -27,8 +25,7 @@
         <v-icon>mdi-arrow-up</v-icon>
       </v-btn>
     </v-scale-transition>
-    
-</body>
+     -->
   </v-app>
 </template>
 
