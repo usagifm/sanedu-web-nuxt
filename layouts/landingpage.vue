@@ -51,6 +51,30 @@
             }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+
+               <v-list-item
+
+                 href="https://nuxt.sanedu.id/student/classes"
+        >
+          <v-list-item-icon class="justify-center">
+            <v-icon>mdi-account-check</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="subtitile-1">Login</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+               <v-list-item
+
+        >
+          <v-list-item-icon class="justify-center">
+            <v-icon>mdi-account-plus</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="subtitile-1">Register</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
