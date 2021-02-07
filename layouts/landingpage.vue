@@ -172,6 +172,14 @@ export default {
 
       computed:{
         ...mapState(['isAuth']),
+
+        load(){
+
+
+              if (process.browser){
+      console.log(window.innerWidth, window.innerHeight);
+    }
+        }
       },
 
   data: () => ({
@@ -192,6 +200,11 @@ export default {
   }),
 
   mounted() {
+
+        if (process.browser){
+      console.log(window.innerWidth, window.innerHeight);
+    }
+    
         this.onResize();
     window.addEventListener("resize", this.onResize, { passive: true });
 
