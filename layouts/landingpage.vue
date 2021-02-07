@@ -10,7 +10,7 @@
         <nuxt />
         
     </v-main>
-    <!-- <v-scale-transition>
+    <v-scale-transition>
       <v-btn
         fab
         v-show="fab"
@@ -25,7 +25,7 @@
         <v-icon>mdi-arrow-up</v-icon>
       </v-btn>
     </v-scale-transition>
-     -->
+    
   </v-app>
 </template>
 
@@ -75,6 +75,12 @@ export default {
         this.flat = true;
       }
     },
+  },
+
+    created(){
+    if (process.browser){
+      console.log(window.innerWidth, window.innerHeight);
+    }
   },
 
   methods: {

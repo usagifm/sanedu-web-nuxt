@@ -3,7 +3,6 @@ import Vue from 'vue'
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
@@ -30,8 +29,6 @@ import '../assets/css/wave.css'
 import '../node_modules/vuesax/dist/vuesax.css'
 
 import '../node_modules/material-design-icons/iconfont/material-icons.css'
-
-import '../node_modules/vuetify/dist/vuetify.css'
 
 import _6b4fb138 from '../layouts/backup.vue'
 import _6f6c098b from '../layouts/default.vue'
@@ -74,7 +71,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -125,6 +122,10 @@ export default {
 
     isFetching () {
       return this.nbFetching > 0
+    },
+
+    isPreview () {
+      return Boolean(this.$options.previewData)
     },
   },
 
@@ -210,10 +211,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
