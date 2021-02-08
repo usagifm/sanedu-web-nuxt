@@ -106,7 +106,7 @@ Sign In
 
                             
            
-                            <NuxtLink  to="/register">
+                            <nuxt-link  to="/register">
 
                             <a
                             class="ml-2"
@@ -115,7 +115,7 @@ Sign In
                               >
                             Or Create an Account !
                             </a>
-                            </NuxtLink>
+                            </nuxt-link>
 
                             <v-spacer></v-spacer>
 

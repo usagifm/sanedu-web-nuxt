@@ -140,7 +140,8 @@
                         }"
                       > -->
 
-                         <NuxtLink style="text-decoration: none" to="/login">
+
+                         <nuxt-link style="text-decoration: none" to="/login">
 
        
         <v-btn 
@@ -149,15 +150,15 @@
         style="text-decoration: none; color: #263238;" rounded outlined text >
           <span >Login</span>
         </v-btn>
-                         </NuxtLink>
+                         </nuxt-link>
            <!-- </nuxt-link> -->
 
-                                <NuxtLink style="text-decoration: none" to="/register">
+                                <nuxt-link style="text-decoration: none" to="/register">
             <v-btn 
         style="text-decoration: none; color: #263238;" rounded outlined text >
           <span >Register</span>
         </v-btn>
-                                </NuxtLink>
+                                </nuxt-link>
       </div>
     </v-app-bar>
 
