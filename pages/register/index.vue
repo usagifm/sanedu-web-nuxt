@@ -263,6 +263,19 @@ Register
 
                           <v-divider></v-divider>
 
+
+                            <nuxt-link  to="/login">
+
+                            <a
+                            class="ml-7"
+                          style="font-size: 14px; color: #2196F3;"
+                              
+                              >
+                            Have an Account ? Just Login !
+                            </a>
+                            </nuxt-link>
+
+
                           <v-card-actions>
 <!-- 
                               <NuxtLink   to="/login">

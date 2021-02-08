@@ -102,20 +102,23 @@ Sign In
 
                            <v-divider></v-divider>
 
-                          <v-card-actions>
-
-                            
-           
                             <nuxt-link  to="/register">
 
                             <a
-                            class="ml-2"
-                          style="font-size: 14px; color: #2196F3"
+                            class="ml-7"
+                          style="font-size: 14px; color: #2196F3; margin:auto"
                               
                               >
                             Or Create an Account !
                             </a>
                             </nuxt-link>
+
+
+                          <v-card-actions>
+
+                            
+           
+                           
 
                             <v-spacer></v-spacer>
 
