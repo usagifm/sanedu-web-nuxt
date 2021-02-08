@@ -383,7 +383,7 @@ Register
                                     <validation-provider
                                       v-slot="{ errors }"
                                       name="Password Confirmation"
-                                      rules="required|min:6|password:@New Password"
+                                      rules="required|min:6|password:@Password"
                                     >
                                       <v-text-field
                                         :counter="20"
