@@ -270,6 +270,14 @@
 import { mapActions, mapState } from "vuex";
 
 export default {
+
+      head() {
+    return {
+      
+      title: "SANEDU | " + this.$store.state.class.meetingDetail.name
+    };
+  },
+
 middleware: ["auth-student"],
   layout: "home",
 

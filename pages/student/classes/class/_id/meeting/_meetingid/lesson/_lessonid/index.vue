@@ -259,6 +259,14 @@ import { mapActions, mapState } from "vuex";
 import getVideoId from 'get-video-id';
 
 export default {
+  
+    head() {
+    return {
+      
+      title: "SANEDU | " + this.$store.state.class.lessonDetail.name
+    };
+  },
+
   middleware: ["auth-student"],
   layout: "home",
 

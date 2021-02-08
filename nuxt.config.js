@@ -2,14 +2,14 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   target: 'static',
   head: {
-    title: 'sanedu-nuxt',
+    title: 'SANEDU',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/images/landingpage/logo.png' },
       { rel: 'stylesheet' ,  href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap' }
     ],
     script: [

@@ -35,11 +35,12 @@ import '../node_modules/vuetify/dist/vuetify.css'
 
 import _6b4fb138 from '../layouts/backup.vue'
 import _6f6c098b from '../layouts/default.vue'
+import _77430317 from '../layouts/empty.vue'
 import _2d2495d5 from '../layouts/home.vue'
 import _d06d9120 from '../layouts/landingpage.vue'
 import _e2e90fcc from '../layouts/vuesax.vue'
 
-const layouts = { "_backup": sanitizeComponent(_6b4fb138),"_default": sanitizeComponent(_6f6c098b),"_home": sanitizeComponent(_2d2495d5),"_landingpage": sanitizeComponent(_d06d9120),"_vuesax": sanitizeComponent(_e2e90fcc) }
+const layouts = { "_backup": sanitizeComponent(_6b4fb138),"_default": sanitizeComponent(_6f6c098b),"_empty": sanitizeComponent(_77430317),"_home": sanitizeComponent(_2d2495d5),"_landingpage": sanitizeComponent(_d06d9120),"_vuesax": sanitizeComponent(_e2e90fcc) }
 
 export default {
   render (h, props) {

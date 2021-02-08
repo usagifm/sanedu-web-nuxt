@@ -47,8 +47,7 @@
 
               <v-list-item-avatar tile size="80" color="white">
                 <img
-                  :src="$auth.$state.user.profile_image"
-                  :alt="$auth.$state.user.name"
+                  :src="require('@/static/images/sanedulogo.jpg')"
                   class="rounded-circle"
                 />
               </v-list-item-avatar>
@@ -327,6 +326,11 @@ extend("required", {
 import { mapActions, mapState } from "vuex";
 
 export default {
+    head() {
+    return {
+      title: "SANEDU | Student Classes"
+    };
+  },
   middleware: ["auth-student"],
   layout: "home",
 

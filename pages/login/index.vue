@@ -1,23 +1,148 @@
+
 <template>
 <v-app>
-    <div class="container-fluid">
 
-      <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+ <section style="height: 100%">
+      <v-container fill-height>
+        <v-row>
+          <v-col cols="12">
+            <v-card
+              style="z-index: 50; position: relative"
+              class="mx-auto"
+              max-width="400"
+             
+            >
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                         <NuxtLink to="/">Halaman Beranda</NuxtLink>
-                                    </div>
-                                    <form class="user">
+            <v-toolbar
+              color="white"
+              light
+
+             
+            >
+            
+            <v-col cols="12">
+              <v-row>
+
+   <v-col cols="5">
+     <h5  class="my-1" style="font-weight:bolder; color: #424242">
+Sign In
+     </h5>
+
+   </v-col>
+        <v-col  cols="7">
+
+             <img :src="require('@/static/images/landingpage/logolanding.png')" alt="Logo" />
+
+        </v-col>
+
+              </v-row>
+
+
+            </v-col>
+
+            </v-toolbar>
+   
+          
+            
+               <validation-observer ref="observer" v-slot="{ invalid }">
+                        <form @submit.prevent="login">
+                      
+                          <v-card-text>
+                            <v-col cols="12">
+                      
+
+                              <v-col cols="12">
+                                <validation-provider
+                                  v-slot="{ errors }"
+                                  name="Username"
+                                  rules="required"
+                                >
+                                  <v-text-field
+                                    :counter="30"
+                                    :error-messages="errors"
+                                    label="Username"
+                                    dense
+                                  v-model="auth.username"
+                                    outlined
+                                  ></v-text-field>
+                                </validation-provider>
+                              </v-col>
+
+                              <v-col cols="12">
+                              
+                                    <validation-provider
+                                      v-slot="{ errors }"
+                                      name="Password"
+                                      rules="required|min:6"
+                                    >
+                                      <v-text-field
+                                        ref="password"
+                                        :counter="20"
+                                        name="password"
+                                        :error-messages="errors"
+                                        outlined
+                                        v-model="auth.password"
+                                        dense
+                                        :append-icon="
+                                          show2 ? 'mdi-eye' : 'mdi-eye-off'
+                                        "
+                                        @click:append="show2 = !show2"
+                                        :type="show2 ? 'text' : 'password'"
+                                        hint="Your Password"
+                                        required
+                                        label="Password"
+                                      ></v-text-field>
+                                    </validation-provider>
+                                  </v-col>
+
+                          
+                            </v-col>
+                          </v-card-text>
+
+                           <v-divider></v-divider>
+
+                          <v-card-actions>
+
+                            
+           
+                            <NuxtLink  to="/register">
+
+                            <a
+                            class="ml-2"
+                          style="font-size: 14px; color: #2196F3"
+                              
+                              >
+                            Or Create an Account !
+                            </a>
+                            </NuxtLink>
+
+                            <v-spacer></v-spacer>
+
+
+                          
+                            <v-btn
+
+                            class="pa-5"
+                                color="primary"
+                                @click="login"
+                                :disabled="invalid"
+                                rounded
+                              >
+                            SIGN IN
+                              </v-btn>
+
+                      
+                            
+
+
+                          </v-card-actions>
+                        </form>
+              </validation-observer>
+
+        
+<!-- 
+         <form class="user">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -38,29 +163,80 @@
                                             Login
                                         </a>
                                         <hr>
-                                        <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a> -->
+                                     
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="#">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="#">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                     -->
+              
+        
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
 
-            </div>
+      <div class="wave wave1"></div>
 
-        </div>
+      <div class="wave wave2"></div>
+
+      <div class="wave wave3"></div>
+
+      <div class="wave wave4"></div>
+    </section>
+
+
+
+
+     <div class="text-center">
+      <v-snackbar v-model="snackbar" :timeout="timeout">
+        {{ text }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn color="blue" text v-bind="attrs" @click="snackbar = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
+
+    <div class="text-center">
+    <!-- <v-btn
+      :disabled="dialog"
+      :loading="dialog"
+      class="white--text"
+      color="purple darken-2"
+      @click="dialog = true"
+    >
+      Start loading
+    </v-btn> -->
+    <v-dialog
+      v-model="isLoading"
+
+      persistent
+      width="300"
+    >
+      <v-card
+        color="primary"
+        dark
+      >
+        <v-card-text>
+          Please Wait...
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+  </div>
+
+
+
+
+
+
+
+
+
 
 
   <div class="text-center"  v-if="isLoading==true">
@@ -106,7 +282,7 @@
     </v-snackbar>
   </div>
 
-    </div>
+    
     <notifications group="foo" />
 
 </v-app>
@@ -114,16 +290,42 @@
 
 
 <script>
+import { required } from "vee-validate/dist/rules";
+import {
+  extend,
+  ValidationObserver,
+  ValidationProvider,
+  setInteractionMode,
+} from "vee-validate";
+
+setInteractionMode("eager");
+
+extend("required", {
+  ...required,
+  message: "{_field_} can not be empty",
+});
 import { mapMutations } from 'vuex'
 
 export default {
-    auth: false,
+     auth: false,
+  layout: "empty",
+
+
+      components: {
+    ValidationProvider,
+    ValidationObserver,
+  },
+
+
     data(){ 
         return {
             auth:{
                 username: null,
                 password: null
             },
+              show1: false,
+      show2: false,
+      show3: false,
 
             snackbar: false,
             text: "",
@@ -149,12 +351,7 @@ export default {
         ...mapMutations(['SET_IS_AUTH', 'SET_API_TOKEN']),
 
         login(){
-                //  this.$notify({
-                //         'group': 'foo',
-                //         'title': 'Kontol-kontol Anjing',
-                //         'text': 'Terbuat Dari Nasi',
-
-                //     }),
+    
               this.isLoading = true,
                  
                 this.$auth.loginWith('local', {
@@ -189,12 +386,6 @@ export default {
 
                 }).catch((error) =>{
                     // this.isLoading = false;
-
-                    //   this.$notify({
-                    //     'group': 'foo',
-                    //     'title': 'Kontol-kontol Anjing',
-                    //     'text': 'Terbuat Dari Nasi',
-
                     // })
                     this.text = error.response.data.message;
                     this.snackbar = true;

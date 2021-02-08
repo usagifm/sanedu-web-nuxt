@@ -140,6 +140,7 @@ export default {
           icon: "mdi-apps",
           title: "Dashboard",
           to: "/student",
+
         },
         {
           icon: "mdi-account-circle",
@@ -154,12 +155,13 @@ export default {
         {
           icon: "mdi-calendar-text",
           title: "San Project",
-          to: "/dashboard",
+          // to: "/dashboard",
+          
         },
         {
           icon: "mdi-calculator-variant",
           title: "San Hitung",
-          to: "/dashboard",
+          // to: "/dashboard",
         },
       ],
       miniVariant: false,

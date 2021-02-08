@@ -380,6 +380,15 @@ var j;
 import { mapActions, mapState } from "vuex";
 
 export default {
+
+    
+    head() {
+    return {
+      
+      title: "SANEDU | Quiz Result"
+    };
+  },
+
   middleware: ["auth-student"],
   layout: "home",
 

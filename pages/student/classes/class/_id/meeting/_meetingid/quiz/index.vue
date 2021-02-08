@@ -604,16 +604,26 @@ textarea {
 
     
     </v-container>
-        <div v-show="isLoading == true">
-       <v-overlay >
-      <v-progress-circular
-        indeterminate
-        size="64"
-      ></v-progress-circular>
-      <div class="overline Overline 0.75rem 500 .1666666667em">Please Wait...</div>
-    </v-overlay>
+         <v-dialog
+      v-model="isLoading"
 
-        </div>
+      persistent
+      width="300"
+    >
+      <v-card
+        color="primary"
+        dark
+      >
+        <v-card-text>
+          Please Wait...
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
 
 
           <v-dialog v-if="isFinish && !isLoading && this.$store.state.class.meetingDetail.quiz"
@@ -691,6 +701,14 @@ var j;
 // var classId = <?php  echo $meetingDetail['class_id'] ?>;
 
 export default {
+
+      head() {
+    return {
+      title: "SANEDU | " +  this.$store.state.class.meetingDetail.quiz.name 
+    };
+  },
+
+
   middleware: ["auth-student"],
   layout: "home",
 

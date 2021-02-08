@@ -130,11 +130,12 @@
                   </v-list-item-content>
 
                   <v-list-item-avatar
+                
                     size="50"
                     color="primary"
                     class="bold text-center" 
-                    style="text-align: center; font-size: 27px; color: white"
-                    >{{ classes.length }}</v-list-item-avatar
+                  
+                    ><p   style="text-align: center; font-size: 27px; color: white; margin: auto">{{ classes.length }}</p></v-list-item-avatar
                   >
                 </v-list-item>
 
@@ -234,7 +235,7 @@
         ></v-progress-linear>
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form @submit.prevent="changePassword">
-            <v-card-title class="headline"> Change Password </v-card-title>
+            <v-card-title class="sub-headline"> Change Password </v-card-title>
             <v-card-text>
               <v-col cols="12">
                 <v-row>
@@ -337,7 +338,7 @@
 
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form @submit.prevent="personalData">
-            <v-card-title class="headline"> Edit Personal Data </v-card-title>
+            <v-card-title class="sub-headline"> Edit Personal Data </v-card-title>
             <v-card-text>
               <v-col cols="12">
                 <validation-provider
@@ -451,7 +452,7 @@
 
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form @submit.prevent="changeProfileImage">
-            <v-card-title class="headline"> Change Profile Image </v-card-title>
+            <v-card-title class="sub-headline"> Change Profile Image </v-card-title>
             <v-card-text>
               <v-col cols="12">
                 <v-row>
@@ -503,7 +504,7 @@
               <v-btn
                 id="imageButton"
                 v-if="previewImage != null"
-                color="red"
+                color="primary"
                 :disabled="invalid"
                 text
                 @click="profileImage"
@@ -511,7 +512,7 @@
                 Change Image
               </v-btn>
 
-              <v-btn v-if="previewImage == null" color="red" disabled text>
+              <v-btn v-if="previewImage == null" color="primary" disabled text>
                 Change Image
               </v-btn>
             </v-card-actions>
@@ -530,7 +531,7 @@
 
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form @submit.prevent="whatsapp">
-            <v-card-title class="headline"> Change Phone Number </v-card-title>
+            <v-card-title class="sub-headline"> Edit Phone Number </v-card-title>
             <v-card-text>
               <v-col cols="12">
                 <validation-provider
@@ -573,7 +574,7 @@
 
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form @submit.prevent="email">
-            <v-card-title class="headline"> Change Email </v-card-title>
+            <v-card-title class="sub-headline"> Edit Email </v-card-title>
             <v-card-text>
               <v-col cols="12">
                 <validation-provider
@@ -628,7 +629,7 @@
 
         <validation-observer ref="observer" v-slot="{ invalid }">
           <form @submit.prevent="regionData">
-            <v-card-title class="headline">
+            <v-card-title class="sub-headline">
               Change Region and Institution Data
             </v-card-title>
             <v-card-text>

@@ -288,6 +288,14 @@
 import { mapActions, mapState } from "vuex";
 
 export default {
+
+    head() {
+    return {
+      
+      title: "SANEDU | " + this.$store.state.class.classDetail.name
+    };
+  },
+
   middleware: ["auth-student"],
   layout: "home",
 

@@ -14,6 +14,13 @@
     "_name": "_a01a1eea"
   },
   {
+    "name": "register",
+    "path": "/register",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/register/index.vue",
+    "chunkName": "pages/register/index",
+    "_name": "_77138357"
+  },
+  {
     "name": "student",
     "path": "/student",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/index.vue",

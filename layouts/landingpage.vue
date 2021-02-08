@@ -52,10 +52,8 @@
           </v-list-item-content>
         </v-list-item>
 
-
+        <NuxtLink to="/login">
                <v-list-item
-
-                 href="https://nuxt.sanedu.id/student/classes"
         >
           <v-list-item-icon class="justify-center">
             <v-icon>mdi-account-check</v-icon>
@@ -64,6 +62,10 @@
             <v-list-item-title class="subtitile-1">Login</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        </NuxtLink>
+
+
+    <NuxtLink to="/register">
 
                <v-list-item
 
@@ -75,6 +77,8 @@
             <v-list-item-title class="subtitile-1">Register</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+    </NuxtLink>
       </v-list>
     </v-navigation-drawer>
 
@@ -135,17 +139,25 @@
                           
                         }"
                       > -->
+
+                         <NuxtLink style="text-decoration: none" to="/login">
+
+       
         <v-btn 
 
-         href="https://nuxt.sanedu.id/student/classes"
+
         style="text-decoration: none; color: #263238;" rounded outlined text >
-          <span class="mr-2">Login</span>
+          <span >Login</span>
         </v-btn>
+                         </NuxtLink>
            <!-- </nuxt-link> -->
+
+                                <NuxtLink style="text-decoration: none" to="/register">
             <v-btn 
         style="text-decoration: none; color: #263238;" rounded outlined text >
-          <span class="mr-2">Register</span>
+          <span >Register</span>
         </v-btn>
+                                </NuxtLink>
       </div>
     </v-app-bar>
 
