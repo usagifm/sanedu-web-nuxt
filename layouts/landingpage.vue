@@ -52,7 +52,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <NuxtLink to="/login">
+        <nuxt-link to="/login">
                <v-list-item
         >
           <v-list-item-icon class="justify-center">
@@ -62,10 +62,10 @@
             <v-list-item-title class="subtitile-1">Login</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        </NuxtLink>
+        </nuxt-link>
 
 
-    <NuxtLink to="/register">
+    <nuxt-link to="/register">
 
                <v-list-item
 
@@ -78,7 +78,7 @@
           </v-list-item-content>
         </v-list-item>
 
-    </NuxtLink>
+    </nuxt-link>
       </v-list>
     </v-navigation-drawer>
 
