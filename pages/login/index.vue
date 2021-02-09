@@ -74,7 +74,7 @@ Sign In
                                     <validation-provider
                                       v-slot="{ errors }"
                                       name="Password"
-                                      rules="required|min:6"
+                                      rules="required"
                                     >
                                       <v-text-field
                                         ref="password"
