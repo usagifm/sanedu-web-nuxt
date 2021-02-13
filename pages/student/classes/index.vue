@@ -165,7 +165,7 @@
                   >
                     <v-img
                       class="white--text align-end"
-                      height="120px"
+                      max-height="135px"
                       src="https://www.colorhexa.com/42a5f5.png"
                     >
                       <v-app-bar class="py-5" flat color="rgba(0, 0, 0, 0)">
@@ -260,7 +260,7 @@
                   Unenroll From Class
                 </v-card-title>
                 <v-card-text
-                  >Are you sure you want to unenroll from
+                  >Apakah anda yakin ingin keluar dari kelas 
                   <code> {{ class_selected ? class_selected.name : "" }}</code>
                   ?</v-card-text
                 >
@@ -271,10 +271,10 @@
                     text
                     @click="deleteModal = false"
                   >
-                    Disagree
+                    Batal
                   </v-btn>
                   <v-btn color="red darken-1" text @click="unenrollClass">
-                    Agree
+                    keluar
                   </v-btn>
                 </v-card-actions>
               </v-card>

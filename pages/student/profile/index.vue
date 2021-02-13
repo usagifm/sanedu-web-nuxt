@@ -56,7 +56,7 @@
           <v-row class="text-left">
             <v-col cols="6">
               <h6 class="bold">
-                PHONE
+               NO HANDPHONE
                 <v-btn
                   @click="dialogWhatsapp = true"
                   style="color: #1e88e5"
@@ -71,7 +71,7 @@
               </h6>
               <h6 class="mb-7">0{{ this.$auth.$state.user.whatsapp }}</h6>
 
-              <h6 class="bold">PARENT PHONE NUMBER</h6>
+              <h6 class="bold">NO HP ORANG TUA</h6>
               <h6>0{{ this.$auth.$state.user.parent_phone_number }}</h6>
             </v-col>
 
@@ -92,7 +92,7 @@
               </h6>
               <h6 class="mb-7">{{ this.$auth.$state.user.email }}</h6>
 
-              <h6 class="bold">BIRTH DATE</h6>
+              <h6 class="bold">TANGGAL LAHIR</h6>
               <h6>{{ this.$auth.$state.user.birth_date }}</h6>
             </v-col>
           </v-row>
@@ -191,14 +191,14 @@
             <v-col cols="6">
               <div class="ml-4 mb-7">
                 <h6 class="bold">
-                  PROVINCE
+                  PROVINSI
                   <h6>{{ this.$auth.$state.user.province_name }}</h6>
                 </h6>
               </div>
 
               <div class="ml-4">
                 <h6 class="bold">
-                  CITY
+                  KOTA
                   <h6>
                     {{ this.$auth.$state.user.city_name }}
                   </h6>
@@ -209,14 +209,14 @@
             <v-col cols="6">
               <div class="ml-4 mb-7">
                 <h6 class="bold">
-                  SCHOOL
+                  SEKOLAH
                   <h6>{{ this.$auth.$state.user.school }}</h6>
                 </h6>
               </div>
 
               <div class="ml-4">
                 <h6 class="bold">
-                  GRADE LEVEL
+                  KELAS
                   <h6>{{ this.$auth.$state.user.grade_level }}</h6>
                 </h6>
               </div>
@@ -352,7 +352,7 @@
                     :error-messages="errors"
                     required
                     v-model="personalDataPayload.name"
-                    label="Name"
+                    label="Nama"
                   ></v-text-field>
                 </validation-provider>
               </v-col>
@@ -378,7 +378,7 @@
                             required
                             v-model="personalDataPayload.birth_date"
                             :error-messages="errors"
-                            label="Birthday date"
+                            label="Tanggal Lahir"
                             prepend-icon="mdi-calendar"
                             readonly
                             v-bind="attrs"
@@ -409,7 +409,7 @@
                         :error-messages="errors"
                         required
                         v-model="personalDataPayload.parent_phone_number"
-                        label="Parent Phone Number"
+                        label="No HP Orang Tua"
                       ></v-text-field>
                     </validation-provider>
                   </v-col>
@@ -466,13 +466,24 @@
                         />
                       </v-avatar>
                     </v-col>
+                    <v-col    v-if="errors != null" align="center" jcols="12">
+
+  <div  >
+
+      <v-chip
+                          rounded
+                          class="mt-2"
+                          style="color: white"
+                          color="#E53935"
+                        >{{errors}}
+                        </v-chip>
+
+  </div>
+                    </v-col>
+
 
                     <v-col cols="12">
-                      <!-- <validation-provider
-                      v-slot="{ errors }"
-                      name="Image"
-                      rules="required|size:2000|mimes:image/*"
-                    > -->
+             
 
                       <b-form-file
                         ref="file"
@@ -481,6 +492,7 @@
                         accept="image/*"
                         @change="uploadImage"
                       />
+                      <v-card-subtitle style="color:red" class="pl-1 pt-1"> Harus lebih kecil dari 1 MB </v-card-subtitle>
 
                       <!-- </validation-provider> -->
                     </v-col>
@@ -698,7 +710,7 @@
                       :items="grades"
                       item-text="grade"
                       item-value="value"
-                      label="Grade Level"
+                      label="Class"
                       persistent-hint
                       return-object
                       single-line
@@ -790,7 +802,7 @@ export default {
 
   data() {
     return {
-      timeout: 2000,
+      timeout: 4000,
       show1: false,
       show2: false,
       show3: false,
@@ -798,6 +810,7 @@ export default {
       yourValue: null,
       menu: false,
       previewImage: null,
+      errors: null,
       text: null,
       tab: null,
       isLoading: false,
@@ -841,14 +854,18 @@ export default {
       cityData: null,
 
       grades: [
-        { grade: 7 , value: 7 },
-        { grade: 8, value: 8 },
-        { grade: 9, value: 9 },
-        { grade: 10, value: 10 },
-        { grade: 11, value: 11 },
-        { grade: 12, value: 12 },
-        { grade: "University Student", value: 13 },
-        { grade: "General", value: 14 },
+        { grade: "1 (SD)", value: 1 },
+        { grade: "2 (SD)", value: 2 },
+        { grade: "3 (SD)", value: 3 },
+        { grade: "4 (SD)", value: 4 },
+        { grade: "5 (SD)", value: 5 },
+        { grade: "6 (SD)", value: 6 },
+        { grade: "7 (SMP)", value: 7 },
+        { grade: "8 (SMP)", value: 8 },
+        { grade: "9 (SMP)", value: 9 },
+        { grade: "10 (SMA/SMK)", value: 10 },
+        { grade: "11 (SMA/SMK)", value: 11 },
+        { grade: "12 (SMA/SMK)", value: 12 },
       ],
 
       provinces: [
@@ -1017,6 +1034,7 @@ export default {
       const image = e.target.files[0];
 
       if (image["size"] < 1000000) {
+                this.errors = null;
         const reader = new FileReader();
         reader.readAsDataURL(image);
         reader.onload = (e) => {
@@ -1024,7 +1042,8 @@ export default {
           console.log(this.previewImage);
         };
       } else {
-        this.text = "Your Image is Too big ( > 1MB )";
+        this.errors = "Foto tidak boleh lebih besar dari 1 MB !";
+        this.text = "Foto tidak boleh lebih besar dari 1 MB !";
         this.snackbar = true;
         this.previewImage = null;
         document.getElementById("image").value = null;

@@ -105,11 +105,11 @@ Sign In
                             <nuxt-link  to="/register">
 
                             <a
-                            class="ml-7"
+                            class="ml-7 text-left"
                           style="font-size: 14px; color: #2196F3; margin:auto"
                               
                               >
-                            Or Create an Account !
+                            Belum punya akun ? Klik untuk buat !
                             </a>
                             </nuxt-link>
 
@@ -306,7 +306,7 @@ export default {
 
             snackbar: false,
             text: "",
-            timeout: 2000,
+            timeout: 4000,
             dialog: false,
             isLoading: false
         }

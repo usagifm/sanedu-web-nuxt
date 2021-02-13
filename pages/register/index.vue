@@ -6,63 +6,58 @@
       <v-container fill-height>
         <v-row>
           <v-col cols="12">
-  
             <v-card
               style="z-index: 50; position: relative"
               class="mx-auto"
               max-width="800"
-            
             >
-                      <v-toolbar
-              color="white"
-              light>
-
-
-
-                 <v-col cols="12">
-              <v-row>
-
-   <v-col cols="5">
-     <h5  class="my-1" style="font-weight:bolder; color: #424242">
-Register
-     </h5>
-
-   </v-col>
-        <v-col  cols="7">
-
-             <img :src="require('@/static/images/landingpage/logolanding.png')" alt="Logo" />
-
-        </v-col>
-
-              </v-row>
-
-
-            </v-col>
-
-      </v-toolbar>
+              <v-toolbar color="white" light>
+                <v-col cols="12">
+                  <v-row>
+                    <v-col cols="5">
+                      <h5
+                        class="my-1"
+                        style="font-weight: bolder; color: #424242"
+                      >
+                        Register
+                      </h5>
+                    </v-col>
+                    <v-col cols="7">
+                      <img
+                        :src="
+                          require('@/static/images/landingpage/logolanding.png')
+                        "
+                        alt="Logo"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-toolbar>
               <div>
                 <v-stepper v-model="e1">
                   <v-stepper-header>
                     <v-stepper-step :complete="e1 > 1" step="1">
-                       Personal Information
+                      Informasi Pribadi
                     </v-stepper-step>
 
                     <v-divider></v-divider>
 
                     <v-stepper-step :complete="e1 > 2" step="2">
-                      Account Information
+                      Informasi Akun
                     </v-stepper-step>
 
                     <v-divider></v-divider>
 
-                    <v-stepper-step step="3"> Profile Image </v-stepper-step>
+                    <v-stepper-step step="3"> Foto Profil </v-stepper-step>
                   </v-stepper-header>
 
                   <v-stepper-items>
                     <v-stepper-content step="1">
                       <validation-observer ref="observer" v-slot="{ invalid }">
                         <form @submit.prevent="toStep2">
-                                        <v-card-subtitle class="headline"> Personal Information </v-card-subtitle>
+                          <v-card-subtitle class="headline text-center">
+                            Informasi Pribadi
+                          </v-card-subtitle>
                           <v-card-text>
                             <v-col cols="12">
                               <validation-provider
@@ -77,7 +72,7 @@ Register
                                   dense
                                   :error-messages="errors"
                                   required
-                                  label="Name"
+                                  label="Nama"
                                 ></v-text-field>
                               </validation-provider>
                             </v-col>
@@ -104,9 +99,9 @@ Register
                                         <v-text-field
                                           required
                                           :error-messages="errors"
-                                          label="Birthday date"
+                                          label="Tanggal Lahir"
                                           outlined
-                                        v-model="payload.birth_date"
+                                          v-model="payload.birth_date"
                                           dense
                                           readonly
                                           v-bind="attrs"
@@ -117,7 +112,7 @@ Register
                                         style="z-index: 50"
                                         ref="picker"
                                         width="250"
-                                             v-model="payload.birth_date"
+                                        v-model="payload.birth_date"
                                         :max="
                                           new Date().toISOString().substr(0, 10)
                                         "
@@ -130,7 +125,13 @@ Register
 
                                 <v-col cols="12">
                                   <v-row>
-                                    <v-col  cols="12" md="6" lg="6" sm="12" xm="12">
+                                    <v-col
+                                      cols="12"
+                                      md="6"
+                                      lg="6"
+                                      sm="12"
+                                      xm="12"
+                                    >
                                       <validation-provider
                                         v-slot="{ errors }"
                                         name="Your Whatsapp Number"
@@ -143,12 +144,18 @@ Register
                                           v-model="payload.whatsapp"
                                           :error-messages="errors"
                                           required
-                                          label="Your Whatsapp Number"
+                                          label="No Handphone"
                                         ></v-text-field>
                                       </validation-provider>
                                     </v-col>
 
-                                    <v-col cols="12" md="6" lg="6" sm="12" xm="12">
+                                    <v-col
+                                      cols="12"
+                                      md="6"
+                                      lg="6"
+                                      sm="12"
+                                      xm="12"
+                                    >
                                       <validation-provider
                                         v-slot="{ errors }"
                                         name="Parent Phone Number"
@@ -161,7 +168,7 @@ Register
                                           v-model="payload.parent_phone_number"
                                           :error-messages="errors"
                                           required
-                                          label="Parent Phone Number"
+                                          label="No HP Orang Tua"
                                         ></v-text-field>
                                       </validation-provider>
                                     </v-col>
@@ -170,114 +177,103 @@ Register
                               </v-row>
                             </v-col>
 
-            <v-col cols="12">
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="Province"
-                  rules="required"
-                >
-                  <v-autocomplete
-                    outlined
-                    :error-messages="errors"
-                    required
-                    :items="provinces"
-                    v-model="provinceData"
-                    return-object
-                    color="white"
-                    item-text="nama"
-                    label="Province"
-                    @change="chain"
-                  ></v-autocomplete>
-                </validation-provider>
-              </v-col>
+                            <v-col cols="12">
+                              <validation-provider
+                                v-slot="{ errors }"
+                                name="Province"
+                                rules="required"
+                              >
+                                <v-autocomplete
+                                  outlined
+                                  :error-messages="errors"
+                                  required
+                                  :items="provinces"
+                                  v-model="provinceData"
+                                  return-object
+                                  color="white"
+                                  item-text="nama"
+                                  label="Provinsi"
+                                  @change="chain"
+                                ></v-autocomplete>
+                              </validation-provider>
+                            </v-col>
 
-              <v-col v-if="cities" cols="12">
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="City"
-                  rules="required"
-                >
-                  <v-autocomplete
-                    outlined
-                    :error-messages="errors"
-                    required
-                    :items="cities"
-                    v-model="cityData"
-                    return-object
-                    color="white"
-                    item-text="nama"
-                    label="City"
-                  ></v-autocomplete>
-                </validation-provider>
-              </v-col>
+                            <v-col v-if="cities" cols="12">
+                              <validation-provider
+                                v-slot="{ errors }"
+                                name="City"
+                                rules="required"
+                              >
+                                <v-autocomplete
+                                  outlined
+                                  :error-messages="errors"
+                                  required
+                                  :items="cities"
+                                  v-model="cityData"
+                                  return-object
+                                  color="white"
+                                  item-text="nama"
+                                  label="Kota"
+                                ></v-autocomplete>
+                              </validation-provider>
+                            </v-col>
 
-              <v-col v-if="cityData" cols="12">
-                <v-row>
-                  <v-col cols="6">
-                    <validation-provider
-                      v-slot="{ errors }"
-                      name="School"
-                      rules="required"
-                    >
-                      <v-text-field
-                        :counter="100"
-                        :error-messages="errors"
-                        
-                        outlined
-                        dense
-                        v-model="payload.school"
-                        label="School"
-                      ></v-text-field>
-                    </validation-provider>
-                  </v-col>
+                            <v-col v-if="cityData" cols="12">
+                              <v-row>
+                                <v-col cols="6">
+                                  <validation-provider
+                                    v-slot="{ errors }"
+                                    name="School"
+                                    rules="required"
+                                  >
+                                    <v-text-field
+                                      :counter="100"
+                                      :error-messages="errors"
+                                      outlined
+                                      dense
+                                      v-model="payload.school"
+                                      label="Sekolah"
+                                    ></v-text-field>
+                                  </validation-provider>
+                                </v-col>
 
-                  <v-col cols="6">
-                      <validation-provider
-                      v-slot="{ errors }"
-                      name="Grade Level"
-                      rules="required"
-                    >
-                    <v-select
-                     label="Grade Level"
-                      v-model="grade_level"
-                      :items="grades"
-                      item-text="grade"
-                      item-value="value"
-                     
-                      :error-messages="errors"
-                      persistent-hint
-                      dense
-                      outlined
-                      return-object
-                      single-line
-                    ></v-select>
-                      </validation-provider>
-                  </v-col>
-                </v-row>
-              </v-col>
-                            
-
-
-
+                                <v-col cols="6">
+                                  <validation-provider
+                                    v-slot="{ errors }"
+                                    name="Grade Level"
+                                    rules="required"
+                                  >
+                                    <v-select
+                                      v-model="grade_level"
+                                      :items="grades"
+                                      item-text="grade"
+                                      item-value="value"
+                                      :error-messages="errors"
+                                      persistent-hint
+                                      dense
+                                      outlined
+                                      return-object
+                                      label="Kelas"
+                                    ></v-select>
+                                  </validation-provider>
+                                </v-col>
+                              </v-row>
+                            </v-col>
                           </v-card-text>
 
                           <v-divider></v-divider>
 
-
-                            <nuxt-link  to="/login">
-
+                          <nuxt-link to="/login">
                             <a
-                            class="ml-7"
-                          style="font-size: 14px; color: #2196F3;"
-                              
-                              >
-                            Have an Account ? Just Login !
+                              class="ml-7 text-left"
+                              style="font-size: 14px; color: #2196f3"
+                            >
+                              Sudah punya akun ? Klik disini !
                             </a>
-                            </nuxt-link>
-
+                          </nuxt-link>
 
                           <v-card-actions>
-<!-- 
+                            <!-- 
                               <NuxtLink   to="/login">
 
                             <a
@@ -289,14 +285,13 @@ Register
                             </a>
                             </NuxtLink> -->
 
-
                             <v-spacer></v-spacer>
-    
+
                             <v-btn
                               color="primary"
                               :disabled="invalid"
                               @click="toStep2"
-                                                         >
+                            >
                               Next
                             </v-btn>
 
@@ -314,7 +309,9 @@ Register
                     <v-stepper-content step="2">
                       <validation-observer ref="observer" v-slot="{ invalid }">
                         <form @submit.prevent="toStep3">
-                                        <v-card-subtitle class="headline"> Account Information </v-card-subtitle>
+                          <v-card-subtitle class="headline text-center">
+                            Informasi Akun
+                          </v-card-subtitle>
                           <v-card-text>
                             <v-col cols="12">
                               <v-col cols="12">
@@ -353,7 +350,13 @@ Register
 
                               <v-col cols="12">
                                 <v-row>
-                                  <v-col  cols="12" md="6" lg="6" sm="12" xm="12">
+                                  <v-col
+                                    cols="12"
+                                    md="6"
+                                    lg="6"
+                                    sm="12"
+                                    xm="12"
+                                  >
                                     <validation-provider
                                       v-slot="{ errors }"
                                       name="Password"
@@ -379,7 +382,13 @@ Register
                                     </validation-provider>
                                   </v-col>
 
-                                  <v-col  cols="12" md="6" lg="6" sm="12" xm="12">
+                                  <v-col
+                                    cols="12"
+                                    md="6"
+                                    lg="6"
+                                    sm="12"
+                                    xm="12"
+                                  >
                                     <validation-provider
                                       v-slot="{ errors }"
                                       name="Password Confirmation"
@@ -405,7 +414,6 @@ Register
                                 </v-row>
                               </v-col>
 
-                    
                               <!-- <v-btn color="secondary" @click="e1 = 1">
                                 Back
                               </v-btn>
@@ -417,143 +425,162 @@ Register
                               >
                                 Next
                               </v-btn> -->
-
-                            
-                              
-
-                             
                             </v-col>
                           </v-card-text>
 
-                           <v-divider></v-divider>
+                          <v-divider></v-divider>
 
                           <v-card-actions>
                             <v-spacer></v-spacer>
 
-
-                              <v-btn color="secondary" @click="e1 = 1">
-                                Back
-                              </v-btn>
+                            <v-btn color="secondary" @click="e1 = 1">
+                              Back
+                            </v-btn>
 
                             <v-btn
-                                color="primary"
-                                @click="toStep3"
-                                :disabled="invalid"
-                              >
-                                Next
-                              </v-btn>
-
-                            
-
-
+                              color="primary"
+                              @click="toStep3"
+                              :disabled="invalid"
+                            >
+                              Next
+                            </v-btn>
                           </v-card-actions>
                         </form>
                       </validation-observer>
                     </v-stepper-content>
 
                     <v-stepper-content step="3">
-                 
-        <validation-observer ref="observer" v-slot="{ invalid }">
-          <form @submit.prevent="register">
-            <v-card-subtitle class="headline"> Profile Image </v-card-subtitle>
-            <v-card-text>
-              <v-col cols="12">
-                <v-row>
-                  <v-col cols="12">
-                    <v-col align="center" cols="12">
-                      <v-avatar size="200" color="grey">
-                        <img
-                          v-if="previewImage"
-                          :src="previewImage"
-                          :v-model="previewImage"
-                        />
-                      </v-avatar>
-                    </v-col>
+                      <validation-observer ref="observer" v-slot="{ invalid }">
+                        <form @submit.prevent="register">
+                          <v-card-subtitle class="headline text-center">
+                            Foto Profil
+                          </v-card-subtitle>
+                          <v-card-text>
+                            <v-col cols="12">
+                              <v-row>
+                                <v-col cols="12">
+                                  <v-col align="center" cols="12">
+                                    <v-avatar size="200" color="grey">
+                                      <img
+                                        v-if="previewImage"
+                                        :src="previewImage"
+                                        :v-model="previewImage"
+                                      />
+                                    </v-avatar>
+                                  </v-col>
 
-                    <v-col cols="12">
-                      <!-- <validation-provider
-                      v-slot="{ errors }"
-                      name="Image"
-                      rules="required|size:2000|mimes:image/*"
-                    > -->
+                                  <v-col cols="12">
+                                    <b-form-file
+                                      ref="file"
+                                      id="image"
+                                      type="file"
+                                      accept="image/*"
+                                      @change="uploadImage"
+                                    />
 
-                      <b-form-file
-                        ref="file"
-                        id="image"
-                        type="file"
-                        accept="image/*"
-                        @change="uploadImage"
-                      />
+                                 
+                                  </v-col>
 
-                      <!-- </validation-provider> -->
-                    </v-col>
-                  </v-col>
-                </v-row>
-              </v-col>
-            </v-card-text>
+                                  <v-col class="pa-0" cols="12">
+                        
+                                     <validation-provider
+                                      v-slot="{ errors }"
+                                      rules="agree"
+                                      name="checkbox"
+                                    >
+                                      <v-checkbox
+                                        v-model="checkbox"
+                                        :error-messages="errors"
+                                        value="1"
+        
+                                        type="checkbox"
+                                        required
+                                      >
+                                       <template v-slot:label>
+        <div class="caption">
+        Dengan Ini saya mendaftar dan menyetujui <a @click="term = true" style="color: #1E88E5">syarat dan ketentuan</a> pengguna
+          
+        </div>
 
-            <v-divider></v-divider>
+                                       </template>
+          </v-checkbox>
+                                    </validation-provider>
+               
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
+                                  </v-col>
+                                </v-col>
+                              </v-row>
+                            </v-col>
+                          </v-card-text>
 
+                          <div v-if="errors != null">
+                            <v-col
+                              class="pa-1"
+                              v-for="item in errors"
+                              :key="item.index"
+                              align="center"
+                              cols="12"
+                            >
+                              <v-chip
+                                rounded
+                                style="color: white"
+                                color="#E53935"
+                                >{{ item[0] }}
 
+                                {{ item.data }}
+                              </v-chip>
+                            </v-col>
+                          </div>
 
+                          <v-col
+                            align="center"
+                            class="pa-1"
+                            v-if="photoError != null"
+                            cols="12"
+                          >
+                            <v-chip
+                              v-if="photoError != null"
+                              rounded
+                              style="color: white"
+                              color="#E53935"
+                              >{{ photoError }}
+                            </v-chip>
+                          </v-col>
 
-                      <!-- <v-btn color="primary" @click="e1 = 4"> Submit </v-btn> -->
+                          <v-divider></v-divider>
 
+                          <v-card-actions>
+                            <v-spacer></v-spacer>
 
+                            <!-- <v-btn color="primary" @click="e1 = 4"> Submit </v-btn> -->
 
+                            <v-btn color="secondary" @click="e1 = 2">
+                              Back
+                            </v-btn>
 
-     
-           
-                      <v-btn color="secondary" @click="e1 = 2"> Back </v-btn>
+                            <v-btn
+                              id="imageButton"
+                              v-if="previewImage != null"
+                              color="primary"
+                              :disabled="invalid"
+                              @click="register"
+                            >
+                              REGISTER
+                            </v-btn>
 
-
-         <v-btn
-                id="imageButton"
-                v-if="previewImage != null"
-                color="primary"
-                :disabled="invalid"
-
-                @click="register"
-              >
-                REGISTER
-              </v-btn>
-
-
-
-   <v-btn v-if="previewImage == null" color="primary" disabled text>
-                     REGISTER
-              </v-btn>
-
-              <!-- <v-btn
-                color="red darken-1"
-                text
-                @click="dialogProfileImage = false"
-              >
-                Cancel
-              </v-btn> -->
-
-            </v-card-actions>
-          </form>
-        </validation-observer>
-
-
-            <div v-if="errors != null" style="margin:auto">
-                <v-chip rounded class="mt-2" style="color: white" color="#E53935" v-for="item in errors" :key="item.index">{{ item[0] }}
-
-                  {{item.data}}
-
-
-
-                </v-chip>
-                <br/>
-              
-
-            </div>
+                            <v-btn
+                              v-if="previewImage == null"
+                              color="primary"
+                              disabled
+                              text
+                            >
+                              REGISTER
+                            </v-btn>
 
         
+                          </v-card-actions>
+                        </form>
+                      </validation-observer>
                     </v-stepper-content>
                   </v-stepper-items>
                 </v-stepper>
@@ -572,10 +599,7 @@ Register
       <div class="wave wave4"></div>
     </section>
 
-
-
-
-     <div class="text-center">
+    <div class="text-center">
       <v-snackbar v-model="snackbar" :timeout="timeout">
         {{ text }}
 
@@ -588,7 +612,7 @@ Register
     </div>
 
     <div class="text-center">
-    <!-- <v-btn
+      <!-- <v-btn
       :disabled="dialog"
       :loading="dialog"
       class="white--text"
@@ -597,28 +621,80 @@ Register
     >
       Start loading
     </v-btn> -->
-    <v-dialog
-      v-model="isLoading"
+      <v-dialog v-model="isLoading" persistent width="300">
+        <v-card color="primary" dark>
+          <v-card-text>
+            Please Wait...
+            <v-progress-linear
+              indeterminate
+              color="white"
+              class="mb-0"
+            ></v-progress-linear>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
 
-      persistent
-      width="300"
+
+    <!-- Term and Condition Modal -->
+       <div class="text-center">
+    <v-dialog
+      v-model="term"
+      width="700"
     >
-      <v-card
-        color="primary"
-        dark
-      >
-        <v-card-text>
-          Please Wait...
-          <v-progress-linear
-            indeterminate
-            color="white"
-            class="mb-0"
-          ></v-progress-linear>
-        </v-card-text>
+
+
+      <v-card>
+        <v-card-title class="headline grey lighten-2">
+          Syarat Dan Ketentuan
+        </v-card-title>
+
+        <v-card-text class="mt-3" style="  text-align: justify;">
+                        These terms and conditions outline the rules and regulations for the use of Sanedu's Website, located at www.sanedu.id.
+
+                    By accessing this website we assume you accept these terms and conditions. Do not continue to use sanedu.id if you do not agree to take all of the terms and conditions stated on this page. Our Terms and Conditions were created with the help of the Terms And Conditions Generator and the Free Terms & Conditions Generator.
+
+                    The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.
+
+                    Cookies
+
+                    We employ the use of cookies. By accessing sanedu.id, you agreed to use cookies in agreement with the Sanedu's Privacy Policy.
+
+                    Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+
+                    License
+
+                    Unless otherwise stated, Sanedu and/or its licensors own the intellectual property rights for all material on sanedu.id. All intellectual property rights are reserved. You may access this from sanedu.id for your own personal use subjected to restrictions set in these terms and conditions.
+
+                    You must not:
+
+                    Republish material from sanedu.id
+                    Sell, rent or sub-license material from sanedu.id
+                    Reproduce, duplicate or copy material from sanedu.id
+                    Redistribute content from sanedu.id
+
+                    This Agreement shall begin on the date hereof.
+
+                    Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Sanedu does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of Sanedu,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Sanedu shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.
+
+                    Sanedu reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or causes breach of these Terms and Conditions.        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="accept"
+          >
+           Saya Setuju
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
 
+    </div>
   </v-app>
 </template>
 
@@ -638,6 +714,12 @@ extend("required", {
   ...required,
   message: "{_field_} can not be empty",
 });
+
+extend("agree", {
+  ...required,
+  message: "You Have to Agree to Continue the Regristration",
+});
+
 extend("password", {
   params: ["target"],
   validate(value, { target }) {
@@ -670,7 +752,7 @@ Vue.component("VueCtkDateTimePicker", VueCtkDateTimePicker);
 import { mapActions, mapState } from "vuex";
 
 export default {
-         auth: false,
+  auth: false,
   layout: "empty",
 
   components: {
@@ -680,17 +762,22 @@ export default {
 
   data() {
     return {
-     
       e1: 1,
-       grades: [
-        { grade: 7 , value: 7 },
-        { grade: 8, value: 8 },
-        { grade: 9, value: 9 },
-        { grade: 10, value: 10 },
-        { grade: 11, value: 11 },
-        { grade: 12, value: 12 },
-        // { grade: "University Student", value: 13 },
-        // { grade: "General", value: 14 },
+              checkbox : null,
+              term: false,
+      grades: [
+        { grade: "1 (SD)", value: 1 },
+        { grade: "2 (SD)", value: 2 },
+        { grade: "3 (SD)", value: 3 },
+        { grade: "4 (SD)", value: 4 },
+        { grade: "5 (SD)", value: 5 },
+        { grade: "6 (SD)", value: 6 },
+        { grade: "7 (SMP)", value: 7 },
+        { grade: "8 (SMP)", value: 8 },
+        { grade: "9 (SMP)", value: 9 },
+        { grade: "10 (SMA/SMK)", value: 10 },
+        { grade: "11 (SMA/SMK)", value: 11 },
+        { grade: "12 (SMA/SMK)", value: 12 },
       ],
       grade_level: null,
 
@@ -829,7 +916,7 @@ export default {
         },
       ],
       menu: false,
-            timeout: 2000,
+      timeout: 4000,
 
       payload: {
         name: null,
@@ -845,101 +932,80 @@ export default {
         email: null,
         username: null,
         password: null,
-      
+
         profile_image: null,
         is_teacher: null,
       },
       provinceData: null,
       cityData: null,
       cities: null,
-        show1: false,
+      show1: false,
       show2: false,
       show3: false,
-        previewImage: null,
-          re_password: null,
-          snackbar: false,
-          text: null,
-          isLoading: false,
-          errors: null,
-
-
-
+      previewImage: null,
+      re_password: null,
+      snackbar: false,
+      text: null,
+      isLoading: false,
+      errors: null,
+      photoError: null,
     };
   },
 
-
-
-        mounted() {
-
-        if(this.$auth.loggedIn){
-            this.$router.push('/student');
-
-
-        }
-
-        },
-
+  mounted() {
+    if (this.$auth.loggedIn) {
+      this.$router.push("/student");
+    }
+  },
 
   methods: {
+    ...mapActions("registerlogin", ["registerStudent"]),
 
-        ...mapActions("registerlogin", [
-      "registerStudent"
-    ]),
+    accept(){
+      this.term = false;
+    },
 
-      register(){
+    register() {
+      this.isLoading = true;
+      // console.log(this.provinceData);
 
+      // console.log(this.cityData);
 
-
-        this.isLoading = true;
-        // console.log(this.provinceData);
-
-        // console.log(this.cityData);
-           
       this.payload.parent_phone_number = parseInt(
         this.payload.parent_phone_number
       );
 
-         
-      this.payload.whatsapp = parseInt(
-        this.payload.whatsapp
-      );
+      this.payload.whatsapp = parseInt(this.payload.whatsapp);
 
+      this.payload.province_id = this.provinceData.id;
+      this.payload.province_name = this.provinceData.nama;
+      this.payload.city_id = this.cityData.id;
+      this.payload.city_name = this.cityData.nama;
 
-        this.payload.province_id =  this.provinceData.id;
-            this.payload.province_name =  this.provinceData.nama;
-                    this.payload.city_id =  this.cityData.id;
-            this.payload.city_name =  this.cityData.nama;
+      this.payload.grade_level = this.grade_level.value;
 
-             this.payload.grade_level =  this.grade_level.value;
+      this.payload.profile_image = this.previewImage;
+      this.payload.is_teacher = 0;
 
+      this.$axios.setBaseURL("https://api.sanedu.id/");
 
-            this.payload.profile_image = this.previewImage;
-            this.payload.is_teacher = 0;
-
-                  this.$axios.setBaseURL("https://api.sanedu.id/");
-
-  this.registerStudent(this.payload)
+      this.registerStudent(this.payload)
 
         .then((response) => {
-
           this.isLoading = false;
 
           // this.text = "Register Successful !";
           // this.snackbar = true;
 
-  
           this.isLoading == false;
 
+          this.$swal(
+            "Register Successful !",
+            "Please Login with your new account !",
+            "success"
+          );
 
-           this.$swal(
-          "Register Successful !",
-          "Please Login with your new account !",
-          "success"
-        );
- 
-           this.$router.push('/login');
-
-
+          this.$router.push("/login");
         })
         .catch((error) => {
           this.isLoading = false;
@@ -948,23 +1014,19 @@ export default {
           // this.snackbar = true;
 
           this.$swal(
-          "Register Failed !",
-           " Please check the error message",
-          "error"
-        );
+            "Register Failed !",
+            " Please check the error message",
+            "error"
+          );
 
-        this.errors = error.data;
-
+          this.errors = error.data;
         });
-
-
-
-
-      },
-      uploadImage(e) {
+    },
+    uploadImage(e) {
       const image = e.target.files[0];
 
       if (image["size"] < 1000000) {
+        this.photoError = null;
         const reader = new FileReader();
         reader.readAsDataURL(image);
         reader.onload = (e) => {
@@ -972,15 +1034,15 @@ export default {
           console.log(this.previewImage);
         };
       } else {
-        this.text = "Your Image is Too big ( > 1MB )";
+        this.photoError = "Foto tidak boleh lebih besar dari 1 MB !";
+        this.text = "Foto tidak boleh lebih besar dari 1 MB !";
         this.snackbar = true;
         this.previewImage = null;
         document.getElementById("image").value = null;
       }
     },
 
-       chain() {
-
+    chain() {
       this.isLoading = true;
 
       this.$axios.setBaseURL("https://dev.farizdotid.com/");
@@ -989,8 +1051,6 @@ export default {
         .get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id)
         .then((response) => {
           this.isLoading = false;
-
-
 
           this.cities = response.data.kota_kabupaten;
         })
@@ -1001,24 +1061,19 @@ export default {
       this.e1 = 2;
     },
 
-       toStep3() {
+    toStep3() {
       this.e1 = 3;
     },
 
-
-   save(date) {
+    save(date) {
       this.$refs.menu.save(date);
     },
-
   },
-  
-
 
   watch: {
     menu(val) {
       val && setTimeout(() => (this.$refs.picker.activePicker = "YEAR"));
     },
   },
-
 };
 </script>

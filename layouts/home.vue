@@ -66,7 +66,7 @@
         </v-btn>
       </div>
 
-      <v-menu bottom min-width="200px" rounded offset-y>
+      <v-menu bottom min-width="300px" rounded offset-y>
         <template v-slot:activator="{ on }">
           <div class="pr-3">
             <v-btn icon large v-on="on" margin>
@@ -87,16 +87,26 @@
             </v-btn>
           </div>
         </template>
-        <v-card>
-          <v-list-item-content class="justify-center">
+        <v-card >
+                    <v-list-item-content  class="pa-1">
+
+                        <v-btn   height="40px" style="color: #1e88e5; font-weight:bolder" small depressed color="blue lighten-5"  block>
+                  
+  San Education
+  </v-btn>
+                    </v-list-item-content>
+            
+          <v-list-item-content  class="justify-center">
+
             <div class="mx-auto text-center">
-              <v-avatar color="brown">
+              
+              <v-avatar size="80" color="brown">
                 <img :src="user.photo" alt="John" />
               </v-avatar>
-              <h6>{{ user.fullName }}</h6>
-              <p class="caption mt-1">
+              <h6 class="mt-4 " style="font-weight:bold">{{ user.fullName.toUpperCase() }}</h6>
+              <h6 >
                 {{ user.email }}
-              </p>
+              </h6>
               <v-divider class="my-3"></v-divider>
                 <nuxt-link
                         style="text-decoration: none"
@@ -105,10 +115,10 @@
                           
                         }"
                       >
-              <v-btn depressed rounded text> Edit Account </v-btn>
+              <v-btn  depressed rounded text style="border: 0.1px solid #CFD8DC"> Edit Your Profile </v-btn>
                 </nuxt-link>
               <v-divider class="my-3"></v-divider>
-              <v-btn @click="logout" depressed rounded text> Logout </v-btn>
+              <v-btn @click="logout" depressed rounded text style="border: 0.1px solid #CFD8DC"> Logout </v-btn>
             </div>
           </v-list-item-content>
         </v-card>

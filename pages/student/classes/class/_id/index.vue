@@ -145,7 +145,13 @@
 
                 <div v-for="item in classMeetings" :key="'A'+item.id" justify="center" align="center">
                  <v-card-subtitle  style="font-weight:bold; color:grey" class="p-0" v-if="  $moment().unix() > $moment(item.date +' '+item.start_time).unix() && $moment().unix() < $moment(item.date +' '+item.finish_time).unix() ">
+                   <nuxt-link   style="text-decoration: none; color:grey"
+                        :to="{
+                          name: 'student-classes-class-id-meeting-meetingid',
+                          params: { id: classDetail.id, meetingid: item.id },
+                        }">
                     {{item.name}} - {{item.date}}
+                   </nuxt-link>
                  </v-card-subtitle>
                 
                 
@@ -159,9 +165,14 @@
 
               <div v-for="item in classMeetings" :key="'B'+item.id" justify="center" align="center">
                  <v-card-subtitle  style="font-weight:bold; color:grey" class="p-0" v-if="$moment(item.date +' '+item.start_time).unix() > $moment().unix()">
+                   <nuxt-link   style="text-decoration: none; color:grey"
+                        :to="{
+                          name: 'student-classes-class-id-meeting-meetingid',
+                          params: { id: classDetail.id, meetingid: item.id },
+                        }">
                     {{item.name}} - {{item.date}}
 
-
+                   </nuxt-link>
                  </v-card-subtitle>
                 
                 
@@ -181,7 +192,7 @@
 
             <template v-if="classMeetings">
 
-              <v-row v-for="item in classMeetings" :key="item.id">
+              <v-row v-for="item in classMeetingsSorted" :key="item.id">
                 <v-col>
                    <nuxt-link
                         style="text-decoration: none"
@@ -199,14 +210,14 @@
                       {{ item.name }}  
                     </v-card-title>
 
-                    <v-card-subtitle v-if="  $moment().unix() > $moment(item.date +' '+item.start_time).unix() && $moment().unix() < $moment(item.date +' '+item.finish_time).unix() "
+                    <v-card-subtitle style="color: #1E88E5" v-if="  $moment().unix() > $moment(item.date +' '+item.start_time).unix() && $moment().unix() < $moment(item.date +' '+item.finish_time).unix() "
                       > The Meeting is Ongoing </v-card-subtitle
                     >
-                       <v-card-subtitle v-if="  $moment().unix() < $moment(item.date +' '+item.start_time).unix()  "
+                       <v-card-subtitle style="color:#43A047" v-if="  $moment().unix() < $moment(item.date +' '+item.start_time).unix()  "
                       > The Meeting is Not Started Yet </v-card-subtitle
                     >
 
-                      <v-card-subtitle v-if="  $moment().unix() > $moment(item.date +' '+item.finish_time).unix()  "
+                      <v-card-subtitle style="color:#E53935" v-if="  $moment().unix() > $moment(item.date +' '+item.finish_time).unix()  "
                       > The Meeting is Already Ended </v-card-subtitle
                     >
 
@@ -336,6 +347,7 @@ export default {
       coba: new Date(),
       now: null,
       temp: null,
+      classMeetingsSorted: null,
 
       isLoaded: false,
     };
@@ -343,6 +355,13 @@ export default {
   mounted() {
     this.isLoaded = true;
     this.now = this.coba.setHours(0, 0, 0, 0);
+
+    this.classMeetingsSorted = this.$store.state.class.classMeetings.sort(function(a, b){
+    return b.id - a.id;
+});
+
+console.log(this.classMeetingsSorted)
+
   },
 
   methods: {
