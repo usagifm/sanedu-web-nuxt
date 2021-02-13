@@ -51,8 +51,8 @@ sub {
                <nuxt-link
                         style="text-decoration: none"
                         :to="{
-                          name: 'student-classes-class-id-meeting-meetingid',
-                          params: { id: classDetail.id, meetingid: meetingDetail.id },
+                          name: 'student-classes'
+                          
                         }"
                       >
                 <v-btn
@@ -328,7 +328,6 @@ sub {
       <v-dialog
         v-if="detailModal == true"
         v-model="detailModal"
-        persistent
         max-width="700"
       >
         <v-card>

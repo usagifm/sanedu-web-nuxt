@@ -550,20 +550,20 @@ textarea {
       <thead>
                             <tr>
                                 <th width="5px" class="text-center">No</th>
-                                <th class="text-left">Answer</th>
-                                <th class="text-left">Photo Answer</th>
+                                <th class="text-center">Answer</th>
+                                <th class="text-center">Photo Answer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(soal, index) in soals"    :key="index">
                                 <td>{{ index+1 }}</td>
-                                  <td class="text-left">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
+                                  <td class="text-center">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
                                   <td>
                                           
                                                 <a v-if="koreksiImage[index]" target="_blank" :href="koreksiImage[index]">Link</a>
                                       
 
-                                              <div v-if="koreksiImage[index] == null">
+                                              <div class="text-center" v-if="koreksiImage[index] == null">
                                                     -
 
                                               </div>
@@ -629,6 +629,7 @@ textarea {
           <v-dialog v-if="isFinish && !isLoading && this.$store.state.class.meetingDetail.quiz"
         transition="dialog-bottom-transition"
         max-width="600"
+        persistent
         v-model="tai"
       >
     
@@ -644,26 +645,27 @@ textarea {
       <thead>
                             <tr>
                                 <th width="5px" class="text-center">No</th>
-                                <th class="text-left">Answer</th>
-                                <th class="text-left">Photo Answer</th>
+                                <th class="text-center">Answer</th>
+                                <th class="text-center">Photo Answer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(soal, index) in soals"    :key="index">
                                 <td>{{ index+1 }}</td>
-                                  <td class="text-left">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
-                                         <td class="text-left">
-                                           
-                                             <td>
+                                  <td class="text-center">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
+                                  <td>
                                           
                                                 <a v-if="koreksiImage[index]" target="_blank" :href="koreksiImage[index]">Link</a>
                                       
 
-                                              <div v-if="koreksiImage[index] == null">
+                                              <div class="text-center" v-if="koreksiImage[index] == null">
                                                     -
 
                                               </div>
                                   </td>
+
+
+                        
                             </tr>
                         </tbody>
     </template>
