@@ -15,7 +15,7 @@ export const mutations = {
 export const actions = {
 
 
-    registerStudent({ dispatch } , payload){
+    registerAccount({ dispatch } , payload){
 
 
         console.log(payload)

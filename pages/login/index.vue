@@ -24,17 +24,17 @@
             <v-col cols="12">
               <v-row>
 
-   <v-col cols="5">
-     <h5  class="my-1" style="font-weight:bolder; color: #424242">
+   <v-col cols="12">
+     <a  style="font-weight:bolder; font-size:22px; color: #424242"  class="my-1">
 Sign In
-     </h5>
+     </a>
 
    </v-col>
-        <v-col  cols="7">
+        <!-- <v-col  cols="7">
 
              <img :src="require('@/static/images/landingpage/logolanding.png')" alt="Logo" />
 
-        </v-col>
+        </v-col> -->
 
               </v-row>
 
@@ -105,11 +105,11 @@ Sign In
                             <nuxt-link  to="/register">
 
                             <a
-                            class="ml-7 text-left"
-                          style="font-size: 14px; color: #2196F3; margin:auto"
+                            class="text-left ml-4"
+                          style="font-size: 14px; color: #2196F3; font-weight:bold; "
                               
                               >
-                            Belum punya akun ? Klik untuk buat !
+                            Belum punya akun ? Daftar disini !
                             </a>
                             </nuxt-link>
 
@@ -131,6 +131,7 @@ Sign In
                                 @click="login"
                                 :disabled="invalid"
                                 rounded
+                                style="font-weight:bold;"
                               >
                             SIGN IN
                               </v-btn>
@@ -317,8 +318,20 @@ export default {
     mounted() {
 
         if(this.$auth.loggedIn){
+
+
+          if(this.$auth.$state.user.is_teacher == 0){
+
             this.$router.push('/student');
 
+          }
+
+
+          if(this.$auth.$state.user.is_teacher == 1){
+
+            this.$router.push('/teacher');
+
+          }
 
         }
 
@@ -351,8 +364,18 @@ export default {
                     this.isLoading= false;
                   
               
+                   if(response.data.is_teacher == 0) {
                    
                     this.$router.push('/student');
+
+                   }
+
+                    if(response.data.is_teacher == 1) {
+                   
+                    this.$router.push('/teacher');
+
+                   }
+                   
                    
                     // console.log("Test !");
                     // console.log(this.$auth.loggedIn);

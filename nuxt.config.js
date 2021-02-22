@@ -11,7 +11,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/images/landingpage/logo.png' },
-      { rel: 'stylesheet' ,  href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap' }
+      { rel: 'stylesheet' ,  href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap'}
     ],
     script: [
       { src: "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" },
@@ -92,6 +93,8 @@ export default {
 
   ],
 
+  
+
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -127,6 +130,16 @@ export default {
 
  
   ],
+
+  vuetify: {
+    treeShake: true,
+    defaultAssets: {
+    font: {
+      family: 'Quicksand'
+    }
+  }
+
+},
 
 
 

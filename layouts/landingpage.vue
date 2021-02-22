@@ -37,6 +37,8 @@
       <v-list dense>
         <v-list-item
 
+      
+
           v-for="([icon, text, href], i) in items"
           :key="i"
           link
@@ -46,7 +48,7 @@
             <v-icon>{{ icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitile-1">{{
+            <v-list-item-title   style="font-weight: bold" class="subtitile-1">{{
               text
             }}</v-list-item-title>
           </v-list-item-content>
@@ -55,11 +57,11 @@
         <nuxt-link to="/login">
                <v-list-item
         >
-          <v-list-item-icon class="justify-center">
+          <v-list-item-icon  class="justify-center">
             <v-icon>mdi-account-check</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitile-1">Login</v-list-item-title>
+            <v-list-item-title   style="font-weight: bold" class="subtitile-1">Login</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         </nuxt-link>
@@ -74,7 +76,7 @@
             <v-icon>mdi-account-plus</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitile-1">Register</v-list-item-title>
+            <v-list-item-title  style="font-weight: bold" class="subtitile-1">Register</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -110,27 +112,27 @@
                  
         <v-btn 
         style="text-decoration: none; color: #263238;" text href="#intro">
-          <span class="mr-2">Home</span>
+          <span  style="font-weight: bold" class="mr-2">Home</span>
         </v-btn>
         <v-btn 
         style="text-decoration: none; color: #263238;" text href="#why-us">
-          <span class="mr-2">About Us</span>
+          <span  style="font-weight: bold" class="mr-2">About Us</span>
         </v-btn>
         <v-btn 
         style="text-decoration: none; color: #263238;" text href="#features" >
-          <span class="mr-2">Download</span>
+          <span style="font-weight: bold" class="mr-2">Download</span>
         </v-btn>
         <v-btn 
         style="text-decoration: none; color: #263238;" text href="#portfolio">
-          <span class="mr-2 color: #263238;">Event</span>
+          <span  style="font-weight: bold" class="mr-2 color: #263238;">Event</span>
         </v-btn>
                 <v-btn 
         style="text-decoration: none; color: #263238;"  text href="#team">
-          <span class="mr-2">Team</span>
+          <span  style="font-weight: bold" class="mr-2">Team</span>
         </v-btn>
             <v-btn 
         style="text-decoration: none; color: #263238;" text href="#footer">
-          <span class="mr-2">Contact Us</span>
+          <span  style="font-weight: bold" class="mr-2">Contact Us</span>
         </v-btn>
            <!-- <nuxt-link
                         style="text-decoration: none"
@@ -148,7 +150,7 @@
 
 
         style="text-decoration: none; color: #263238;" rounded outlined text >
-          <span >Login</span>
+          <span  style="font-weight: bold">Login</span>
         </v-btn>
                          </nuxt-link>
            <!-- </nuxt-link> -->
@@ -156,7 +158,7 @@
                                 <nuxt-link style="text-decoration: none" to="/register">
             <v-btn 
         style="text-decoration: none; color: #263238;" rounded outlined text >
-          <span >Register</span>
+          <span  style="font-weight: bold">Register</span>
         </v-btn>
                                 </nuxt-link>
       </div>
@@ -214,7 +216,7 @@ export default {
 
 
               if (process.browser){
-      console.log(window.innerWidth, window.innerHeight);
+      // console.log(window.innerWidth, window.innerHeight);
     }
         }
       },
@@ -239,7 +241,7 @@ export default {
   mounted() {
 
         if (process.browser){
-      console.log(window.innerWidth, window.innerHeight);
+      // console.log(window.innerWidth, window.innerHeight);
     }
     
         this.onResize();
@@ -260,7 +262,7 @@ export default {
 
     created(){
     if (process.browser){
-      console.log(window.innerWidth, window.innerHeight);
+      // console.log(window.innerWidth, window.innerHeight);
     }
   },
 

@@ -560,7 +560,7 @@ textarea {
                                   <td class="text-center">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
                                   <td>
                                           
-                                                <a v-if="koreksiImage[index]" target="_blank" :href="koreksiImage[index]">Link</a>
+                                                <a v-if="koreksiImage[index]" class="text-center" target="_blank" :href="koreksiImage[index]">Link</a>
                                       
 
                                               <div class="text-center" v-if="koreksiImage[index] == null">
@@ -785,7 +785,7 @@ export default {
       
       showMyImage(fileInput) {
 
-          console.log(fileInput);
+          // console.log(fileInput);
 
           if (fileInput) {
  
@@ -866,7 +866,7 @@ export default {
 
 // this.imagePreview = null;
             
-      console.log("Masuk!");
+      // console.log("Masuk!");
 
 
           }
@@ -928,10 +928,10 @@ export default {
     
 
 
-        console.log("Isi Self.jawaban " + self.jawaban);
+        // console.log("Isi Self.jawaban " + self.jawaban);
 
         
-        console.log("Isi Self.jawabanUser " + self.jawabanUser[self.indexSoal]);
+        // console.log("Isi Self.jawabanUser " + self.jawabanUser[self.indexSoal]);
         
       }
 
@@ -995,7 +995,7 @@ export default {
                 ? Math.floor(self.soals.length / 5)
                 : Math.floor(self.soals.length / 5) + 1;
 
-            console.log(self.endTimer);
+            // console.log(self.endTimer);
             // console.log(response);
           } else {
             console.log(response);
@@ -1032,7 +1032,7 @@ export default {
             // console.log(this.imagetemp)
 
             if(this.indexSoal+1 == this.jumlahSoal){
-              console.log("is Finish !");
+              // console.log("is Finish !");
                 this.isFinish = true;      
                 this.tai = true;
               
@@ -1060,7 +1060,7 @@ export default {
 
             else if(this.jawabanUser[this.indexSoal] == undefined && this.imagetemp !== '' && !this.koreksiId[this.indexSoal] &&  this.soal.question_type == 2 ) {
 
-                console.log("case 1 : Photo dan Essay")
+                // console.log("case 1 : Photo dan Essay")
 
                 this.sendJawaban();
                          
@@ -1071,7 +1071,7 @@ export default {
 
               else if(this.jawabanUser[this.indexSoal] !== undefined && this.imagetemp == '' && !this.koreksiId[this.indexSoal] &&  this.soal.question_type == 2 ) {
 
-                      console.log("case 2 : Essay");
+                      // console.log("case 2 : Essay");
                                   this.sendJawaban();
                 
 
@@ -1080,7 +1080,7 @@ export default {
 
              else if(this.jawabanUser[this.indexSoal] !== undefined && this.imagetemp !== '' && !this.koreksiId[this.indexSoal] &&  this.soal.question_type == 2 ) {
 
-                      console.log("case 3 : Photo dan Essay");
+                      // console.log("case 3 : Photo dan Essay");
                                   this.sendJawaban();
                             
 
@@ -1089,7 +1089,7 @@ export default {
 
 
             else if(this.jawabanUser[this.indexSoal] == undefined && this.imagetemp == '' && !this.koreksiId[this.indexSoal] && this.soal.question_type == 2 ) {
-                  console.log("Lewat Anjing !");
+                  // console.log("Lewat Anjing !");
                 this.changeSoal(this.indexSoal+1);
          
 
@@ -1111,7 +1111,7 @@ export default {
             else if(this.jawabanUser[this.indexSoal] == undefined && this.jawaban == undefined && this.soal.question_type == 1 ) {
                 this.changeSoal(this.indexSoal+1);
 
-                console.log("Pantek 1")
+                // console.log("Pantek 1")
             }
             
 
@@ -1120,7 +1120,7 @@ export default {
 
             else if(this.jawabanUser[this.indexSoal] !== null && this.jawaban !== null && this.jawaban == this.jawabanUser[this.indexSoal] && this.soal.question_type == 1) {
                 this.changeSoal(this.indexSoal+1);
-                             console.log("Pantek 2")
+                            //  console.log("Pantek 2")
                                      
             }
             
@@ -1139,7 +1139,7 @@ export default {
 
             else if (this.jawabanUser[this.indexSoal] !== null  && this.koreksiId[this.indexSoal] && this.soal.question_type == 2 ) {
 
-                console.log("CEK 2 !");
+                // console.log("CEK 2 !");
 
                 
 
@@ -1186,7 +1186,7 @@ export default {
 
               // console.log(self.imagetemp)
 
-                console.log("Answer sent");
+                // console.log("Answer sent");
 
                      const payload = { attempt_id : self.attemptId,
                     answer : self.jawabanUser[self.indexSoal],
@@ -1218,7 +1218,7 @@ export default {
 
 
 
-                  console.log(self.imagetemp)
+                  // console.log(self.imagetemp)
 
                 self.jawabanUser[self.indexSoal] = "Dijawab dengan foto"
 
@@ -1314,7 +1314,7 @@ export default {
 
             if (self.imagetemp == null){
 
-                console.log(" TEST NULL : " + self.imagetemp);
+                // console.log(" TEST NULL : " + self.imagetemp);
 
             const payload = { 
                     id : self.koreksiId[self.indexSoal],
@@ -1347,7 +1347,7 @@ export default {
              } else if (self.imagetemp != null){
 
 
-                console.log(self.imagetemp);
+                // console.log(self.imagetemp);
 
 
                   const payload = { 

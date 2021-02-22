@@ -28,6 +28,27 @@
     "_name": "_2e1a6f1d"
   },
   {
+    "name": "teacher",
+    "path": "/teacher",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/index.vue",
+    "chunkName": "pages/teacher/index",
+    "_name": "_8691d7f8"
+  },
+  {
+    "name": "register-student",
+    "path": "/register/student",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/register/student/index.vue",
+    "chunkName": "pages/register/student/index",
+    "_name": "_35833f83"
+  },
+  {
+    "name": "register-teacher",
+    "path": "/register/teacher",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/register/teacher/index.vue",
+    "chunkName": "pages/register/teacher/index",
+    "_name": "_77c0372c"
+  },
+  {
     "name": "student-classes",
     "path": "/student/classes",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/index.vue",
@@ -40,6 +61,20 @@
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/profile/index.vue",
     "chunkName": "pages/student/profile/index",
     "_name": "_2bd5c992"
+  },
+  {
+    "name": "teacher-classes",
+    "path": "/teacher/classes",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/index.vue",
+    "chunkName": "pages/teacher/classes/index",
+    "_name": "_298a5f5b"
+  },
+  {
+    "name": "teacher-profile",
+    "path": "/teacher/profile",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/profile/index.vue",
+    "chunkName": "pages/teacher/profile/index",
+    "_name": "_84e42dc4"
   },
   {
     "name": "student-classes-taro dulu",
@@ -56,11 +91,25 @@
     "_name": "_296b5e88"
   },
   {
+    "name": "teacher-classes-class-id",
+    "path": "/teacher/classes/class/:id",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/index",
+    "_name": "_f73590a2"
+  },
+  {
     "name": "student-classes-class-id-meeting-meetingid",
     "path": "/student/classes/class/:id?/meeting/:meetingid",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/index.vue",
     "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/index",
     "_name": "_57e35830"
+  },
+  {
+    "name": "teacher-classes-class-id-meeting-meetingid",
+    "path": "/teacher/classes/class/:id?/meeting/:meetingid",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/index",
+    "_name": "_34d38361"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-quiz",
@@ -82,6 +131,27 @@
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue",
     "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index",
     "_name": "_78ece538"
+  },
+  {
+    "name": "teacher-classes-class-id-meeting-meetingid-lesson-lessonid",
+    "path": "/teacher/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index",
+    "_name": "_67811242"
+  },
+  {
+    "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid",
+    "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index",
+    "_name": "_b392024e"
+  },
+  {
+    "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid-attempt-attemptid",
+    "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/attempt/:attemptid",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index",
+    "_name": "_8f2aa792"
   },
   {
     "name": "index",

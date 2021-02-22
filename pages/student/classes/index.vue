@@ -66,7 +66,7 @@
             <v-dialog v-model="dialog" persistent max-width="290">
               <template v-slot:activator="{ on }">
                 <v-col class="text-right">
-                  <v-btn class="my-4" color="primary" dark v-on="on">
+                  <v-btn class="my-4" color="primary" dark v-on="on"  style="font-weight:bold;">
                     + Add Class
                   </v-btn>
                 </v-col>
@@ -80,7 +80,7 @@
 
                 <validation-observer ref="observer" v-slot="{ invalid }">
                   <form @submit.prevent="submit">
-                    <v-card-title class="headline">
+                    <v-card-title class="headline"  style="font-weight:bold;">
                       Join More Class
                     </v-card-title>
                     <v-card-text>
@@ -164,11 +164,13 @@
                     :class="{ 'on-hover': hover }"
                   >
                     <v-img
-                      class="white--text align-end"
-                      max-height="135px"
-                      src="https://www.colorhexa.com/42a5f5.png"
+                      style="background-color: #42a5f5;"
+                      class="align-start white--text "
+                      max-height="170px"
+
+                      src="https://gstatic.com/classroom/themes/img_code.jpg"
                     >
-                      <v-app-bar class="py-5" flat color="rgba(0, 0, 0, 0)">
+                      <v-app-bar class="my-n1 py-2" flat color="rgba(0, 0, 0, 0)">
                         <v-icon color="white">mdi-book</v-icon>
 
                         <v-spacer></v-spacer>
@@ -189,7 +191,7 @@
                         </v-tooltip>
                       </v-app-bar>
 
-                      <v-card-title>{{ item.name }}</v-card-title>
+                      <v-card-title  style="font-weight:bold;">{{ item.name }}</v-card-title>
                       <v-card-subtitle class="white--text">
                         {{ item.teacher_name }}
                       </v-card-subtitle>
@@ -209,9 +211,9 @@
 
                     <v-col>
                       <v-divider />
-                      <v-chip color="primary">Class Quota</v-chip>
+                      <v-chip class="my-2" color="primary">Class Quota</v-chip>
                       <!-- <v-chip       text-color="white"  color="pink">Max : {{item.quota}}</v-chip> -->
-                      <v-chip color="teal" text-color="white"
+                      <v-chip class="my-2" color="teal" text-color="white"
                         ><v-avatar left>
                           <v-icon>mdi-account-supervisor-circle</v-icon> </v-avatar
                         >Students : {{ item.student_number }}</v-chip
@@ -231,14 +233,14 @@
                           params: { id: item.id },
                         }"
                       >
-                        <v-btn color="orange" text> Detail </v-btn>
+                        <v-btn color="orange"  style="font-weight:bold;" text> Detail </v-btn>
                       </nuxt-link>
 
                       <v-btn
                         color="green"
                         text
                         target="_blank"
-                        style="text-decoration: none"
+                        style="text-decoration: none; font-weight: bold"
                         :href="
                           'https://api.whatsapp.com/send?phone=+62' +
                           item.teacher_whatsapp

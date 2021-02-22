@@ -182,7 +182,7 @@ sub {
             <v-col cols="12" align="left">
               <v-banner two-line>
                 <v-col>
-                  <h4 class="captoin">
+                  <h4  class="captoin">
                     <v-avatar slot="icon" color="primary" size="40">
                       <v-icon icon="mdi-lock" color="white"> mdi-fish </v-icon>
                     </v-avatar>
@@ -191,17 +191,17 @@ sub {
                   </h4>
                 </v-col>
 
-                <v-btn text color="green">
-                  <v-icon left>mdi-check</v-icon>
+                <v-btn  style="font-weight:bold;" text color="green">
+                  <v-icon left>mdi-check</v-icon >
                   Correct Answer : {{ quizResult.correct_number }}
                 </v-btn>
 
-                <v-btn text color="red">
+                <v-btn  style="font-weight:bold;" text color="red">
                   <v-icon left>mdi-backspace</v-icon>
                   Incorrect Answer : {{ quizResult.incorrect_number }}
                 </v-btn>
 
-                <v-btn text color="grey">
+                <v-btn  style="font-weight:bold;" text color="grey">
                   <v-icon left>mdi-radiobox-blank</v-icon>
                   Blank Answer : {{ quizResult.not_answered_number }}
                 </v-btn>
@@ -212,8 +212,8 @@ sub {
               <v-simple-table>
                 <template v-slot:default>
                   <thead>
-                    <tr>
-                      <th class="text-left">No</th>
+                    <tr >
+                      <th  class="text-left">No</th>
                       <th class="text-left">Detail</th>
                       <th class="text-center">Your Answer</th>
                       <th class="text-center">Correction</th>
@@ -356,7 +356,7 @@ sub {
             </v-card-subtitle>
 
             <v-card-subtitle v-if="questionDetail.answer">
-              Answer Key : {{ questionDetail.answer.toUpperCase() }} {{}}
+              Answer Key : {{ questionDetail.answer.toUpperCase() }}
             </v-card-subtitle>
           </v-card-text>
           <v-card-actions>

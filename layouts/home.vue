@@ -19,15 +19,30 @@
             </template>
           </v-list-item-avatar>
 
+     <div      v-if="user.is_teacher == 0">
           <v-list-item-content>
             <v-list-item-subtitle style="font-weight: bold">{{
               this.$auth.$state.user.name
             }}</v-list-item-subtitle>
             <v-list-item-subtitle>San Student</v-list-item-subtitle>
           </v-list-item-content>
+     </div>
+
+     <div      v-if="user.is_teacher == 1">
+           <v-list-item-content>
+            <v-list-item-subtitle style="font-weight: bold">{{
+              this.$auth.$state.user.name
+            }}</v-list-item-subtitle>
+            <v-list-item-subtitle>San Teacher</v-list-item-subtitle>
+          </v-list-item-content>
+     </div>
+
         </v-list-item>
 
+        <div      v-if="user.is_teacher == 0">
         <v-list-item
+       
+
           v-for="(item, i) in items"
           :key="i"
           :to="item.to"
@@ -42,6 +57,28 @@
             <v-list-item-title style="color: #455A64" class="font-weight-bold" v-text="item.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        </div>
+
+
+  <div      v-if="user.is_teacher == 1">
+        <v-list-item
+          v-for="(item, i) in itemsTeacher"
+          :key="i"
+          :to="item.to"
+          router
+          exact
+          style="text-decoration: none"
+        >
+          <v-list-item-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title style="color: #455A64" class="font-weight-bold" v-text="item.title"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+  </div>
+
+
       </v-list>
     </v-navigation-drawer>
 
@@ -74,11 +111,11 @@
                 <template v-if="user.photo == null">
                   <img
                     color="grey"
-                    alt="John"
                     src="@/static/images/profile/profile.png"
                     class="rounded-circle"
                   />
                 </template>
+
 
                 <template v-if="user.photo != null">
                   <img :src="user.photo" alt="John" class="rounded-circle" />
@@ -99,15 +136,26 @@
           <v-list-item-content  class="justify-center">
 
             <div class="mx-auto text-center">
+
               
+              
+               <template v-if="user.photo != null">
               <v-avatar size="80" color="brown">
                 <img :src="user.photo" alt="John" />
               </v-avatar>
+              </template>
+
+                    <template v-if="user.photo == null">
+              <v-avatar size="80" color="brown">
+                <img   src="@/static/images/profile/profile.png" alt="John" />
+              </v-avatar>
+              </template>
               <h6 class="mt-4 " style="font-weight:bold">{{ user.fullName.toUpperCase() }}</h6>
               <h6 >
                 {{ user.email }}
               </h6>
               <v-divider class="my-3"></v-divider>
+                   <div      v-if="user.is_teacher == 0">
                 <nuxt-link
                         style="text-decoration: none"
                         :to="{
@@ -115,10 +163,26 @@
                           
                         }"
                       >
-              <v-btn  depressed rounded text style="border: 0.1px solid #CFD8DC"> Edit Your Profile </v-btn>
+              <v-btn  depressed rounded text style="border: 0.1px solid #CFD8DC; font-weight:bold;"> Edit Your Profile </v-btn>
                 </nuxt-link>
+                   </div>
+
+
+                <div      v-if="user.is_teacher == 1">
+                <nuxt-link
+                        style="text-decoration: none"
+                        :to="{
+                          name: 'teacher-profile',
+                          
+                        }"
+                      >
+              <v-btn  depressed rounded text style="border: 0.1px solid #CFD8DC; font-weight:bold;"> Edit Your Profile </v-btn>
+                </nuxt-link>
+                   </div>
+
+
               <v-divider class="my-3"></v-divider>
-              <v-btn @click="logout" depressed rounded text style="border: 0.1px solid #CFD8DC"> Logout </v-btn>
+              <v-btn @click="logout" depressed rounded text style="border: 0.1px solid #CFD8DC; font-weight:bold;"> Logout </v-btn>
             </div>
           </v-list-item-content>
         </v-card>
@@ -174,9 +238,39 @@ export default {
           // to: "/dashboard",
         },
       ],
+       itemsTeacher: [
+        {
+          icon: "mdi-apps",
+          title: "Dashboard",
+          to: "/teacher",
+
+        },
+        {
+          icon: "mdi-account-circle",
+          title: "Profile",
+          to: "/teacher/profile",
+        },
+        {
+          icon: "mdi-google-classroom",
+          title: "Sanclass",
+          to: "/teacher/classes",
+        },
+        {
+          icon: "mdi-calendar-text",
+          title: "San Project",
+          // to: "/dashboard",
+          
+        },
+        {
+          icon: "mdi-calculator-variant",
+          title: "San Hitung",
+          // to: "/dashboard",
+        },
+      ],
       miniVariant: false,
       title: "SANEDU",
       user: {
+        is_teacher: this.$auth.$state.user.is_teacher,
         photo: this.$auth.$state.user.profile_image,
         fullName: this.$auth.$state.user.name,
         email: this.$auth.$state.user.email,

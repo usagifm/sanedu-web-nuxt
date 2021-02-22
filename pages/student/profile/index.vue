@@ -1,15 +1,16 @@
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
+
 
 * {
+    font-family: 'Quicksand';
 }
 
 .bold {
   font-weight: 900;
 
   color: rgb(104, 102, 102);
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Quicksand';
+
 }
 </style>
 
@@ -20,12 +21,33 @@
       <v-row justify="center">
         <v-col align="center" cols="12" lg="2" md="2">
           <v-img
+
+            v-if="this.$auth.$state.user.profile_image != null"
+
             lazy-src="https://picsum.photos/id/11/10/6"
             height="120"
             width="120"
             style="border-radius: 50%"
             :src="this.$auth.$state.user.profile_image"
+
+            
           ></v-img>
+
+                    <img
+
+
+            v-if="this.$auth.$state.user.profile_image == null"
+            
+  
+            height="120"
+            width="120"
+            style="border-radius: 50%; height:120px; width:120px;"
+
+             src="@/static/images/profile/profile.png"
+         
+          >
+
+
         </v-col>
         <v-col align="left" cols="12" lg="5" md="5">
           <h4 v-if="$vuetify.breakpoint.mobile" class="text-center bold">
@@ -705,16 +727,24 @@
                   </v-col>
 
                   <v-col cols="6">
+                       <validation-provider
+                        v-slot="{ errors }"
+                        name="Grade Level"
+                        rules="required"
+                >
                     <v-select
                       v-model="regionDataPayload.grade_level"
+                      :counter="100"
+                      :error-messages="errors"
                       :items="grades"
                       item-text="grade"
                       item-value="value"
-                      label="Class"
+                      label="Grade Level"
                       persistent-hint
                       return-object
                       single-line
                     ></v-select>
+                       </validation-provider>
                   </v-col>
                 </v-row>
               </v-col>
@@ -1084,6 +1114,7 @@ export default {
       this.editRegionData(this.regionDataPayload)
 
         .then((response) => {
+
 
         this.$auth.setUser(response);
 

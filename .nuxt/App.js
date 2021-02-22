@@ -31,8 +31,6 @@ import '../node_modules/vuesax/dist/vuesax.css'
 
 import '../node_modules/material-design-icons/iconfont/material-icons.css'
 
-import '../node_modules/vuetify/dist/vuetify.css'
-
 import _6b4fb138 from '../layouts/backup.vue'
 import _6f6c098b from '../layouts/default.vue'
 import _77430317 from '../layouts/empty.vue'

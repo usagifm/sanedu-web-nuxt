@@ -81,7 +81,7 @@
               }}</v-card-subtitle>
 
             <v-col>
-          <v-chip style="font-weight:bold"  color="teal darken-3" text-color="white"
+          <v-chip class="my-2" style="font-weight:bold"  color="teal darken-3" text-color="white"
                         ><v-avatar left>
                           <v-icon
                             >mdi-calendar</v-icon
@@ -91,7 +91,7 @@
 
 
             
-  <v-chip style="font-weight:bold" color="teal darken-2" text-color="white"
+  <v-chip class="my-2" style="font-weight:bold" color="teal darken-2" text-color="white"
                         >{{ meetingDetail.start_time }} - {{ meetingDetail.finish_time }}</v-chip
                       >
             </v-col>
@@ -226,18 +226,23 @@
             <v-card-actions>
           <div v-if="item.youtube !== null">
                        <v-btn 
+                       small
                         rounded
                           color="red"
                       dark
+                       style="font-weight:bold;"
                       text> <v-icon left>mdi-youtube</v-icon>With Video </v-btn>
                       </div>
 
 
                  <div v-if="item.link !== null">
                        <v-btn 
+
+                       small
                         rounded
                           color="primary"
                       dark
+                       style="font-weight:bold;"
                       text> <v-icon left>mdi-link</v-icon>With Link </v-btn>
                       </div>
 

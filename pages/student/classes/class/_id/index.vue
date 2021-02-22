@@ -34,7 +34,7 @@
                         }"
                       >
                 <v-btn
-                  v-show="!hidden"
+                
                   color="blue darken-1"
                   fab
                   dark
@@ -81,13 +81,13 @@
                 classDetail.teacher_name
               }}</v-card-subtitle>
 
-              <v-btn rounded class="ml-4 my-4" color="primary" dark>
+              <v-btn style="font-size: 2.5vmin" rounded class="ml-4 my-4" color="primary" dark>
                 <v-icon left>mdi-castle</v-icon>
 
                 {{ classDetail.school }}
               </v-btn>
 
-              <v-btn rounded class="ml-4 my-4" color="blue lighten-2" dark>
+              <v-btn style="font-size: 2.5vmin" rounded class="ml-4 my-4" color="blue lighten-2" dark>
                 <v-icon left>mdi-star</v-icon>
 
                 Grade Level : {{ classDetail.grade_level }}
@@ -144,7 +144,7 @@
 
 
                 <div v-for="item in classMeetings" :key="'A'+item.id" justify="center" align="center">
-                 <v-card-subtitle  style="font-weight:bold; color:grey" class="p-0" v-if="  $moment().unix() > $moment(item.date +' '+item.start_time).unix() && $moment().unix() < $moment(item.date +' '+item.finish_time).unix() ">
+                 <v-card-subtitle  style="font-weight:bold; color:grey"      class="ml-4 pb-0 py-0" v-if="  $moment().unix() > $moment(item.date +' '+item.start_time).unix() && $moment().unix() < $moment(item.date +' '+item.finish_time).unix() ">
                    <nuxt-link   style="text-decoration: none; color:grey"
                         :to="{
                           name: 'student-classes-class-id-meeting-meetingid',
@@ -164,7 +164,7 @@
               </v-card-text>
 
               <div v-for="item in classMeetings" :key="'B'+item.id" justify="center" align="center">
-                 <v-card-subtitle  style="font-weight:bold; color:grey" class="p-0" v-if="$moment(item.date +' '+item.start_time).unix() > $moment().unix()">
+                 <v-card-subtitle   style="font-weight:bold; color:grey"      class="ml-4 pb-0 py-0" v-if="$moment(item.date +' '+item.start_time).unix() > $moment().unix()">
                    <nuxt-link   style="text-decoration: none; color:grey"
                         :to="{
                           name: 'student-classes-class-id-meeting-meetingid',
@@ -206,7 +206,7 @@
                    :elevation="hover ? 4 : 2"
                     :class="{ 'on-hover': hover }"
                     >
-                    <v-card-title class="headline">
+                    <v-card-title  class="headline">
                       {{ item.name }}  
                     </v-card-title>
 
@@ -223,7 +223,7 @@
 
 
                     <v-col>
-                      <v-chip style="font-weight:bold"  color="#385F73" text-color="white"
+                      <v-chip class="my-2" style="font-weight:bold"  color="#385F73" text-color="white"
                         ><v-avatar left>
                           <v-icon
                             >mdi-calendar</v-icon
@@ -232,7 +232,7 @@
                       >
 
 
-  <v-chip style="font-weight:bold" color="teal" text-color="white"
+  <v-chip class="my-2" style="font-weight:bold" color="teal" text-color="white"
                         >{{ item.start_time }} - {{ item.finish_time }}</v-chip
                       >
                       
@@ -255,15 +255,19 @@
                     <v-card-actions>
 
                          <v-btn v-if="item.lessons == ''" 
+                         small
                         rounded
                           color="primary"
                       dark
+                       style="font-weight:bold;"
                       text> <v-icon left>mdi-book-open-variant</v-icon>No Lesson </v-btn>
 
 
                       <v-btn v-if="item.lessons != ''" 
+                      small
                         rounded
                           color="primary"
+                           style="font-weight:bold;"
                       dark
                       text> <v-icon left>mdi-book-open-variant</v-icon>{{ item.lessons.length }} Lessons  </v-btn>
 
@@ -272,7 +276,9 @@
 
                       <div v-if="item.quiz">
                        <v-btn 
+                       small
                         rounded
+                         style="font-weight:bold;"
                           color="success"
                       dark
                       text> <v-icon left>mdi-pencil-circle</v-icon>With Quiz </v-btn>
@@ -311,7 +317,7 @@ export default {
   layout: "home",
 
   async asyncData({ store, params }) {
-    console.log(params);
+    // console.log(params);
 
     await Promise.all([
       store.dispatch("class/getClassDetailData", params.id),
@@ -360,7 +366,7 @@ export default {
     return b.id - a.id;
 });
 
-console.log(this.classMeetingsSorted)
+// console.log(this.classMeetingsSorted)
 
   },
 

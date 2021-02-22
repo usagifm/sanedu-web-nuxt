@@ -94,11 +94,17 @@
                 meetingDetail.name
               }} on {{ classDetail.name }}</v-card-subtitle>
 
-              <v-btn style="text-decoration:none" rounded class="ml-4 my-4" target="_blank" :href="lessonDetail.link" color="primary" dark>
+              <v-btn v-if="lessonDetail.link" style="text-decoration:none" rounded class="ml-4 my-4" target="_blank" :href="lessonDetail.link" color="primary" dark>
                 <v-icon left>mdi-castle</v-icon>
 
                 Link
               </v-btn>
+                   <v-btn v-if="!lessonDetail.link" style="text-decoration:none" rounded class="ml-4 my-4" target="_blank" disabled color="primary" dark>
+                <v-icon left>mdi-castle</v-icon>
+
+                Link
+              </v-btn>
+
 
               <!-- <v-btn rounded class="ml-4 my-4" color="blue lighten-2" dark>
                 <v-icon left>mdi-star</v-icon>

@@ -127,7 +127,7 @@ export const actions = {
 
     getClassDetailData({ commit }, payload){
 
-            console.log("Ini Payload : " + payload)
+           
 
         return new Promise((resolve, reject) => {
             this.$axios.get(`/user/class/${payload}`).then((response) => {
@@ -166,6 +166,17 @@ export const actions = {
     getLessonDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
             this.$axios.get(`/user/class/${payload.id}/meeting/${payload.meetingid}/lesson/${payload.lessonid}`).then((response) => {
+
+
+
+                this.$axios.post(`user/class/attendlesson/+${payload.lessonid}`).then(() =>{
+
+                    }).catch((error) =>{
+
+
+                     })
+
+
                 commit('SET_LESSON_DETAIL_DATA', response.data)
                 resolve(response)
 
