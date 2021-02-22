@@ -23,7 +23,6 @@ const _34d38361 = () => interopDefault(import('../pages/teacher/classes/class/_i
 const _6bc2f072 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/quiz/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/quiz/index" */))
 const _2674c7f0 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index" */))
 const _78ece538 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index" */))
-const _67811242 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index" */))
 const _b392024e = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index" */))
 const _8f2aa792 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index" */))
 const _3c0e261e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -120,10 +119,6 @@ export const routerOptions = {
     path: "/student/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
     component: _78ece538,
     name: "student-classes-class-id-meeting-meetingid-lesson-lessonid"
-  }, {
-    path: "/teacher/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
-    component: _67811242,
-    name: "teacher-classes-class-id-meeting-meetingid-lesson-lessonid"
   }, {
     path: "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid",
     component: _b392024e,

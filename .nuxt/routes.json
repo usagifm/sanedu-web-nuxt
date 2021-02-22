@@ -133,13 +133,6 @@
     "_name": "_78ece538"
   },
   {
-    "name": "teacher-classes-class-id-meeting-meetingid-lesson-lessonid",
-    "path": "/teacher/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue",
-    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index",
-    "_name": "_67811242"
-  },
-  {
     "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid",
     "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue",
