@@ -206,7 +206,7 @@ input[type="radio"]{
                           questionid: item.id,
                         },
                       }">
-                    <v-list-item link >
+                    <v-list-item link v-if="item.question_type == 2">
                       <v-list-item-title style="font-weight: bold">
                         <v-icon>mdi-check-outline</v-icon> Correct Answers</v-list-item-title
                       >
