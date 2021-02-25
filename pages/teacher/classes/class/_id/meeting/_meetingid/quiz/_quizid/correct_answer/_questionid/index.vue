@@ -56,7 +56,7 @@
               </v-app-bar>
 
               <v-card-title style="font-weight: bold" class="headline">
-                {{ quizDetail.name }}
+                {{ quizDetail.name }} ({{ quizDetail.duration}} Min)
               </v-card-title>
 
               <!-- <v-card-subtitle style="font-weight: bold">{{
