@@ -49,12 +49,12 @@ sub {
 
             <v-fab-transition>
                <nuxt-link
-                        style="text-decoration: none"
-                        :to="{
-                          name: 'student-classes'
-                          
-                        }"
-                      >
+              style="text-decoration: none"
+              :to="{
+                name: 'student-classes-class-id-meeting-meetingid',
+                params: { id: classDetail.id, meetingid: meetingDetail.id },
+              }"
+            >
                 <v-btn
                   v-show="!hidden"
                   color="blue darken-1"

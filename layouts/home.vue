@@ -1,3 +1,11 @@
+<style scoped>
+* {
+    font-family: 'Quicksand';
+}
+
+
+</style>
+
 <template>
   <v-app>
     <v-navigation-drawer

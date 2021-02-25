@@ -376,6 +376,10 @@ sub {
             <v-card-subtitle v-if="questionDetail.answer">
               Answer Key : {{ questionDetail.answer.toUpperCase() }} 
             </v-card-subtitle>
+
+               <v-card-subtitle v-if="questionDetail.essay_answer">
+              Essay Answer : {{ questionDetail.essay_answer }} 
+            </v-card-subtitle>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -413,7 +417,7 @@ export default {
     await Promise.all([
       store.dispatch("teacher/getMeetingDetailData", params),
       store.dispatch("teacher/getClassDetailData", params.id),
-      store.dispatch("teacher/getAttemptDetail", params),
+      store.dispatch("teacher/getAttemptDetailData", params),
 
     ]);
     return;

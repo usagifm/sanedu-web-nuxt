@@ -5,6 +5,8 @@ export const state = () => ({
     meetingDetail: [],
     lessonDetail: [],
     attemptDetail: [],
+    quizDetail: [],
+    correctAnswer: [],
 })
 
 
@@ -23,6 +25,15 @@ export const mutations = {
     SET_ATTEMPT_DETAIL_DATA(state, payload){
         state.attemptDetail = payload;
     },
+
+    SET_QUIZ_DETAIL_DATA(state, payload){
+        state.quizDetail = payload;
+    },
+
+    SET_CORRECTANSWER_DETAIL_DATA(state, payload){
+        state.correctAnswer = payload;
+    },
+
 }
 
 
@@ -361,7 +372,7 @@ export const actions = {
     },
 
 
-    getAttemptDetail({ commit }, payload){
+    getAttemptDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
             this.$axios.get(`teacher/quiz/${payload.quizid}/attempt/${payload.attemptid}`).then((response) => {
                 commit('SET_ATTEMPT_DETAIL_DATA', response.data)
@@ -377,6 +388,179 @@ export const actions = {
 
         })
     },
+
+
+    createQuiz({ dispatch },payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.post(`/teacher/quiz/create`, payload).then((response) => {
+                dispatch('getMeetingDetailDataForEditLesson', payload)
+                resolve(response)
+
+
+            })
+            .catch((error) => {
+
+                console.log(error)
+
+                
+                reject(error); 
+                
+            })
+
+        })
+    },
+    
+
+    getQuizDetailData({ commit }, payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.get(`teacher/quiz/${payload.quizid}`).then((response) => {
+                commit('SET_QUIZ_DETAIL_DATA', response.data)
+                resolve(response)
+
+            })
+            .catch((error) => {
+
+                
+                reject(error.response.data.message); 
+                
+            })
+
+        })
+    },
+
+
+    deleteQuiz({ commit }, payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.get(`teacher/quiz/delete/${payload}`).then((response) => {
+                resolve(response)
+
+            })
+            .catch((error) => {
+
+                
+                reject(error.response.data.message); 
+                
+            })
+
+        })
+    },
+
+
+
+    // getQuizDetailData({ commit }, payload){
+    //     return new Promise((resolve, reject) => {
+    //         this.$axios.get(`teacher/quiz/${payload.quizid}`).then((response) => {
+    //             commit('SET_QUIZ_DETAIL_DATA', response.data)
+    //             resolve(response)
+
+    //         })
+    //         .catch((error) => {
+
+                
+    //             reject(error.response.data.message); 
+                
+    //         })
+
+    //     })
+    // },
+
+
+    createQuizQuestion({ dispatch },payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.post(`/teacher/quiz/${payload.quizid}/create-question`, payload).then((response) => {
+                dispatch('getQuizDetailData', payload)
+                resolve(response)
+
+
+            })
+            .catch((error) => {
+
+                console.log(error)
+
+                
+                reject(error); 
+                
+            })
+
+        })
+    },
+
+    deleteQuestion({ dispatch }, payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.get(`teacher/quiz/${payload.quizid}/delete-question/${payload.id}`).then((response) => {
+                dispatch('getQuizDetailData', payload)
+                resolve(response)
+
+            })
+            .catch((error) => {
+                reject(error.response.data.message); 
+                
+            })
+
+        })
+    },
+
+
+    editQuizQuestion({ dispatch, commit }, payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.post(`/teacher/quiz/${payload.quizid}/edit-question/${payload.id}}`, payload).then((response) => {
+                dispatch('getQuizDetailData', payload)
+                resolve(response)
+
+            })
+            .catch((error) => {
+
+                console.log(error)
+
+                
+                reject(error); 
+                
+            })
+
+        })
+    },
+
+
+    getCorrectAnswer({ dispatch, commit }, payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.get(`/teacher/quiz/${payload.quizid}/get-essay-answer/${payload.questionid}`, payload).then((response) => {
+                commit('SET_CORRECTANSWER_DETAIL_DATA', response.data)
+                resolve(response)
+
+            })
+            .catch((error) => {
+
+                console.log(error)
+
+                
+                reject(error); 
+                
+            })
+
+        })
+    },
+
+
+    correctQuestionAnswer({ dispatch, commit }, payload){
+        return new Promise((resolve, reject) => {
+            this.$axios.post(`/teacher/quiz/${payload.quizid}/correct-essay-answer/${payload.questionid}`, payload).then((response) => {
+                dispatch('getCorrectAnswer', payload)
+                resolve(response)
+
+            })
+            .catch((error) => {
+
+                console.log(error)
+
+                
+                reject(error); 
+                
+            })
+
+        })
+    },
+
+    
 
 
 

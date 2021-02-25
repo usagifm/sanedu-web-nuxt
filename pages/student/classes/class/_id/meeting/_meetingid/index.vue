@@ -60,7 +60,7 @@
           <v-col align="left"  cols="12">
             <v-card color="teal" dark>
               <v-app-bar flat color="rgba(0, 0, 0, 0)">
-                <v-icon color="white">mdi-calendar</v-icon>
+                <v-icon color="white">mdi-calendar</v-icon> <v-card-title style="font-weight:bolder" class="text-left"> Meeting </v-card-title>
 
                 <v-spacer></v-spacer>
 

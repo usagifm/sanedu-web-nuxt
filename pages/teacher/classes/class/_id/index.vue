@@ -47,7 +47,7 @@
           <v-col align="left" cols="12">
             <v-card color="#385F73" dark>
               <v-app-bar flat color="rgba(0, 0, 0, 0)">
-                <v-icon color="white">mdi-book</v-icon> 
+                <v-icon color="white">mdi-book</v-icon> <v-card-title style="font-weight:bolder" class="text-left"> Class </v-card-title>
 
                 <v-spacer></v-spacer>
 
@@ -100,19 +100,22 @@
 
               <v-card-subtitle style="font-weight: bold">{{
                 classDetail.teacher_name
-              }}</v-card-subtitle>
-
-                   <v-card-subtitle style="font-weight: bold">Class Code : {{
+                
+              }}
+                <br/>
+              Class Code : {{
                 classDetail.class_code
               }}</v-card-subtitle>
 
-              <v-btn style="font-size: 2.5vmin" rounded class="ml-4 my-4" color="primary" dark>
+                   <!-- <v-card-subtitle style="font-weight: bold"></v-card-subtitle> -->
+
+              <v-btn small rounded class="ml-4 my-4" color="primary" style="font-weight:bold" dark>
                 <v-icon left>mdi-castle</v-icon>
 
                 {{ classDetail.school }}
               </v-btn>
 
-              <v-btn style="font-size: 2.5vmin" rounded class="ml-4 my-4" color="blue lighten-2" dark>
+              <v-btn small rounded class="ml-4 my-4" color="blue lighten-2" style="font-weight:bold" dark>
                 <v-icon left>mdi-star</v-icon>
 
                 Grade Level : {{ classDetail.grade_level }}

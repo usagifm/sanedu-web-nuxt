@@ -12,6 +12,24 @@
   width: 100%;
   height: 100%;
 }
+
+.sembunyi {
+  display: block;
+  width: 50px;
+  height: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+input[type="radio"]{
+  vertical-align: middle;
+}
+
+.textRadio{
+ vertical-align: middle;
+}
+
 </style>
 
 <template>
@@ -42,8 +60,8 @@
             <nuxt-link
               style="text-decoration: none"
               :to="{
-                name: 'teacher-classes-class-id',
-                params: { id: classDetail.id },
+                name: 'teacher-classes-class-id-meeting-meetingid',
+                params: { id: classDetail.id, meetingid: meetingDetail.id },
               }"
             >
               <v-btn color="blue darken-1" fab dark medium fixed bottom left>
@@ -62,9 +80,9 @@
 
         <v-row justify="center" align="center">
           <v-col align="left" cols="12">
-            <v-card color="teal" dark>
+            <v-card color="#35B5AC" dark>
               <v-app-bar flat color="rgba(0, 0, 0, 0)">
-                <v-icon color="white">mdi-calendar</v-icon>
+                <v-icon color="white">mdi-pencil</v-icon> <v-card-title style="font-weight:bolder" class="text-left"> Quiz </v-card-title>
 
                 <v-spacer></v-spacer>
 
@@ -76,16 +94,10 @@
                   </template>
 
                   <v-list>
-                    <v-list-item link @click="editMeetingDialog = true">
-                      <v-list-item-title style="font-weight: bold">
-                        <v-icon>mdi-pencil</v-icon> Edit
-                        Meeting</v-list-item-title
-                      >
-                    </v-list-item>
-                    <v-list-item link @click="deleteMeetingDialog = true">
+                    <v-list-item link @click="deleteQuizDialog = true">
                       <v-list-item-title style="font-weight: bold">
                         <v-icon>mdi-delete</v-icon> Delete
-                        Meeting</v-list-item-title
+                        Quiz</v-list-item-title
                       >
                     </v-list-item>
                   </v-list>
@@ -93,7 +105,7 @@
               </v-app-bar>
 
               <v-card-title style="font-weight: bold" class="headline">
-                {{ meetingDetail.name }}
+                {{ quizDetail.name }}
               </v-card-title>
 
               <v-card-subtitle style="font-weight: bold">{{
@@ -127,30 +139,119 @@
               <v-card-actions>
                 <v-spacer> </v-spacer>
 
-                <v-btn
+          
+                 <v-btn
+                 small
                   rounded
                   class="mr-4 mb-2 my-4"
                   color="green"
                   dark
                   style="font-weight: bold"
-                  @click="createLessonDialog = true"
+                  @click="createMultipleQuestionDialog = true"
                 >
                   <v-icon left>mdi-plus</v-icon>
 
-                  Create Lesson
+                  Add Question
                 </v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
 
-   
+       <v-row>
 
+ 
+
+           <v-col cols="12"  md="3" lg="3" sm="6" v-for="(item, index) in quizDetail.questions" :key="item.id"   >
+          
+              <v-card>
+                   <v-progress-linear v-if="item.question_type == 1"
+              
+                  color="green darken-1"
+                  value="100"
+             >
+
+
+             </v-progress-linear>
+
+              <v-progress-linear v-if="item.question_type == 2"
+                              value="100"
+                  color="yellow darken-2"
+             >
+
+
+             </v-progress-linear>
+             
+                <v-card-title>
+                       Number : {{ index+1 }}   <v-spacer/> <v-menu class="ml-4" offset-y transition="slide-y-transition" bottom>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn color="black" v-bind="attrs" v-on="on" icon>
+                      <v-icon>mdi-dots-vertical</v-icon>
+                    </v-btn>
+                  </template>
+
+                  <v-list>
+                    <v-list-item link @click="openEditQuestionDialog(item,index)">
+                      <v-list-item-title style="font-weight: bold">
+                        <v-icon>mdi-pencil</v-icon> Edit
+                        Question</v-list-item-title
+                      >
+                    </v-list-item>
+                    <nuxt-link  style="text-decoration:none"  :to="{
+                        name: 'teacher-classes-class-id-meeting-meetingid-quiz-quizid-correct_answer-questionid',
+                        params: {
+                          id: classDetail.id,
+                          meetingid: meetingDetail.id,
+                          quizid: meetingDetail.quiz.id,
+                          questionid: item.id,
+                        },
+                      }">
+                    <v-list-item link >
+                      <v-list-item-title style="font-weight: bold">
+                        <v-icon>mdi-check-outline</v-icon> Correct Answers</v-list-item-title
+                      >
+                    </v-list-item>
+                    </nuxt-link>
+                    <v-list-item link @click="openDeleteQuestionDialog(item)">
+                      <v-list-item-title style="font-weight: bold">
+                        <v-icon>mdi-delete</v-icon> Delete
+                        Question</v-list-item-title
+                      >
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+
+                </v-card-title>
+
+                <v-card-subtitle  v-if="item.question_type == 1">
+                Multiple Choice <v-btn target="_blank" :href="item.question_image" color="primary" rounded x-small v-if="item.question_image != null"> Image</v-btn>
+                       <br/>
+    
+                </v-card-subtitle>
+
+                <v-card-subtitle  v-if="item.question_type == 2">
+                Essay Question    <v-btn target="_blank" :href="item.question_image" color="primary" rounded x-small v-if="item.question_image != null"> Image</v-btn>
+                <br/>
 
     
 
+                </v-card-subtitle>
+                
 
-       
+
+
+              </v-card>
+
+
+             
+           </v-col> 
+
+
+
+   
+       </v-row>
+
+   
       </v-flex>
 
       <div class="text-center">
@@ -165,243 +266,82 @@
         </v-snackbar>
       </div>
 
-      <v-dialog v-model="editMeetingDialog" persistent max-width="500">
-        <v-card>
-          <v-toolbar color="primary" dark>
-            <v-card-title style="font-weight: bold" class="headline">
-              Edit Meeting
-            </v-card-title>
+  
 
-            <v-spacer />
+   <div class="text-center">
+    <v-dialog
+      v-model="isLoading"
 
-            <v-btn @click="closeDialog" color="white" icon>
-              <v-icon>mdi-close-thick</v-icon>
-            </v-btn>
-          </v-toolbar>
-
+      persistent
+      width="300"
+    >
+      <v-card
+        color="primary"
+        dark
+      >
+        <v-card-text>
+          Please Wait...
           <v-progress-linear
-            v-if="isLoading == true"
             indeterminate
-            color="cyan"
+            color="white"
+            class="mb-0"
           ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+  </div>
 
-          <validation-observer ref="observer" v-slot="{ invalid }">
-            <form @submit.prevent="editClassMeeting">
-              <v-card-text>
-                <v-col cols="12">
-                  <validation-provider
-                    v-slot="{ errors }"
-                    name="Meeting Name"
-                    rules="required"
-                  >
-                    <v-text-field
-                      :counter="35"
-                      :error-messages="errors"
-                      label="Meeting Name"
-                      required
-                      prepend-icon="mdi-pencil"
-                      outlined
-                      dense
-                      v-model="meetingPayload.name"
-                    ></v-text-field>
-                  </validation-provider>
-                </v-col>
 
-                <v-col cols="12">
-                  <validation-provider
-                    v-slot="{ errors }"
-                    name="Meeting Date"
-                    rules="required"
-                  >
-                    <v-menu
-                      v-model="menu"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      transition="scale-transition"
-                      offset-y
-                      min-width="auto"
-                    >
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-text-field
-                          :error-messages="errors"
-                          v-model="meetingPayload.date"
-                          label="Meeting Date"
-                          prepend-icon="mdi-calendar"
-                          dense
-                          outlined
-                          readonly
-                          v-bind="attrs"
-                          v-on="on"
-                        ></v-text-field>
-                      </template>
-                      <v-date-picker
-                        v-model="meetingPayload.date"
-                        @input="menu = false"
-                        :min="new Date().toISOString().substr(0, 10)"
-                      ></v-date-picker>
-                    </v-menu>
-                  </validation-provider>
-                </v-col>
+       
 
-                <v-col cols="12">
-                  <v-row>
-                    <v-col cols="6">
-                      <validation-provider
-                        v-slot="{ errors }"
-                        name="Meeting Start Time "
-                        rules="required"
-                      >
-                        <v-menu
-                          ref="menu"
-                          v-model="startMenu"
-                          :close-on-content-click="false"
-                          :nudge-right="40"
-                          :return-value.sync="meetingPayload.start_time"
-                          transition="scale-transition"
-                          offset-y
-                          max-width="290px"
-                          min-width="290px"
-                        >
-                          <template v-slot:activator="{ on, attrs }">
-                            <v-text-field
-                              v-model="meetingPayload.start_time"
-                              :error-messages="errors"
-                              label="Start Time"
-                              prepend-icon="mdi-clock-time-four-outline"
-                              dense
-                              outlined
-                              readonly
-                              v-bind="attrs"
-                              v-on="on"
-                              @change="meetingPayload.finish_time = null"
-                            ></v-text-field>
-                          </template>
-                          <v-time-picker
-                            v-if="startMenu"
-                            format="24hr"
-                            v-model="meetingPayload.start_time"
-                            full-width
-                            @click:minute="
-                              $refs.menu.save(meetingPayload.start_time)
-                            "
-                          ></v-time-picker>
-                        </v-menu>
-                      </validation-provider>
-                    </v-col>
-
-                    <v-col cols="6">
-                      <validation-provider
-                        v-show="meetingPayload.start_time != null"
-                        v-slot="{ errors }"
-                        name="Meeting Finish Time"
-                        rules="required"
-                      >
-                        <v-menu
-                          ref="menu2"
-                          v-model="finishMenu"
-                          :close-on-content-click="false"
-                          :nudge-right="40"
-                          :return-value.sync="meetingPayload.finish_time"
-                          transition="scale-transition"
-                          offset-y
-                          max-width="290px"
-                          min-width="290px"
-                        >
-                          <template v-slot:activator="{ on, attrs }">
-                            <v-text-field
-                              v-model="meetingPayload.finish_time"
-                              :error-messages="errors"
-                              label="Finish Time"
-                              prepend-icon="mdi-clock-time-four-outline"
-                              dense
-                              outlined
-                              readonly
-                              v-bind="attrs"
-                              v-on="on"
-                            ></v-text-field>
-                          </template>
-                          <v-time-picker
-                            v-if="finishMenu"
-                            format="24hr"
-                            v-model="meetingPayload.finish_time"
-                            :min="meetingPayload.start_time"
-                            full-width
-                            @click:minute="
-                              $refs.menu2.save(meetingPayload.finish_time)
-                            "
-                          ></v-time-picker>
-                        </v-menu>
-                      </validation-provider>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-card-text>
-              <v-card-actions
-                class="py-4 pb-4"
-                style="background-color: #e0e0e0"
-              >
-                <v-spacer></v-spacer>
-                <v-btn color="red darken-1" text @click="closeDialog">
-                  CANCEL
-                </v-btn>
-
-                <v-btn
-                  v-if="
-                    meetingPayload.date != null &&
-                    meetingPayload.start_time != null &&
-                    meetingPayload.finish_time != null
-                  "
-                  @click="editClassMeeting"
-                  :disabled="invalid"
-                  color="primary"
-                  class="py-4 pb-4"
-                >
-                  Edit
-                </v-btn>
-
-                <v-btn
-                  v-if="
-                    meetingPayload.date == null ||
-                    meetingPayload.start_time == null ||
-                    meetingPayload.finish_time == null
-                  "
-                  disabled
-                  color="primary"
-                  class="py-4 pb-4"
-                >
-                  Edit
-                </v-btn>
-              </v-card-actions>
-            </form>
-          </validation-observer>
-        </v-card>
-      </v-dialog>
-
-      <v-dialog v-model="deleteMeetingDialog" persistent max-width="450">
+      <v-dialog v-model="deleteQuizDialog" persistent max-width="450">
         <v-card>
-          <v-card-title class="headline"> Delete Meeting </v-card-title>
+          <v-card-title class="headline"> Delete Quiz </v-card-title>
           <v-card-text
-            >Apakah anda yakin ingin menghapus meeting
-            <code>{{ meetingDetail.name }}</code> dari kelas
-            <code>{{ classDetail.name }}</code> ?</v-card-text
+            >Apakah anda yakin ingin menghapus quiz
+            <code>{{ quizDetail.name }}</code> dari pertemuan
+            <code>{{ meetingDetail.name }}</code> ?</v-card-text
           >
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="grey darken-1" text @click="closeDialog">
               Batal
             </v-btn>
-            <v-btn color="red darken-1" text @click="deleteMeeting">
+            <v-btn color="red darken-1" text @click="deleteMeetingQuiz">
               Delete
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
 
-      <v-dialog v-model="createLessonDialog" persistent max-width="500">
+
+
+      <v-dialog v-model="deleteQuestionDialog" persistent max-width="450">
+        <v-card>
+          <v-card-title class="headline"> Delete Question </v-card-title>
+          <v-card-text
+            >Apakah anda yakin ingin menghapus pertanyaan ini dari quiz
+            <code>{{ quizDetail.name }} </code> ? </v-card-text
+          >
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="grey darken-1" text @click="closeDialog">
+              Batal
+            </v-btn>
+            <v-btn color="red darken-1" text @click="deleteQuizQuestion">
+              Delete
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+
+
+         <v-dialog v-model="createMultipleQuestionDialog" persistent max-width="600">
         <v-card>
           <v-toolbar color="primary" dark>
             <v-card-title style="font-weight: bold" class="headline">
-              Create Lesson
+              Create Question
             </v-card-title>
 
             <v-spacer />
@@ -418,69 +358,275 @@
           ></v-progress-linear>
 
           <validation-observer ref="observer" v-slot="{ invalid }">
-            <form @submit.prevent="createMeetingLesson">
+            <form @submit.prevent="createQuizMultipleQuestion">
               <v-card-text>
+                
+              
+
+                    <v-col class="mb-n5" cols="12">
+                 <validation-provider
+                        v-slot="{ errors }"
+                        name="Question Type"
+                        rules="required"
+                >
+                    <v-select
+                      label="Question Type"
+                      :error-messages="errors"
+                      :items="option"
+                       outlined
+                      persistent-hint
+                         item-text="text"
+                      item-value="value"
+                      v-model="multipleQuestionPayload.question_type"
+                    ></v-select>
+
+
+                       </validation-provider>
+                    </v-col>
+                
+
+
+                <v-col class="my-n5" align="center" cols="12">
+                  <v-card-subtitle style="text-center; font-weight:bold" >Gambar Soal</v-card-subtitle>
+                             <v-card             v-if="previewImage"> 
+                        <b-img
+             
+                         blank-color="#777"
+                          center
+                    fluid
+                          blank-src="https://picsum.photos/id/11/100/60"
+                           
+                          :src="previewImage"
+                    
+                          :v-model="previewImage"
+                        />
+                        <v-card-subtitle class="text-center">
+                        Gambar Yang Dipilih
+                        </v-card-subtitle>
+                             </v-card>
+                        <v-card            v-if="!previewImage"> 
+                        <b-img
+              
+                         blank-color="#777"
+                          center
+                          fluid
+                          src="@/static/images/class/noimage.jpg"
+                   
+                        />
+                         <v-card-subtitle class="text-center">
+                        Tidak Ada Gambar yang Dipilih
+                        </v-card-subtitle>
+                        </v-card>
+                   
+                    </v-col>
+
+
                 <v-col cols="12">
+
+                    <v-col cols="12">
+            
+                      <b-form-file
+                        ref="file"
+                        id="file"
+                        type="file"
+                        accept="image/*"
+                        @change="uploadImage"
+                      />
+                      <!-- </validation-provider> -->
+                    </v-col>
+
+                      <p class="sembunyi" id="dummyImage" ref="image" ></p>
+
+
                   <validation-provider
                     v-slot="{ errors }"
-                    name="Meeting Name"
+                    name="Quiz Question"
                     rules="required"
                   >
-                    <v-text-field
+                    <v-textarea
                       :counter="35"
                       :error-messages="errors"
-                      label="Lesson Name"
+                      label="Quiz Question"
+                      required
+                      auto-grow
+                      outlined
+                      dense
+                      v-model="multipleQuestionPayload.question"
+                    ></v-textarea>
+                  </validation-provider>
+                </v-col>
+
+
+
+              <div v-if="multipleQuestionPayload.question_type == 1"> 
+                <v-col cols="12" >
+                  <validation-provider
+                     
+                          name="Quiz Answer"
+                          rules="required"
+                        >
+                
+                    <input
+                      id="jawabanA"
+               
+                      
+                      type="radio"
+                      value="a"
+                      name="jawaban"
+                      v-model="multipleQuestionPayload.answer"
+                    /> A  <v-text-field
+
+                    class="textRadio"
+                      :counter="35"
+                      label="Answer A"
                       required
                       outlined
                       dense
-                      v-model="lessonPayload.name"
+                      v-model="multipleQuestionPayload.a"
                     ></v-text-field>
                   </validation-provider>
                 </v-col>
 
-                <v-col cols="12">
-                  <!-- <validation-provider
-                          v-slot="{ errors }"
-                          name="Meeting Name"
+
+                      <v-col cols="12">
+                  <validation-provider
+                     
+                          name="Quiz Answer"
                           rules="required"
-                        > -->
-                  <v-text-field
-                    label="Lesson Link"
-                    outlined
-                    dense
-                    placeholder="Ex : https://meet.google.com/zhe-etpo-jii"
-                    v-model="lessonPayload.link"
-                  ></v-text-field>
-                  <!-- </validation-provider> -->
+                        >
+                
+                    <input
+       
+                      id="jawabanB"
+                      type="radio"
+                      name="jawaban"
+                             value="b"
+                      v-model="multipleQuestionPayload.answer"
+                    /> B  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer B"
+                      required
+                      outlined
+                      dense
+                      v-model="multipleQuestionPayload.b"
+                    ></v-text-field>
+                  </validation-provider>
                 </v-col>
 
-                <v-col cols="12">
-                  <!-- <validation-provider
-                          v-slot="{ errors }"
-                          name="Meeting Name"
+                
+                
+
+
+         <v-col cols="12">
+                  <validation-provider
+                   
+                          name="Quiz Answer"
                           rules="required"
-                        > -->
-                  <v-text-field
-                    label="Youtube Link"
-                    outlined
-                    dense
-                    placeholder="Ex : https://www.youtube.com/watch?v=mBhqJam52rs"
-                    v-model="lessonPayload.youtube"
-                    @change="setYoutube(lessonPayload.youtube)"
-                  ></v-text-field>
-                  <!-- </validation-provider> -->
+                        >
+                
+                    <input
+                          
+                      id="jawabanC"
+                      type="radio"
+                      name="jawaban"
+                             value="c"
+                      v-model="multipleQuestionPayload.answer"
+                    /> C  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer C"
+                      required
+                      outlined
+                      dense
+                      v-model="multipleQuestionPayload.c"
+                    ></v-text-field>
+                  </validation-provider>
                 </v-col>
 
-                <div class="videoWrapper">
-                  <iframe
-                    class="py-2 px-2"
-                    width="300"
-                    height="180"
-                    :src="ytvid"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                </div>
+                         <v-col cols="12">
+                  <validation-provider
+         
+                          name="Quiz Answer"
+                          rules="required"
+                        >
+                
+                    <input
+                      
+                      id="jawabanD"
+                      type="radio"
+                      name="jawaban"
+                             value="d"
+                      v-model="multipleQuestionPayload.answer"
+                    /> D  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer D"
+                      required
+                      outlined
+                      dense
+                      v-model="multipleQuestionPayload.d"
+                    ></v-text-field>
+                  </validation-provider>
+                </v-col>
+                
+
+
+                         <v-col cols="12">
+                  <validation-provider
+                     
+                          name="Quiz Answer"
+                          rules="required"
+                        >
+                
+                    <input
+                      id="jawabanE"
+                      type="radio"
+                      name="jawaban"
+                                 
+                             value="e"
+                      v-model="multipleQuestionPayload.answer"
+                    /> E  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer E"
+                      required
+                      outlined
+                      dense
+                      v-model="multipleQuestionPayload.e"
+                    ></v-text-field>
+                  </validation-provider>
+                </v-col>
+
+              </div>
+
+
+ <div v-if="multipleQuestionPayload.question_type == 2"> 
+                <v-col cols="12" >
+
+                         <validation-provider
+                    v-slot="{ errors }"
+                    name="Quiz Essay Answer"
+                
+                  >
+                    <v-textarea
+                      :counter="35"
+                      :error-messages="errors"
+                      label="Quiz Essay Answer"
+                      placeholder="Tidak Wajib Di isi, Anda Harus tetap menilai soal essay secara manual di sistem"
+                      required
+                      auto-grow
+                      outlined
+                      dense
+                      v-model="multipleQuestionPayload.essay_answer"
+                    ></v-textarea>
+                  </validation-provider>
+                 
+                </v-col>
+
+              </div>
+
+              
               </v-card-text>
               <v-card-actions
                 class="py-4 pb-4"
@@ -492,7 +638,7 @@
                 </v-btn>
 
                 <v-btn
-                  @click="createMeetingLesson"
+                  @click="createQuizMultipleQuestion"
                   :disabled="invalid"
                   color="primary"
                   class="py-4 pb-4"
@@ -505,12 +651,15 @@
         </v-card>
       </v-dialog>
 
-      <v-dialog v-model="editLessonDialog" persistent max-width="500">
+
+
+
+           <v-dialog v-model="editQuestionDialog" persistent max-width="600">
         <v-card>
           <v-toolbar color="primary" dark>
-            <v-card-subtitle style="font-weight: bold; color: white">
-              Edit Lesson {{ selectedLesson.oldName }}
-            </v-card-subtitle>
+            <v-card-title style="font-weight: bold" >
+              Edit Question No {{selectedQuestionPayload.index+1}} 
+            </v-card-title>
 
             <v-spacer />
 
@@ -526,69 +675,275 @@
           ></v-progress-linear>
 
           <validation-observer ref="observer" v-slot="{ invalid }">
-            <form @submit.prevent="editMeetingLesson">
+            <form @submit.prevent="editQuizMultipleQuestion">
               <v-card-text>
+                
+              
+
+                    <v-col class="mb-n5" cols="12">
+                 <validation-provider
+                        v-slot="{ errors }"
+                        name="Question Type"
+                        rules="required"
+                >
+                    <v-select
+                      label="Question Type"
+                      :error-messages="errors"
+                      :items="option"
+                       outlined
+                      persistent-hint
+                         item-text="text"
+                      item-value="value"
+                      v-model="selectedQuestionPayload.question_type"
+                    ></v-select>
+
+
+                       </validation-provider>
+                    </v-col>
+                
+
+
+                <v-col class="my-n5" align="center" cols="12">
+                  <v-card-subtitle style="text-center; font-weight:bold" >Question Image</v-card-subtitle>
+                             <v-card             v-if="previewImage"> 
+                        <b-img
+             
+                         blank-color="#777"
+                          center
+                    fluid
+                          blank-src="https://picsum.photos/id/11/100/60"
+                           
+                          :src="previewImage"
+                    
+                          :v-model="previewImage"
+                        />
+                        <v-card-subtitle class="text-center">
+                        Selected Image
+                        </v-card-subtitle>
+                             </v-card>
+                        <v-card            v-if="!previewImage"> 
+                        <b-img
+              
+                         blank-color="#777"
+                          center
+                          fluid
+                          src="@/static/images/class/noimage.jpg"
+                   
+                        />
+                         <v-card-subtitle class="text-center">
+                        No Image Selected
+                        </v-card-subtitle>
+                        </v-card>
+                   
+                    </v-col>
+
+
                 <v-col cols="12">
+
+                    <v-col cols="12">
+            
+                      <b-form-file
+                        ref="file"
+                        id="file"
+                        type="file"
+                        accept="image/*"
+                        @change="uploadImage"
+                      />
+                      <!-- </validation-provider> -->
+                    </v-col>
+
+                      <p class="sembunyi" id="dummyImage" ref="image" ></p>
+
+
                   <validation-provider
                     v-slot="{ errors }"
-                    name="Meeting Name"
+                    name="Quiz Question"
                     rules="required"
                   >
-                    <v-text-field
+                    <v-textarea
                       :counter="35"
                       :error-messages="errors"
-                      label="Lesson Name"
+                      label="Quiz Question"
+                      required
+                      auto-grow
+                      outlined
+                      dense
+                      v-model="selectedQuestionPayload.question"
+                    ></v-textarea>
+                  </validation-provider>
+                </v-col>
+
+
+
+              <div v-if="selectedQuestionPayload.question_type == 1"> 
+                <v-col cols="12" >
+                  <validation-provider
+                     
+                          name="Quiz Answer"
+                          rules="required"
+                        >
+                
+                    <input
+                      id="jawabanA"
+               
+                      
+                      type="radio"
+                      value="a"
+                      name="jawaban"
+                      v-model="selectedQuestionPayload.answer"
+                    /> A  <v-text-field
+
+                    class="textRadio"
+                      :counter="35"
+                      label="Answer A"
                       required
                       outlined
                       dense
-                      v-model="selectedLesson.name"
+                      v-model="selectedQuestionPayload.a"
                     ></v-text-field>
                   </validation-provider>
                 </v-col>
 
-                <v-col cols="12">
-                  <!-- <validation-provider
-                          v-slot="{ errors }"
-                          name="Meeting Name"
+
+                      <v-col cols="12">
+                  <validation-provider
+                     
+                          name="Quiz Answer"
                           rules="required"
-                        > -->
-                  <v-text-field
-                    label="Lesson Link"
-                    outlined
-                    dense
-                    placeholder="Ex : https://meet.google.com/zhe-etpo-jii"
-                    v-model="selectedLesson.link"
-                  ></v-text-field>
-                  <!-- </validation-provider> -->
+                        >
+                
+                    <input
+       
+                      id="jawabanB"
+                      type="radio"
+                      name="jawaban"
+                             value="b"
+                      v-model="selectedQuestionPayload.answer"
+                    /> B  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer B"
+                      required
+                      outlined
+                      dense
+                      v-model="selectedQuestionPayload.b"
+                    ></v-text-field>
+                  </validation-provider>
                 </v-col>
 
-                <v-col cols="12">
-                  <!-- <validation-provider
-                          v-slot="{ errors }"
-                          name="Meeting Name"
+                
+                
+
+
+         <v-col cols="12">
+                  <validation-provider
+                   
+                          name="Quiz Answer"
                           rules="required"
-                        > -->
-                  <v-text-field
-                    label="Youtube Link"
-                    outlined
-                    dense
-                    placeholder="Ex : https://www.youtube.com/watch?v=mBhqJam52rs"
-                    v-model="selectedLesson.youtube"
-                    @change="setYoutube(selectedLesson.youtube)"
-                  ></v-text-field>
-                  <!-- </validation-provider> -->
+                        >
+                
+                    <input
+                          
+                      id="jawabanC"
+                      type="radio"
+                      name="jawaban"
+                             value="c"
+                      v-model="selectedQuestionPayload.answer"
+                    /> C  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer C"
+                      required
+                      outlined
+                      dense
+                      v-model="selectedQuestionPayload.c"
+                    ></v-text-field>
+                  </validation-provider>
                 </v-col>
 
-                <div class="videoWrapper">
-                  <iframe
-                    class="py-2 px-2"
-                    width="400"
-                    height="300"
-                    :src="ytvid"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                </div>
+                         <v-col cols="12">
+                  <validation-provider
+         
+                          name="Quiz Answer"
+                          rules="required"
+                        >
+                
+                    <input
+                      
+                      id="jawabanD"
+                      type="radio"
+                      name="jawaban"
+                             value="d"
+                      v-model="selectedQuestionPayload.answer"
+                    /> D  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer D"
+                      required
+                      outlined
+                      dense
+                      v-model="selectedQuestionPayload.d"
+                    ></v-text-field>
+                  </validation-provider>
+                </v-col>
+                
+
+
+                         <v-col cols="12">
+                  <validation-provider
+                     
+                          name="Quiz Answer"
+                          rules="required"
+                        >
+                
+                    <input
+                      id="jawabanE"
+                      type="radio"
+                      name="jawaban"
+                                 
+                             value="e"
+                      v-model="selectedQuestionPayload.answer"
+                    /> E  <v-text-field
+                                 class="textRadio"
+                      :counter="35"
+                      label="Answer E"
+                      required
+                      outlined
+                      dense
+                      v-model="selectedQuestionPayload.e"
+                    ></v-text-field>
+                  </validation-provider>
+                </v-col>
+
+              </div>
+
+
+ <div v-if="selectedQuestionPayload.question_type == 2"> 
+                <v-col cols="12" >
+
+                         <validation-provider
+                    v-slot="{ errors }"
+                    name="Quiz Essay Answer"
+                
+                  >
+                    <v-textarea
+                      :counter="35"
+                      :error-messages="errors"
+                      label="Quiz Essay Answer"
+                      placeholder="Tidak Wajib Di isi, Anda Harus tetap menilai soal essay secara manual di sistem"
+                      required
+                      auto-grow
+                      outlined
+                      dense
+                      v-model="selectedQuestionPayload.essay_answer"
+                    ></v-textarea>
+                  </validation-provider>
+                 
+                </v-col>
+
+              </div>
+
+              
               </v-card-text>
               <v-card-actions
                 class="py-4 pb-4"
@@ -600,7 +955,7 @@
                 </v-btn>
 
                 <v-btn
-                  @click="editMeetingLesson"
+                 @click="editQuizMultipleQuestion"
                   :disabled="invalid"
                   color="primary"
                   class="py-4 pb-4"
@@ -613,30 +968,46 @@
         </v-card>
       </v-dialog>
 
-      <v-dialog v-model="deleteLessonDialog" persistent max-width="450">
-        <v-card>
-          <v-card-title class="headline"> Delete Lesson </v-card-title>
-          <v-card-text
-            >Apakah anda yakin ingin menghapus materi
-            <code> {{ selectedLesson ? selectedLesson.name : "" }}</code> dari
-            pertemuan <code> {{ meetingDetail.name }}</code> ?</v-card-text
-          >
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="grey darken-1" text @click="closeDialog">
-              Batal
-            </v-btn>
-            <v-btn color="red darken-1" text @click="deleteMeetingLesson">
-              Delete
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+
+    
     </v-container>
   </v-layout>
 </template>
 
 <script>
+
+document.getElementById('file').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+
+  if (!file) {
+    return;
+  }
+
+  new Compressor(file, {
+    quality: 0.2,
+
+    // The compression process is asynchronous,
+    // which means you have to access the `result` in the `success` hook function.
+    success(result) {
+  
+                   const reader = new FileReader()
+                    reader.readAsDataURL(result);
+
+                    reader.onload = (e) => {
+                      this.previewImage = e.target.result;
+                      console.log(this.previewImage);
+                    }
+
+    },
+    error(err) {
+      console.log(err.message);
+    },
+  });
+});
+</script>
+
+<script>
+
 import { required, numeric } from "vee-validate/dist/rules";
 import {
   extend,
@@ -679,52 +1050,59 @@ export default {
     await Promise.all([
       store.dispatch("teacher/getMeetingDetailData", params),
       store.dispatch("teacher/getClassDetailData", params.id),
+      store.dispatch("teacher/getQuizDetailData", params),
+            
     ]);
     return;
   },
   data() {
     return {
-      meetingPayload: {
-        class_id: this.$store.state.teacher.classDetail.id,
-        meeting_id: this.$store.state.teacher.meetingDetail.id,
-        name: this.$store.state.teacher.meetingDetail.name,
-        date: this.$store.state.teacher.meetingDetail.date,
-        start_time: this.$store.state.teacher.meetingDetail.start_time,
-        finish_time: this.$store.state.teacher.meetingDetail.finish_time,
-      },
-      lessonPayload: {
-        class_id: this.$store.state.teacher.classDetail.id,
-        meeting_id: this.$store.state.teacher.meetingDetail.id,
-        name: null,
-        link: null,
-        youtube: null,
-      },
-      selectedLesson: {
-        class_id: this.$store.state.teacher.classDetail.id,
-        meeting_id: this.$store.state.teacher.meetingDetail.id,
-        id: null,
-        name: null,
-        link: null,
-        youtube: null,
-        oldName: null,
-      },
-
-      ytvid: "https://www.youtube.com/embed/",
-      finishMenu: false,
-      startMenu: false,
       menu: false,
       snackbar: false,
       text: false,
       isLoaded: false,
-      deleteMeetingDialog: false,
-      editMeetingDialog: false,
-      createLessonDialog: false,
-      editLessonDialog: false,
-      deleteLessonDialog: false,
       isLoading: false,
-      showLessons: true,
-      showAttendances: false,
-      showAttemps: false,
+      deleteQuizDialog: false,
+      previewImage: null,
+      imageContainer: null,
+      createMultipleQuestionDialog: false,
+      deleteQuestionDialog: false,
+      editQuestionDialog: false,
+      option: [
+        { text: "Multiple Choice", value: 1 },
+        { text: "Essay", value: 2 },
+      ],
+      quizPayload: {
+          id: this.$store.state.teacher.quizDetail.id,
+          name: this.$store.state.teacher.quizDetail.name, 
+          duration: this.$store.state.teacher.quizDetail.duration,
+      },
+      multipleQuestionPayload: {
+          quizid: this.$store.state.teacher.quizDetail.id,
+          question_type: 1,
+          question: null,
+          a: null,
+          b: null,
+          c: null,
+          d: null,
+          e: null,
+          answer: null,
+          question_image: null
+      },
+      selectedQuestionPayload: {
+          index: null,
+          quizid: this.$store.state.teacher.quizDetail.id,
+          id: null,
+          question_type: null,
+          question: null,
+          a: null,
+          b: null,
+          c: null,
+          d: null,
+          e: null,
+          answer: null,
+          question_image: null
+      },
       breadcrumbs: [
         {
           text: "Sanclass",
@@ -738,8 +1116,13 @@ export default {
         },
         {
           text: this.$store.state.teacher.meetingDetail.name,
+          disabled: false,
+          href: `/teacher/classes/class/${this.$store.state.teacher.classDetail.id}/meeting/${this.$store.state.teacher.meetingDetail.id}`,
+        },
+        {
+          text: this.$store.state.teacher.quizDetail.name,
           disabled: true,
-          href: `/teacher/classes/class/${this.$store.state.class.classDetail.id}/meeting/${this.$store.state.teacher.meetingDetail.id}`,
+          href: `/teacher/classes/class/${this.$store.state.teacher.classDetail.id}/meeting/${this.$store.state.teacher.meetingDetail.id}/quiz/${this.$store.state.teacher.quizDetail.id}`,
         },
       ],
     };
@@ -749,97 +1132,196 @@ export default {
   },
   computed: {
     ...mapState("teacher", {
+            classDetail: (state) => state.classDetail,
       meetingDetail: (state) => state.meetingDetail,
-      classDetail: (state) => state.classDetail,
+      quizDetail: (state) => state.quizDetail,
     }),
   },
   methods: {
-    lessons() {
-      this.showLessons = true;
-      this.showAttendances = false;
-      this.showAttemps = false;
-    },
-    attendances() {
-      this.showLessons = false;
-      this.showAttendances = true;
-      this.showAttemps = false;
-    },
-    attemps() {
-      this.showLessons = false;
-      this.showAttendances = false;
-      this.showAttemps = true;
-    },
+    
+  openEditQuestionDialog(item, index) {
+      this.selectedQuestionPayload.index = index;
+      this.editQuestionDialog = true;
+      this.selectedQuestionPayload.id = item.id;
+      this.selectedQuestionPayload.question_type = item.question_type;
+      this.selectedQuestionPayload.question = item.question;
+      this.selectedQuestionPayload.a = item.a;
+      this.selectedQuestionPayload.b = item.b;
+      this.selectedQuestionPayload.c = item.c;
+      this.selectedQuestionPayload.d = item.d;
+      this.selectedQuestionPayload.e = item.e;
+      this.previewImage = item.question_image;
+      this.selectedQuestionPayload.answer = item.answer;
+      this.selectedQuestionPayload.essay_answer = item.essay_answer;
 
-    openEditLessonDialog(item) {
-      this.editLessonDialog = true;
-      this.selectedLesson.id = item.id;
-      this.selectedLesson.name = item.name;
-      this.selectedLesson.link = item.link;
-      this.selectedLesson.youtube = item.youtube;
-      this.selectedLesson.oldName = item.name;
-
-      if (item.youtube != null) {
-        const id = getVideoId(item.youtube);
-
-        this.ytvid = "https://www.youtube.com/embed/" + id.id;
-      }
     },
 
-    openDeleteLessonDialog(item) {
-      this.selectedLesson.id = item.id;
-      this.selectedLesson.name = item.name;
-      this.selectedLesson.link = item.link;
-      this.selectedLesson.youtube = item.youtube;
-      this.selectedLesson.oldName = item.name;
-      this.deleteLessonDialog = true;
+    openDeleteQuestionDialog(item) {
+      this.deleteQuestionDialog = true;
+      this.selectedQuestionPayload.id = item.id;
+      this.selectedQuestionPayload.question_type = item.question_type;
+      this.selectedQuestionPayload.question = item.question;
+      this.selectedQuestionPayload.a = item.a;
+      this.selectedQuestionPayload.b = item.b;
+      this.selectedQuestionPayload.c = item.c;
+      this.selectedQuestionPayload.d = item.d;
+      this.selectedQuestionPayload.e = item.e;
+      this.selectedQuestionPayload.answer = item.answer;
+      this.selectedQuestionPayload.essay_answer = item.essay_answer;
+    },
+    
+    uploadImage(e) {
+      this.isLoading = true;
+      const image = e.target.files[0];
+
+   
+  if(image != null){
+
+        this.errors = null;
+        const reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.onload = (e) => {
+
+          this.previewImage = e.target.result;
+          console.log(this.previewImage);
+
+
+
+        };
+
+
+           $('#dummyImage').show();
+        // for (var i = 0; i < files.length; i++) {
+            var file = e.target.files[0];
+            // var imageType = /image.*/;
+            // if (!file.type.match(imageType)) {
+            //     continue;
+            // }
+
+
+
+           
+        
+            var img = document.getElementById("dummyImage");
+
+      
+            img.file = file;
+
+       
+
+            var pembaca = new FileReader();
+            pembaca.onload = (function (aImg) {
+                return function (e) {
+
+                const imgE = document.createElement("img")
+                  
+                        // console.log("Isi File :");
+                        // console.log(file);
+
+
+                        new Compressor(file, {
+                            quality: 0.2,
+                            success(result){
+                                var pembaca = new FileReader()
+                                pembaca.readAsDataURL(result);
+                                pembaca.onloadend = function() {
+                                    var base64data = pembaca.result;
+
+                                  console.log(base64data);
+
+                                  aImg.innerHTML = base64data;
+                          }
+
+
+                            },
+                            error(err){
+
+                                console.log(err.message);
+                            }
+                         
+
+
+                        })
+                    
+                };
+            })(img);
+            pembaca.readAsDataURL(file);
+
+
+        }
+             
+                   this.isLoading = false;
+   
     },
 
-    setYoutube(link) {
-      const id = getVideoId(link);
+    cobaConsole(){
 
-      this.ytvid = "https://www.youtube.com/embed/" + id.id;
+        var coba = document.getElementById('dummyImage').innerHTML;
+
+        console.log(coba)
+
+    },
+
+    previewImageQuestion(e){
+        const file = e.target.files[0];
+
+          new Compressor(file, {
+              quality: 0.2,
+
+              success(result) {
+
+                   const reader = new FileReader()
+                    reader.readAsDataURL(result);
+
+                    reader.onload = (e) => {
+                      this.previewImage = e.target.result;
+                      console.log(this.previewImage);
+
+                   
+
+        }
+
+                    //  reader.onloadend = (e) => function() {
+                
+                    
+                        
+
+                    //  }
+
+               
+              },
+              error(err) {
+                console.log(err.message);
+              },
+          });
     },
 
     ...mapActions("teacher", [
-      "getMeetingDetailData",
-      "editMeetingDetail",
-      "deleteClassMeeting",
-      "createLesson",
-      "editLesson",
-      "deleteLesson",
+  
+                "deleteQuiz",
+                "createQuiz",
+                "createQuizQuestion",
+                "deleteQuestion",
+                "editQuizQuestion",
+
+
     ]),
-    convert(date) {
-      var full = new Date(date);
 
-      return full.setHours(0, 0, 0, 0);
-    },
-    closeDialog() {
-      this.ytvid = "https://www.youtube.com/embed/";
-      this.editMeetingDialog = false;
-      this.deleteMeetingDialog = false;
-      this.createLessonDialog = false;
-      this.editLessonDialog = false;
-      this.deleteLessonDialog = false;
-    },
 
-    editClassMeeting() {
-      this.isLoading = true;
+    closeDialog(){
 
-      this.editMeetingDetail(this.meetingPayload)
-        .then((response) => {
-          this.closeDialog();
-          this.isLoading = false;
-          this.text = "Meeting Berhasil Diedit";
-          this.snackbar = true;
-        })
-        .catch((error) => {
-          this.isLoading = false;
-          this.text = error;
-          this.snackbar = true;
-        });
+this.deleteQuizDialog = false;
+this.createMultipleQuestionDialog = false;
+this.deleteQuestionDialog = false;
+this.editQuestionDialog = false;
+this.clearQuestionPayload();
+this.clearSelectedQuestionPayload();
+// this.editQuizDialog = false; 
+
+
     },
 
-    deleteMeeting() {
+     deleteMeetingQuiz() {
       this.$swal({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -850,7 +1332,7 @@ export default {
         confirmButtonText: "Yes, Delete It !",
       }).then((result) => {
         if (result.isConfirmed) {
-          this.deleteClassMeeting(this.meetingPayload)
+          this.deleteQuiz(this.$store.state.teacher.quizDetail.id)
             .then((response) => {
               this.closeDialog();
               this.$swal({
@@ -861,12 +1343,12 @@ export default {
                 toast: true,
                 timer: 3000,
                 showConfirmButton: false,
-                title: "Meeting Deleted Successfuly",
+                title: "Quiz Deleted Successfuly",
               });
               this.snackbar = true;
               this.$router.push(
                 "/teacher/classes/class/" +
-                  this.$store.state.teacher.classDetail.id
+                  this.$store.state.teacher.classDetail.id+ "/meeting/"+ this.$store.state.teacher.meetingDetail.id
               );
             })
             .catch((error) => {
@@ -880,69 +1362,320 @@ export default {
       });
     },
 
-    createMeetingLesson() {
+      deleteQuizQuestion() {
       this.isLoading = true;
 
-      this.createLesson(this.lessonPayload)
+      this.deleteQuestion(this.selectedQuestionPayload)
         .then((response) => {
-          this.lessonPayload.name = null;
-          this.lessonPayload.link = null;
-          this.lessonPayload.youtube = null;
+          this.clearSelectedQuestionPayload();
+            this.closeDialog();
+          this.isLoading = false;
+          this.text = "Soal Berhasil Dihapus";
+          this.snackbar = true;
+        })
+        .catch((error) => {
+          this.isLoading = false;
+          this.text = error;
+          this.snackbar = true;
+        });
+    },
+
+
+    clearQuestionPayload(){
+
+
+          this.multipleQuestionPayload.answer = null;
+          this.multipleQuestionPayload.question_type = 1;
+          this.multipleQuestionPayload.question = null;
+          this.multipleQuestionPayload.question_image = null;
+          this.multipleQuestionPayload.a = null;
+          this.multipleQuestionPayload.b = null;
+          this.previewImage = null;
+          this.multipleQuestionPayload.c = null;
+          this.multipleQuestionPayload.d = null;
+          this.multipleQuestionPayload.e = null;
+
+          if(document.getElementById('dummyImage').innerHTML != null){
+          document.getElementById('dummyImage').innerHTML = null;
+          }
+          
+
+
+    },
+
+
+
+    clearSelectedQuestionPayload(){
+
+          this.editQuestionDialog = false;
+          this.selectedQuestionPayload.id = null;
+          this.selectedQuestionPayload.answer = null;
+          this.selectedQuestionPayload.question_type = null;
+          this.selectedQuestionPayload.question = null;
+          this.selectedQuestionPayload.question_image = null;
+          this.selectedQuestionPayload.a = null;
+          this.selectedQuestionPayload.b = null;
+          this.previewImage = null;
+          this.selectedQuestionPayload.c = null;
+          this.selectedQuestionPayload.d = null;
+          this.selectedQuestionPayload.e = null;
+           if(document.getElementById('dummyImage').innerHTML != null){
+          document.getElementById('dummyImage').innerHTML = null;
+          }
+
+    },
+         createQuizMultipleQuestion() {
+      this.isLoading = true;
+
+      var file = document.getElementById('dummyImage').innerHTML;
+
+
+      if (file == null){
+
+
+      if(this.multipleQuestionPayload.question_type == 1){
+
+        
+
+        this.multipleQuestionPayload.essay_answer = null,
+
+
+      this.createQuizQuestion(this.multipleQuestionPayload)
+        .then((response) => {
           this.closeDialog();
           this.isLoading = false;
-          this.text = "Materi Berhasil Dibuat";
+          this.text = "Soal Berhasil Dibuat";
           this.snackbar = true;
+
+
+            this.clearQuestionPayload();
+
+
         })
         .catch((error) => {
           this.isLoading = false;
           this.text = error;
           this.snackbar = true;
         });
+
+      }else if (this.multipleQuestionPayload.question_type == 2) {
+
+               this.multipleQuestionPayload.a = null;
+                 this.multipleQuestionPayload.b = null;
+                   this.multipleQuestionPayload.c = null;
+                     this.multipleQuestionPayload.d = null;
+                     this.multipleQuestionPayload.e = null;
+                     this.multipleQuestionPayload.answer = null;
+
+          this.createQuizQuestion(this.multipleQuestionPayload)
+            .then((response) => {
+              this.closeDialog();
+              this.isLoading = false;
+              this.text = "Soal Berhasil Dibuat";
+              this.snackbar = true;
+
+                    
+                this.clearQuestionPayload();
+                
+            })
+            .catch((error) => {
+              this.isLoading = false;
+              this.text = error;
+              this.snackbar = true;
+            });
+      }
+
+        } else if(file != null){
+
+        this.multipleQuestionPayload.question_image = file;
+
+         if(this.multipleQuestionPayload.question_type == 1){
+
+        
+
+        this.multipleQuestionPayload.essay_answer = null,
+
+
+      this.createQuizQuestion(this.multipleQuestionPayload)
+        .then((response) => {
+          this.closeDialog();
+          this.isLoading = false;
+          this.text = "Soal Berhasil Dibuat";
+          this.snackbar = true;
+
+
+            this.clearQuestionPayload();
+
+
+        })
+        .catch((error) => {
+          this.isLoading = false;
+          this.text = error;
+          this.snackbar = true;
+        });
+
+      }else if (this.multipleQuestionPayload.question_type == 2) {
+
+               this.multipleQuestionPayload.a = null;
+                 this.multipleQuestionPayload.b = null;
+                   this.multipleQuestionPayload.c = null;
+                     this.multipleQuestionPayload.d = null;
+                     this.multipleQuestionPayload.e = null;
+                     this.multipleQuestionPayload.answer = null;
+
+          this.createQuizQuestion(this.multipleQuestionPayload)
+            .then((response) => {
+              this.closeDialog();
+              this.isLoading = false;
+              this.text = "Soal Berhasil Dibuat";
+              this.snackbar = true;
+
+                    
+                this.clearQuestionPayload();
+                
+            })
+            .catch((error) => {
+              this.isLoading = false;
+              this.text = error;
+              this.snackbar = true;
+            });
+      }
+
+
+
+                 }
     },
 
-    editMeetingLesson() {
+
+
+           editQuizMultipleQuestion() {
       this.isLoading = true;
 
-      this.editLesson(this.selectedLesson)
+      var file = document.getElementById('dummyImage').innerHTML;
+
+
+      if (file == null){
+
+
+      if(this.selectedQuestionPayload.question_type == 1){
+
+        
+
+        this.selectedQuestionPayload.essay_answer = null,
+
+
+      this.editQuizQuestion(this.selectedQuestionPayload)
         .then((response) => {
-          (this.selectedLesson.id = null),
-            (this.selectedLesson.name = null),
-            (this.selectedLesson.link = null),
-            (this.selectedLesson.youtube = null),
-            (this.selectedLesson.oldName = null),
-            this.closeDialog();
+          this.closeDialog();
           this.isLoading = false;
-          this.text = "Materi Berhasil Diedit";
+          this.text = "Soal Berhasil Diedit";
           this.snackbar = true;
+
+
+            this.clearSelectedQuestionPayload();
+
+
         })
         .catch((error) => {
           this.isLoading = false;
           this.text = error;
           this.snackbar = true;
         });
-    },
 
-    deleteMeetingLesson() {
-      this.isLoading = true;
+      }else if (this.selectedQuestionPayload.question_type == 2) {
 
-      this.deleteLesson(this.selectedLesson)
+               this.selectedQuestionPayload.a = null;
+                 this.selectedQuestionPayload.b = null;
+                   this.selectedQuestionPayload.c = null;
+                     this.selectedQuestionPayload.d = null;
+                     this.selectedQuestionPayload.e = null;
+                     this.selectedQuestionPayload.answer = null;
+
+          this.editQuizQuestion(this.selectedQuestionPayload)
+            .then((response) => {
+              this.closeDialog();
+              this.isLoading = false;
+              this.text = "Soal Berhasil Diedit";
+              this.snackbar = true;
+
+                    
+                this.clearSelectedQuestionPayload();
+                
+            })
+            .catch((error) => {
+              this.isLoading = false;
+              this.text = error;
+              this.snackbar = true;
+            });
+      }
+
+        } else if(file != null){
+
+        this.selectedQuestionPayload.question_image = file;
+
+         if(this.selectedQuestionPayload.question_type == 1){
+
+        
+
+        this.selectedQuestionPayload.essay_answer = null,
+
+
+      this.editQuizQuestion(this.selectedQuestionPayload)
         .then((response) => {
-          (this.selectedLesson.id = null),
-            (this.selectedLesson.name = null),
-            (this.selectedLesson.link = null),
-            (this.selectedLesson.youtube = null),
-            (this.selectedLesson.oldName = null),
-            this.closeDialog();
+          this.closeDialog();
           this.isLoading = false;
-          this.text = "Materi Berhasil Dihapus";
+          this.text = "Soal Berhasil Diedit";
           this.snackbar = true;
+
+
+            this.clearSelectedQuestionPayload();
+
+
         })
         .catch((error) => {
           this.isLoading = false;
           this.text = error;
           this.snackbar = true;
         });
+
+      }else if (this.selectedQuestionPayload.question_type == 2) {
+
+               this.selectedQuestionPayload.a = null;
+                 this.selectedQuestionPayload.b = null;
+                   this.selectedQuestionPayload.c = null;
+                     this.selectedQuestionPayload.d = null;
+                     this.selectedQuestionPayload.e = null;
+                     this.selectedQuestionPayload.answer = null;
+
+          this.editQuizQuestion(this.selectedQuestionPayload)
+            .then((response) => {
+              this.closeDialog();
+              this.isLoading = false;
+              this.text = "Soal Berhasil Diedit";
+              this.snackbar = true;
+
+                    
+                this.clearSelectedQuestionPayload();
+                
+            })
+            .catch((error) => {
+              this.isLoading = false;
+              this.text = error;
+              this.snackbar = true;
+            });
+      }
+
+
+
+                 }
     },
+
+
+
+  
   },
+
+
+
 };
 </script>

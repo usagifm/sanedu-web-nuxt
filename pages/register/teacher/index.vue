@@ -1017,6 +1017,9 @@ export default {
     uploadImage(e) {
       const image = e.target.files[0];
 
+
+        if(image != null){
+
       if (image["size"] < 1000000) {
         this.photoError = null;
         const reader = new FileReader();
@@ -1032,6 +1035,8 @@ export default {
         this.previewImage = null;
         document.getElementById("image").value = null;
       }
+
+        }
     },
 
     chain() {

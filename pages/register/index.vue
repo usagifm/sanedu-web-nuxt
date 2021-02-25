@@ -195,6 +195,23 @@ export default {
     },
 
     mounted() {
+        if(this.$auth.loggedIn){
+
+
+          if(this.$auth.$state.user.is_teacher == 0){
+
+            this.$router.push('/student');
+
+          }
+
+
+          if(this.$auth.$state.user.is_teacher == 1){
+
+            this.$router.push('/teacher');
+
+          }
+
+        }
 
    
 

@@ -147,6 +147,13 @@
     "_name": "_8f2aa792"
   },
   {
+    "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid-correct_answer-questionid",
+    "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/correct_answer/:questionid",
+    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index",
+    "_name": "_3adc4690"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/index.vue",

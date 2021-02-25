@@ -25,6 +25,7 @@ const _2674c7f0 = () => interopDefault(import('../pages/student/classes/class/_i
 const _78ece538 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index" */))
 const _b392024e = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index" */))
 const _8f2aa792 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index" */))
+const _3adc4690 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index" */))
 const _3c0e261e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -127,6 +128,10 @@ export const routerOptions = {
     path: "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/attempt/:attemptid",
     component: _8f2aa792,
     name: "teacher-classes-class-id-meeting-meetingid-quiz-quizid-attempt-attemptid"
+  }, {
+    path: "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/correct_answer/:questionid",
+    component: _3adc4690,
+    name: "teacher-classes-class-id-meeting-meetingid-quiz-quizid-correct_answer-questionid"
   }, {
     path: "/",
     component: _3c0e261e,

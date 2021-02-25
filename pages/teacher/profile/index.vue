@@ -112,7 +112,7 @@
                   <v-icon>mdi-circle-edit-outline</v-icon>
                 </v-btn>
               </h6>
-              <h6 class="mb-7">{{ this.$auth.$state.user.email }}</h6>
+              <v-list-item-subtitle class="mb-7">{{ this.$auth.$state.user.email }}</v-list-item-subtitle>
 
               <h6 class="bold">TANGGAL LAHIR</h6>
               <h6>{{ this.$auth.$state.user.birth_date }}</h6>
@@ -1044,6 +1044,7 @@ export default {
     uploadImage(e) {
       const image = e.target.files[0];
 
+  if(image != null){
       if (image["size"] < 1000000) {
                 this.errors = null;
         const reader = new FileReader();
@@ -1059,6 +1060,8 @@ export default {
         this.previewImage = null;
         document.getElementById("image").value = null;
       }
+
+  }
     },
 
     save(date) {

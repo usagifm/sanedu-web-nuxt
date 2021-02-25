@@ -64,7 +64,7 @@
           <v-col align="left" cols="12">
             <v-card color="teal" dark>
               <v-app-bar flat color="rgba(0, 0, 0, 0)">
-                <v-icon color="white">mdi-calendar</v-icon>
+                <v-icon color="white">mdi-calendar</v-icon> <v-card-title style="font-weight:bolder" class="text-left"> Meeting </v-card-title>
 
                 <v-spacer></v-spacer>
 
@@ -123,18 +123,21 @@
               <v-card-actions>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on, attrs }">
-                    <!-- <nuxt-link
+                    <nuxt-link
+
+                      v-if="meetingDetail.quiz"
                       style="text-decoration: none"
                       :to="{
-                        name: 'teacher-classes-class-id-meeting-meetingid-quiz',
+                        name: 'teacher-classes-class-id-meeting-meetingid-quiz-quizid',
                         params: {
                           id: classDetail.id,
                           meetingid: meetingDetail.id,
+                          quizid: meetingDetail.quiz.id,
                         },
                       }"
-                    > -->
+                    >
                       <v-btn
-                        v-if="meetingDetail.quiz"
+                      
                         rounded
                         class="ml-2 mb-2 my-4"
                         color="primary"
@@ -146,7 +149,7 @@
 
                         Edit Quiz
                       </v-btn>
-                    <!-- </nuxt-link> -->
+                    </nuxt-link>
 
                     <!-- <v-btn
 
@@ -165,36 +168,27 @@
                     Edit Quiz
                     </v-btn> -->
                   </template>
-                  <span>Click to start quiz</span>
+                  <span>Click to edit quiz</span>
                 </v-tooltip>
 
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on, attrs }">
-                    <!-- <nuxt-link
-                      v-if="!meetingDetail.quiz"
-                      style="text-decoration: none"
-                      :to="{
-                        name:
-                          'teacher-classes-class-id-meeting-meetingid-quiz-result',
-                        params: {
-                          id: classDetail.id,
-                          meetingid: meetingDetail.id,
-                        },
-                      }"
-                    > -->
+
                       <v-btn
+
+                        v-if="meetingDetail.quiz == null"
                         rounded
                         class="ml-4 mb-2 my-4"
                         color="blue lighten-2"
                         dark
                         v-bind="attrs"
                         v-on="on"
+                        @click="createQuizDialog = true"
                       >
                         <v-icon left>mdi-pencil</v-icon>
 
                         Create Quiz
                       </v-btn>
-                    <!-- </nuxt-link> -->
                   </template>
                   <span>See Quiz Result</span>
                 </v-tooltip>
@@ -1017,6 +1011,96 @@
         </v-card>
       </v-dialog>
 
+
+
+
+      <v-dialog v-model="createQuizDialog" persistent max-width="500">
+        <v-card>
+          <v-toolbar color="primary" dark>
+            <v-card-title style="font-weight: bold" class="headline">
+              Create Quiz
+            </v-card-title>
+
+            <v-spacer />
+
+            <v-btn @click="closeDialog" color="white" icon>
+              <v-icon>mdi-close-thick</v-icon>
+            </v-btn>
+          </v-toolbar>
+
+          <v-progress-linear
+            v-if="isLoading == true"
+            indeterminate
+            color="cyan"
+          ></v-progress-linear>
+
+          <validation-observer ref="observer" v-slot="{ invalid }">
+            <form @submit.prevent="createMeetingQuiz">
+              <v-card-text>
+                <v-col cols="12">
+                  <validation-provider
+                    v-slot="{ errors }"
+                    name="Meeting Name"
+                    rules="required"
+                  >
+                    <v-text-field
+                      :counter="35"
+                      :error-messages="errors"
+                      label="Quiz Name"
+                      required
+                      outlined
+                      dense
+                      v-model="quizPayload.name"
+                    ></v-text-field>
+                  </validation-provider>
+                </v-col>
+
+                <v-col cols="12">
+                  <validation-provider
+                          v-slot="{ errors }"
+                          name="Quiz Duration"
+                          rules="required|numeric|"
+                        >
+                  <v-text-field
+                    label="Quiz Duration"
+                    :counter="4"
+                    :error-messages="errors"
+                    outlined
+                    dense
+                    placeholder="Dalam Menit, Contoh : 60"
+                    v-model="quizPayload.duration"
+                  ></v-text-field>
+                  </validation-provider>
+                </v-col>
+
+               
+
+              
+              </v-card-text>
+              <v-card-actions
+                class="py-4 pb-4"
+                style="background-color: #e0e0e0"
+              >
+                <v-spacer></v-spacer>
+                <v-btn color="red darken-1" text @click="closeDialog">
+                  CANCEL
+                </v-btn>
+
+                <v-btn
+                  @click="createMeetingQuiz"
+                  :disabled="invalid"
+                  color="primary"
+                  class="py-4 pb-4"
+                >
+                  Create
+                </v-btn>
+              </v-card-actions>
+            </form>
+          </validation-observer>
+        </v-card>
+      </v-dialog>
+
+
        <div class="text-center">
     <v-dialog
       v-model="isLoading"
@@ -1125,7 +1209,13 @@ export default {
         youtube: null,
         oldName: null,
       },
-
+      quizPayload: {
+          name: null,
+          duration: null,
+          meeting_id: this.$store.state.teacher.meetingDetail.id,
+          class_id: this.$store.state.teacher.classDetail.id,
+   
+      },
       ytvid: "https://www.youtube.com/embed/",
       finishMenu: false,
       startMenu: false,
@@ -1142,6 +1232,8 @@ export default {
       showLessons: true,
       showAttendances: false,
       showAttemps: false,
+      createQuizDialog: false,
+
       breadcrumbs: [
         {
           text: "Sanclass",
@@ -1224,6 +1316,7 @@ export default {
       "createLesson",
       "editLesson",
       "deleteLesson",
+      "createQuiz",
     ]),
     convert(date) {
       var full = new Date(date);
@@ -1237,6 +1330,7 @@ export default {
       this.createLessonDialog = false;
       this.editLessonDialog = false;
       this.deleteLessonDialog = false;
+      this.createQuizDialog = false
     },
 
     editClassMeeting() {
@@ -1360,6 +1454,34 @@ export default {
           this.snackbar = true;
         });
     },
+
+      createMeetingQuiz() {
+      this.isLoading = true;
+
+      this.createQuiz(this.quizPayload)
+        .then((response) => {
+          this.closeDialog();
+          this.isLoading = false;
+          this.text = "Quiz Berhasil Dibuat";
+          this.snackbar = true;
+
+          this.$router.push(
+                "/teacher/classes/class/" +
+                  this.$store.state.teacher.classDetail.id + "/meeting/" + this.$store.state.teacher.meetingDetail.id + "/quiz/" +response.data.id
+              );
+
+
+        })
+        .catch((error) => {
+          this.isLoading = false;
+          this.text = error;
+          this.snackbar = true;
+        });
+    },
+
+
   },
+
+  
 };
 </script>

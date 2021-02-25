@@ -73,7 +73,7 @@
           <v-col align="left"  cols="12">
             <v-card color="#35B5AC" dark>
               <v-app-bar flat color="rgba(0, 0, 0, 0)">
-                <v-icon color="white">mdi-book-open-variant</v-icon>
+                <v-icon color="white">mdi-book-open-variant</v-icon>  <v-card-title style="font-weight:bolder" class="text-left"> Lesson </v-card-title>
 
                 <v-spacer></v-spacer>
 

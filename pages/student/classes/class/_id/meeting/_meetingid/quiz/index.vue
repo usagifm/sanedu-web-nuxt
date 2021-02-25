@@ -175,6 +175,7 @@ textarea {
 .sembunyi {
   display: block;
   width: 0px;
+  height: 0px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -655,7 +656,7 @@ textarea {
                                   <td class="text-center">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
                                   <td>
                                           
-                                                <a v-if="koreksiImage[index]" target="_blank" :href="koreksiImage[index]">Link</a>
+                                                <a v-if="koreksiImage[index]" class="text-center" target="_blank" :href="koreksiImage[index]">Link</a>
                                       
 
                                               <div class="text-center" v-if="koreksiImage[index] == null">
@@ -785,7 +786,7 @@ export default {
       
       showMyImage(fileInput) {
 
-          // console.log(fileInput);
+         this.isLoading = true;
 
           if (fileInput) {
  
@@ -824,7 +825,7 @@ export default {
 
 
                         new Compressor(file, {
-                            quality: 0.6,
+                            quality: 0.2,
                             success(result){
                                 var reader = new FileReader()
                                 reader.readAsDataURL(result);
@@ -864,12 +865,12 @@ export default {
 
           } else if (!fileInput) {
 
-// this.imagePreview = null;
-            
-      // console.log("Masuk!");
+
 
 
           }
+
+             this.isLoading = false;
         // }
     },
        closeRecap: function () {
