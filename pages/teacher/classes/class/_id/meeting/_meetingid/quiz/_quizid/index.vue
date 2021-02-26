@@ -325,7 +325,7 @@ input[type="radio"]{
           >
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="grey darken-1" text @click="closeDialog">
+            <v-btn color="grey darken-1" text @click="deleteQuestionDialog = false;">
               Batal
             </v-btn>
             <v-btn color="red darken-1" text @click="deleteQuizQuestion">
