@@ -1367,7 +1367,7 @@ this.clearSelectedQuestionPayload();
 
       this.deleteQuestion(this.selectedQuestionPayload)
         .then((response) => {
-          this.clearSelectedQuestionPayload();
+          this.clearSelectedQuestionPayloadForDelete();
             this.closeDialog();
           this.isLoading = false;
           this.text = "Soal Berhasil Dihapus";
@@ -1424,6 +1424,24 @@ this.clearSelectedQuestionPayload();
           }
 
     },
+
+        clearSelectedQuestionPayloadForDelete(){
+
+          this.editQuestionDialog = false;
+          this.selectedQuestionPayload.id = null;
+          this.selectedQuestionPayload.answer = null;
+          this.selectedQuestionPayload.question_type = null;
+          this.selectedQuestionPayload.question = null;
+          this.selectedQuestionPayload.question_image = null;
+          this.selectedQuestionPayload.a = null;
+          this.selectedQuestionPayload.b = null;
+          this.previewImage = null;
+          this.selectedQuestionPayload.c = null;
+          this.selectedQuestionPayload.d = null;
+          this.selectedQuestionPayload.e = null;
+
+    },
+
          createQuizMultipleQuestion() {
       this.isLoading = true;
 
