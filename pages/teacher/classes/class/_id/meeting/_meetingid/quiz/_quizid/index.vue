@@ -1312,7 +1312,7 @@ export default {
 
 this.deleteQuizDialog = false;
 this.createMultipleQuestionDialog = false;
-this.deleteQuestionDialog = false;
+
 this.editQuestionDialog = false;
 this.clearQuestionPayload();
 this.clearSelectedQuestionPayload();
@@ -1368,7 +1368,7 @@ this.clearSelectedQuestionPayload();
       this.deleteQuestion(this.selectedQuestionPayload)
         .then((response) => {
           this.clearSelectedQuestionPayloadForDelete();
-            this.closeDialog();
+           this.deleteQuestionDialog = false;
           this.isLoading = false;
           this.text = "Soal Berhasil Dihapus";
           this.snackbar = true;
@@ -1435,7 +1435,6 @@ this.clearSelectedQuestionPayload();
           this.selectedQuestionPayload.question_image = null;
           this.selectedQuestionPayload.a = null;
           this.selectedQuestionPayload.b = null;
-          this.previewImage = null;
           this.selectedQuestionPayload.c = null;
           this.selectedQuestionPayload.d = null;
           this.selectedQuestionPayload.e = null;
