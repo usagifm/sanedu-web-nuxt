@@ -20,7 +20,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            
@@ -43,7 +43,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            
@@ -66,7 +66,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            
@@ -89,7 +89,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            
@@ -112,7 +112,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            
@@ -135,7 +135,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            
@@ -158,7 +158,7 @@ export const actions = {
 
         console.log(payload)
         return new Promise((resolve, reject) => {
-            this.$axios.post('/profile/edit', payload).then((response) => {
+            this.$axios.post('/sanclass/profile/edit', payload).then((response) => {
           
                resolve(response.data);
            

@@ -957,7 +957,7 @@ export default {
       var self = this;
 
       this.$axios
-        .post("/user/quiz/" + this.quizId + "/start")
+        .post("/sanquiz/user/quiz/" + this.quizId + "/start")
         .then((response) => {
           // console.log(response.data);
 
@@ -1195,7 +1195,7 @@ export default {
 
             
               this.$axios
-            .post("/user/quiz/" + this.quizId + "/answer/insert", payload)
+            .post("/sanquiz/user/quiz/" + this.quizId + "/answer/insert", payload)
             .then(function(response) {
 
                 if(response.data) {
@@ -1230,7 +1230,7 @@ export default {
                     answer_image : self.imagetemp }    
 
               this.$axios
-                .post("/user/quiz/" + this.quizId + "/answer/insert", payload)
+                .post("/sanquiz/user/quiz/" + this.quizId + "/answer/insert", payload)
             .then(function(response) {
 
                 if(response.data) {
@@ -1268,7 +1268,7 @@ export default {
                     answer_image : self.imagetemp }    
 
               this.$axios
-            .post("/user/quiz/" + this.quizId + "/answer/insert", payload)
+            .post("/sanquiz/user/quiz/" + this.quizId + "/answer/insert", payload)
             .then(function(response) {
 
                 if(response.data) {
@@ -1326,7 +1326,7 @@ export default {
             
 
              this.$axios
-            .post("/user/quiz/" + this.quizId + "/answer/update", payload)
+            .post("/sanquiz/user/quiz/" + this.quizId + "/answer/update", payload)
             .then(function(response) {
 
                 if(response.data) {
@@ -1360,7 +1360,7 @@ export default {
 
 
               this.$axios
-            .post("/user/quiz/" + this.quizId + "/answer/update", payload)
+            .post("/sanquiz/user/quiz/" + this.quizId + "/answer/update", payload)
             .then(function(response) {
 
                 if(response.data) {
@@ -1466,7 +1466,7 @@ export default {
             if (result.isConfirmed) {
 
              this.$axios
-            .post("/user/quiz/" + this.quizId + "/finish")
+            .post("/sanquiz/user/quiz/" + this.quizId + "/finish")
             .then((response) => {
               
        

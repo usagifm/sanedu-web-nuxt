@@ -35,7 +35,7 @@ export const actions = {
 
     getClassesData({ commit }){
         return new Promise((resolve, reject) => {
-            this.$axios.get('/user/classes').then((response) => {
+            this.$axios.get('/sanclass/user/classes').then((response) => {
                 commit('SET_CLASSES_DATA', response.data)
                 resolve()
 
@@ -47,8 +47,8 @@ export const actions = {
     },
     joinClass({ dispatch }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post('/user/search',payload).then((response) => {
-               this.$axios.get('user/class/'+response.data.id+'/register').then(() =>{
+            this.$axios.post('/sanclass/user/search',payload).then((response) => {
+               this.$axios.get('sanclass/user/class/'+response.data.id+'/register').then(() =>{
                dispatch('getClassesData');
                resolve(response);
 
@@ -75,7 +75,7 @@ export const actions = {
     },  
     unenrollFromClass({ dispatch }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/user/class/${payload}/resign`).then((response) => {
+            this.$axios.get(`/sanclass/user/class/${payload}/resign`).then((response) => {
           
                dispatch('getClassesData');
                resolve(response.data.message);
@@ -95,7 +95,7 @@ export const actions = {
     },
     getClassDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/user/class/${payload}`).then((response) => {
+            this.$axios.get(`/sanclass/user/class/${payload}`).then((response) => {
                 commit('SET_CLASS_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -111,7 +111,7 @@ export const actions = {
     },
     getClassMeetings({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/user/class/${payload}/meetings`).then((response) => {
+            this.$axios.get(`/sanclass/user/class/${payload}/meetings`).then((response) => {
                 commit('SET_CLASS_MEETINGS', response.data)
                 resolve()
 
@@ -130,7 +130,7 @@ export const actions = {
            
 
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/user/class/${payload}`).then((response) => {
+            this.$axios.get(`/sanclass/user/class/${payload}`).then((response) => {
                 commit('SET_CLASS_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -147,7 +147,7 @@ export const actions = {
 
     getMeetingDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/user/class/${payload.id}/meeting/${payload.meetingid}`).then((response) => {
+            this.$axios.get(`/sanquiz/user/class/${payload.id}/meeting/${payload.meetingid}`).then((response) => {
                 commit('SET_MEETING_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -165,11 +165,11 @@ export const actions = {
 
     getLessonDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/user/class/${payload.id}/meeting/${payload.meetingid}/lesson/${payload.lessonid}`).then((response) => {
+            this.$axios.get(`/sanclass/user/class/${payload.id}/meeting/${payload.meetingid}/lesson/${payload.lessonid}`).then((response) => {
 
 
 
-                this.$axios.post(`user/class/attendlesson/+${payload.lessonid}`).then(() =>{
+                this.$axios.post(`sanclass/user/class/attendlesson/+${payload.lessonid}`).then(() =>{
 
                     }).catch((error) =>{
 

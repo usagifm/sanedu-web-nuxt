@@ -1086,7 +1086,7 @@ export default {
     },
     regionData() {
 
-      this.$axios.setBaseURL("https://api.sanedu.id/");
+      this.$axios.setBaseURL("http://localhost:4000/");
 
       this.isLoading = true;
       this.regionDataPayload.province_id = this.provinceData.id;

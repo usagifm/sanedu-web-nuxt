@@ -42,7 +42,7 @@ export const actions = {
 
     getClassesData({ commit }){
         return new Promise((resolve, reject) => {
-            this.$axios.get('/teacher/class').then((response) => {
+            this.$axios.get('/sanclass/teacher/class').then((response) => {
                 commit('SET_CLASSES_DATA', response.data)
                 resolve()
 
@@ -54,7 +54,7 @@ export const actions = {
 
     createClass({ dispatch }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post('teacher/class/create',payload).then((response) => {
+            this.$axios.post('/sanclass/teacher/class/create',payload).then((response) => {
             
               
                 dispatch('getClassesData');
@@ -75,7 +75,7 @@ export const actions = {
     },
     deleteClass({ dispatch }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`teacher/class/delete/${payload}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/delete/${payload}`).then((response) => {
                dispatch('getClassesData');
                resolve(response.data.message);
            
@@ -94,7 +94,7 @@ export const actions = {
     },
     getClassDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload}`).then((response) => {
                 commit('SET_CLASS_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -112,7 +112,7 @@ export const actions = {
 
     editClassDetailData({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/class/edit/${payload.id}`, payload).then((response) => {
+            this.$axios.post(`/sanclass/teacher/class/edit/${payload.id}`, payload).then((response) => {
                 commit('SET_CLASS_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -133,7 +133,7 @@ export const actions = {
 
     createMeeting({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/class/${payload.id}/meeting/create`, payload).then((response) => {
+            this.$axios.post(`/sanclass/teacher/class/${payload.id}/meeting/create`, payload).then((response) => {
           
                 dispatch('getClassDetailData', payload.id)
                 resolve(response)
@@ -155,7 +155,7 @@ export const actions = {
 
     editMeeting({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/class/${payload.class_id}/meeting/edit/${payload.id}`, payload).then((response) => {
+            this.$axios.post(`/sanclass/teacher/class/${payload.class_id}/meeting/edit/${payload.id}`, payload).then((response) => {
           
                 dispatch('getClassDetailData', payload.class_id)
                 resolve(response)
@@ -178,7 +178,7 @@ export const actions = {
 
     deleteMeeting({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload.class_id}/meeting/delete/${payload.id}`, payload).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload.class_id}/meeting/delete/${payload.id}`, payload).then((response) => {
           
                 dispatch('getClassDetailData', payload.class_id)
                 resolve(response)
@@ -203,7 +203,7 @@ export const actions = {
     
     deleteStudent({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload.class_id}/students/delete/${payload.id}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload.class_id}/students/delete/${payload.id}`).then((response) => {
           
                 dispatch('getClassDetailData', payload.class_id)
                 resolve(response)
@@ -226,7 +226,7 @@ export const actions = {
 
     getMeetingDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload.id}/meeting/${payload.meetingid}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload.id}/meeting/${payload.meetingid}`).then((response) => {
                 commit('SET_MEETING_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -243,7 +243,7 @@ export const actions = {
 
     editMeetingDetail({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/class/${payload.class_id}/meeting/edit/${payload.meeting_id}`, payload).then((response) => {
+            this.$axios.post(`/sanclass/teacher/class/${payload.class_id}/meeting/edit/${payload.meeting_id}`, payload).then((response) => {
                 dispatch('getMeetingDetailDataForEditLesson', payload)
                 resolve(response)
 
@@ -264,7 +264,7 @@ export const actions = {
 
     deleteClassMeeting({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload.class_id}/meeting/delete/${payload.id}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload.class_id}/meeting/delete/${payload.id}`).then((response) => {
                 dispatch('getClassDetailData', payload.class_id)
                 resolve(response)
 
@@ -291,7 +291,7 @@ export const actions = {
 
     getMeetingDetailDataForEditLesson({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}`).then((response) => {
                 commit('SET_MEETING_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -310,7 +310,7 @@ export const actions = {
 
     createLesson({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}/lesson/create`, payload).then((response) => {
+            this.$axios.post(`/sanclass/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}/lesson/create`, payload).then((response) => {
           
                 dispatch('getMeetingDetailDataForEditLesson', payload)
                 resolve(response)
@@ -332,7 +332,7 @@ export const actions = {
 
     editLesson({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}/lesson/edit/${payload.id}`, payload).then((response) => {
+            this.$axios.post(`/sanclass/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}/lesson/edit/${payload.id}`, payload).then((response) => {
                 dispatch("getMeetingDetailDataForEditLesson", payload)
                 resolve(response)
 
@@ -352,7 +352,7 @@ export const actions = {
 
     deleteLesson({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}/lesson/delete/${payload.id}`).then((response) => {
+            this.$axios.get(`/sanclass/teacher/class/${payload.class_id}/meeting/${payload.meeting_id}/lesson/delete/${payload.id}`).then((response) => {
                 dispatch('getMeetingDetailDataForEditLesson', payload)
                 resolve(response)
 
@@ -374,7 +374,7 @@ export const actions = {
 
     getAttemptDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`teacher/quiz/${payload.quizid}/attempt/${payload.attemptid}`).then((response) => {
+            this.$axios.get(`/sanquiz/teacher/quiz/${payload.quizid}/attempt/${payload.attemptid}`).then((response) => {
                 commit('SET_ATTEMPT_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -392,7 +392,7 @@ export const actions = {
 
     createQuiz({ dispatch },payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/quiz/create`, payload).then((response) => {
+            this.$axios.post(`/sanquiz/teacher/quiz/create`, payload).then((response) => {
                 dispatch('getMeetingDetailDataForEditLesson', payload)
                 resolve(response)
 
@@ -413,7 +413,7 @@ export const actions = {
 
     getQuizDetailData({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`teacher/quiz/${payload.quizid}`).then((response) => {
+            this.$axios.get(`/sanquiz/teacher/quiz/${payload.quizid}`).then((response) => {
                 commit('SET_QUIZ_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -431,7 +431,7 @@ export const actions = {
 
     deleteQuiz({ commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`teacher/quiz/delete/${payload}`).then((response) => {
+            this.$axios.get(`/sanquiz/teacher/quiz/delete/${payload}`).then((response) => {
                 resolve(response)
 
             })
@@ -467,7 +467,7 @@ export const actions = {
 
     createQuizQuestion({ dispatch },payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/quiz/${payload.quizid}/create-question`, payload).then((response) => {
+            this.$axios.post(`/sanquiz/teacher/quiz/${payload.quizid}/create-question`, payload).then((response) => {
                 dispatch('getQuizDetailData', payload)
                 resolve(response)
 
@@ -487,7 +487,7 @@ export const actions = {
 
     deleteQuestion({ dispatch }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`teacher/quiz/${payload.quizid}/delete-question/${payload.id}`).then((response) => {
+            this.$axios.get(`/sanquiz/teacher/quiz/${payload.quizid}/delete-question/${payload.id}`).then((response) => {
                 dispatch('getQuizDetailData', payload)
                 resolve(response)
 
@@ -503,7 +503,7 @@ export const actions = {
 
     editQuizQuestion({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/quiz/${payload.quizid}/edit-question/${payload.id}}`, payload).then((response) => {
+            this.$axios.post(`/sanquiz/teacher/quiz/${payload.quizid}/edit-question/${payload.id}}`, payload).then((response) => {
                 dispatch('getQuizDetailData', payload)
                 resolve(response)
 
@@ -523,7 +523,7 @@ export const actions = {
 
     getCorrectAnswer({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.get(`/teacher/quiz/${payload.quizid}/get-essay-answer/${payload.questionid}`, payload).then((response) => {
+            this.$axios.get(`/sanquiz/teacher/quiz/${payload.quizid}/get-essay-answer/${payload.questionid}`, payload).then((response) => {
                 commit('SET_CORRECTANSWER_DETAIL_DATA', response.data)
                 resolve(response)
 
@@ -543,7 +543,7 @@ export const actions = {
 
     correctQuestionAnswer({ dispatch, commit }, payload){
         return new Promise((resolve, reject) => {
-            this.$axios.post(`/teacher/quiz/${payload.quizid}/correct-essay-answer/${payload.questionid}`, payload).then((response) => {
+            this.$axios.post(`/sanquiz/teacher/quiz/${payload.quizid}/correct-essay-answer/${payload.questionid}`, payload).then((response) => {
                 dispatch('getCorrectAnswer', payload)
                 resolve(response)
 

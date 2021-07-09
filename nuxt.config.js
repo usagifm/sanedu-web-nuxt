@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  target: 'server',
-  ssr: true,
+  target: 'static',
+  ssr: false,
   head: {
     title: 'SANEDU',
     meta: [
@@ -162,9 +162,9 @@ export default {
     strategies:{
       local:{
           endpoints: {
-              login: { url: '/login', method: 'post', propertyName: 'access_token'},
+              login: { url: '/sanclass/login', method: 'post', propertyName: 'access_token'},
               logout: false,
-              user: { url: '/profile', method: 'get',propertyName: '' },
+              user: { url: '/sanclass/profile', method: 'get',propertyName: '' },
           },
           tokenRequired: true,
           tokenType: 'Bearer'
@@ -179,7 +179,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: "https://api.sanedu.id/"
+    baseURL: "http://localhost:4000/"
 
   },
   router:{

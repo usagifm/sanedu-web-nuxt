@@ -1,0 +1,9 @@
+{
+    "eslint.codeAction.disableRuleComment": {
+        "enable": false
+    },
+    "eslint.options": {
+        "eslint.enable": false
+    },
+    "eslint.probe": []
+}

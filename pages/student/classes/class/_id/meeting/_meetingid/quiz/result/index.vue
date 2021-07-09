@@ -422,7 +422,7 @@ export default {
       if (this.$store.state.class.meetingDetail.attempt) {
         this.$axios
           .get(
-            "/user/attempts/" + this.$store.state.class.meetingDetail.attempt.id
+            "/sanquiz/user/attempts/" + this.$store.state.class.meetingDetail.attempt.id
           )
           .then((response) => {
             self.soals = response.data.quiz.questions;

@@ -156,7 +156,7 @@
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on, attrs }">
 
-                    <nuxt-link v-if="meetingDetail.attempt"  style="text-decoration: none"
+                    <nuxt-link v-if="meetingDetail.attempt != undefined"  style="text-decoration: none"
                         :to="{
                           name: 'student-classes-class-id-meeting-meetingid-quiz-result',
                           params: { id: classDetail.id, meetingid: meetingDetail.id },
