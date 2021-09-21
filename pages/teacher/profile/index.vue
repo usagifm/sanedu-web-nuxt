@@ -1086,7 +1086,7 @@ export default {
     },
     regionData() {
 
-      this.$axios.setBaseURL("http://localhost:4000/");
+      this.$axios.setBaseURL("http://34.117.208.101/");
 
       this.isLoading = true;
       this.regionDataPayload.province_id = this.provinceData.id;

@@ -23,7 +23,7 @@
           <v-list-item-avatar>
 
 
-            <img :src="require('@/static/images/landingpage/logo.png')" alt="Logo" />
+            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922067/images/landingpage/logo_xsbxxy.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">SANEDU</v-list-item-title>
@@ -93,7 +93,7 @@
       :class="{ expand: flat }"
     >
       <v-toolbar-title>
-        <v-img :src="require('@/static/images/landingpage/logolanding.png')" max-width="300px" />
+        <v-img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922296/img/logolanding_gtxprc.png" max-width="300px" />
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon

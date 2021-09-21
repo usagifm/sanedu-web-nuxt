@@ -124,7 +124,7 @@
                     >
                       <v-icon left>mdi-pencil</v-icon>
 
-                    Start Quiz
+                    Start Quiz ({{meetingDetail.quiz.duration}} min)
                     
                     </v-btn>
 
@@ -146,7 +146,7 @@
                     >
                       <v-icon left>mdi-pencil</v-icon>
 
-                    Start Quiz
+                    Start Quiz ({{meetingDetail.quiz.duration}} min)
                     </v-btn>
 
                   </template>

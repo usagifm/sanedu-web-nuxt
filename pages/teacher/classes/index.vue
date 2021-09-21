@@ -47,7 +47,7 @@
 
               <v-list-item-avatar tile size="80" color="white">
                 <img
-                  :src="require('@/static/images/sanedulogo.jpg')"
+                  src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922054/images/sanedulogo_qf1ohb.jpg"
                   class="rounded-circle"
                 />
               </v-list-item-avatar>

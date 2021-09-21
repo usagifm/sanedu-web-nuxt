@@ -422,7 +422,7 @@ textarea {
 
                   <v-card v-show="soal.question_type == 2" outlined class="pa-4">
    
-                          <label class="panel-body font-soal" >Jawaban Essay </label>
+                          <label class="panel-body font-soal" >Essay Answer</label>
                             <!-- <textarea style="width:90%;" class="form-control" placeholder="Masukan Jawaban Essay Anda !" id="essay" v-model="jawabanUser[indexSoal]" rows="3"></textarea>
                           -->
                             <v-textarea
@@ -436,7 +436,7 @@ textarea {
         ></v-textarea>
 
                         
-                            <label class="panel-body font-soal" >Jawaban Gambar </label>
+                            <label class="panel-body font-soal" >Image Answer </label>
                             <br>
 <!--                             
 
@@ -475,7 +475,8 @@ textarea {
 
                       <div v-if="koreksiImage[indexSoal]">
                             <b-img  center
-                    fluid style='width:50%; ' v-bind:src="koreksiImage[indexSoal]" />
+           
+                    fluid style='width:50%;border-radius: 5px; ' v-bind:src="koreksiImage[indexSoal]" />
 
                     </div>
 
@@ -552,14 +553,14 @@ textarea {
                             <tr>
                                 <th width="5px" class="text-center">No</th>
                                 <th class="text-center">Answer</th>
-                                <th class="text-center">Photo Answer</th>
+                                <th class="text-center">Image Answer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(soal, index) in soals"    :key="index">
                                 <td>{{ index+1 }}</td>
                                   <td class="text-center">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
-                                  <td>
+                                  <td class="text-center">
                                           
                                                 <a v-if="koreksiImage[index]" class="text-center" target="_blank" :href="koreksiImage[index]">Link</a>
                                       
@@ -647,14 +648,14 @@ textarea {
                             <tr>
                                 <th width="5px" class="text-center">No</th>
                                 <th class="text-center">Answer</th>
-                                <th class="text-center">Photo Answer</th>
+                                <th class="text-center">Image Answer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(soal, index) in soals"    :key="index">
                                 <td>{{ index+1 }}</td>
                                   <td class="text-center">{{ jawabanUser[index] == null ? "-" : jawabanUser[index] }}</td>
-                                  <td>
+                                  <td class="text-center">
                                           
                                                 <a v-if="koreksiImage[index]" class="text-center" target="_blank" :href="koreksiImage[index]">Link</a>
                                       
@@ -1440,7 +1441,7 @@ export default {
 			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 			const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 			
-			const timerHtml = "WAKTU : " + hours + ":" + minutes + ":" + seconds ;
+			const timerHtml = "TIME : " + hours + ":" + minutes + ":" + seconds ;
             self.timer = timerHtml;
 
                 }

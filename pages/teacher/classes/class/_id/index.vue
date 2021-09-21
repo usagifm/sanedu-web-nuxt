@@ -468,7 +468,7 @@
                  
                         <v-list-item-avatar>
                           <img
-                                src="@/static/images/profile/profile.png"
+                                src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922054/images/profile/profile_tlwd3z.png"
                           />
                         </v-list-item-avatar>
 

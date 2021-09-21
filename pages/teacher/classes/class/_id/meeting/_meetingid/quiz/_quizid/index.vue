@@ -158,6 +158,116 @@ input[type="radio"]{
           </v-col>
         </v-row>
 
+
+
+   <v-row>
+
+  <v-col cols="12">
+<v-card>
+
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th class="text-left">No</th>
+                      <th class="text-center">Type</th>
+                      <th class="text-center">Question</th>
+                      <th class="text-center">Answer Key</th>
+                      <th class="text-center">Question Image</th>
+                      <th class="text-center">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="(item, index) in quizDetail.questions" :key="item.id" 
+                    >
+                      <td>{{ index + 1 }}</td>
+                      <td>
+                         <div class="text-center" v-if="item.question_type == 1">
+                          Multiple Choice 
+                         </div>
+
+                         <div class="text-center" v-if="item.question_type == 2">
+                          Essay
+                         </div>
+
+                      </td>
+
+                       <td>
+                        
+                        {{ item.question}}
+             
+                      </td>
+
+                      <td>
+                        <div class="text-center" >
+                          {{ item.answer }}
+                        </div>
+                      </td>
+
+                    <td>
+                          <div class="text-center" >
+                       <v-btn target="_blank" :href="item.question_image" color="primary" rounded x-small v-if="item.question_image != null"> Image</v-btn>
+                          </div>
+                      </td>
+
+                       <td>
+                               <div class="text-center" >
+
+                                  <v-tooltip bottom>
+                          <template v-slot:activator="{ on, attrs }">
+                        <v-btn               v-bind="attrs"
+                              v-on="on" style="color:white; font-weight:bold" color="orange darken-1" rounded x-small @click="openEditQuestionDialog(item,index)" icon large >   <v-icon>mdi-pencil-circle</v-icon></v-btn>
+                            </template>
+                          <span>Edit Question</span>
+                        </v-tooltip>
+
+
+                                  <v-tooltip bottom>
+                          <template v-slot:activator="{ on, attrs }">
+                       <v-btn    v-bind="attrs"
+                              v-on="on"  style="color:white; font-weight:bold" color="red darken-1" rounded x-small @click="openDeleteQuestionDialog(item)" icon large >   <v-icon>mdi-delete-circle</v-icon></v-btn>
+                              </template>
+                          <span>Delete Question</span>
+                        </v-tooltip>
+
+                        <nuxt-link  v-if="item.question_type == 2"  style="text-decoration:none"  :to="{
+                        name: 'teacher-classes-class-id-meeting-meetingid-quiz-quizid-correct_answer-questionid',
+                        params: {
+                          id: classDetail.id,
+                          meetingid: meetingDetail.id,
+                          quizid: meetingDetail.quiz.id,
+                          questionid: item.id,
+                        },
+                      }">
+
+                                <v-tooltip bottom>
+                          <template v-slot:activator="{ on, attrs }">
+                    <v-btn    v-bind="attrs"
+                              v-on="on"  style="color:white; font-weight:bold" color="light-blue darken-2"  large icon><v-icon>mdi-check-circle</v-icon></v-btn>
+
+                           </template>
+                          <span>Correct Essay Answers</span>
+                        </v-tooltip>
+
+                    </nuxt-link>
+
+
+                               </div>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+      
+          </v-card>
+      </v-col>
+
+   </v-row>
+
+
+<!-- 
        <v-row>
 
  
@@ -249,7 +359,7 @@ input[type="radio"]{
 
 
    
-       </v-row>
+       </v-row> -->
 
    
       </v-flex>
@@ -405,14 +515,7 @@ input[type="radio"]{
                         </v-card-subtitle>
                              </v-card>
                         <v-card            v-if="!previewImage"> 
-                        <b-img
-              
-                         blank-color="#777"
-                          center
-                          fluid
-                          src="@/static/images/class/noimage.jpg"
-                   
-                        />
+                        
                          <v-card-subtitle class="text-center">
                         Tidak Ada Gambar yang Dipilih
                         </v-card-subtitle>
@@ -1334,7 +1437,6 @@ this.clearSelectedQuestionPayload();
         if (result.isConfirmed) {
           this.deleteQuiz(this.$store.state.teacher.quizDetail.id)
             .then((response) => {
-              this.closeDialog();
               this.$swal({
                 type: "success",
                 icon: "success",

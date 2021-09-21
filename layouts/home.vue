@@ -23,7 +23,7 @@
             </template>
 
             <template v-if="user.photo == null">
-              <img src="@/static/images/profile/profile.png" />
+              <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922054/images/profile/profile_tlwd3z.png" />
             </template>
           </v-list-item-avatar>
 
@@ -119,7 +119,7 @@
                 <template v-if="user.photo == null">
                   <img
                     color="grey"
-                    src="@/static/images/profile/profile.png"
+                    src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922054/images/profile/profile_tlwd3z.png"
                     class="rounded-circle"
                   />
                 </template>
@@ -155,7 +155,7 @@
 
                     <template v-if="user.photo == null">
               <v-avatar size="80" color="brown">
-                <img   src="@/static/images/profile/profile.png" alt="John" />
+                <img   src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922054/images/profile/profile_tlwd3z.png" alt="John" />
               </v-avatar>
               </template>
               <h6 class="mt-4 " style="font-weight:bold">{{ user.fullName.toUpperCase() }}</h6>

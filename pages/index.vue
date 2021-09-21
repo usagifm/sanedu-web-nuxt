@@ -4,7 +4,7 @@
             width: 100%;
             height: 100vh;
             position: relative;
-            background: #f5f8fd url("~@/static/images/landingpage/intro-bg2.jpg") center top no-repeat;
+            background: #f5f8fd url("https://res.cloudinary.com/douzspxoy/image/upload/v1626922070/images/landingpage/intro-bg2_zn8wwf.jpg") center top no-repeat;
             background-size: cover;
         }
 
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="col-md-6 intro-img order-md-last order-first">
-                    <img src="@/static/images/landingpage/pencilboy.png" alt="" class="img-fluid">
+                    <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922063/images/landingpage/pencilboy_ovj27e.png" alt="" class="img-fluid">
                 </div>
             </div>
 
@@ -115,7 +115,7 @@
 
                     <div class="col-lg-6">
                         <div class="why-us-img">
-                            <img src="@/static/images/landingpage/sanedumaskot.jpg" alt="" class="img-fluid">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/sanedumaskot_zwdxi8.jpg" alt="" class="img-fluid">
                         </div>
                     </div>
 
@@ -240,7 +240,7 @@
             <div class="container">
                 <div class="row feature-item mt-5 pt-5">
                     <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-                        <img src="@/static/images/landingpage/app.png" class="img-fluid" alt="">
+                        <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922058/images/landingpage/app_xqsfzq.png" class="img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
@@ -248,7 +248,7 @@
                         <p>
 
                         </p>
-                        <img type="image" src="@/assets/img/google-play-badge.png" alt="Submit" width="250" height="auto" >
+                        <img type="image" src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922299/img/google-play-badge_ldcubb.png" alt="Submit" width="250" height="auto" >
                     </div>
 
 
@@ -284,11 +284,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-tryout">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/tryout/tr1.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922063/images/landingpage/tryout/tr1_czvw3m.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Tryout</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/tryout/tr1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922063/images/landingpage/tryout/tr1_czvw3m.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -297,11 +297,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-event">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/event/ev1.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/event/ev1_abp6bc.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Event</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/event/ev1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/event/ev1_abp6bc.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -310,11 +310,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-saneducenter">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/saneducenter/sc1.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922058/images/landingpage/saneducenter/sc1_eec4fv.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Sanedu Center</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/saneducenter/sc1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922058/images/landingpage/saneducenter/sc1_eec4fv.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -323,11 +323,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-roadshow">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/roadshow/rs1.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922061/images/landingpage/roadshow/rs1_hdzgvy.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Roadshow</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/roadshow/rs1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922061/images/landingpage/roadshow/rs1_hdzgvy.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -336,11 +336,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-tryout">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/tryout/tr3.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922062/images/landingpage/tryout/tr3_wqgo8p.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Tryout</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/tryout/tr3.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922062/images/landingpage/tryout/tr3_wqgo8p.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -349,11 +349,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-event">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/event/ev3.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/event/ev3_qzudy8.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Event</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/event/ev3.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/event/ev3_qzudy8.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -362,11 +362,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-saneducenter">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/saneducenter/sc3.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922060/images/landingpage/saneducenter/sc3_xz2ixu.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Sanedu Center</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/saneducenter/sc3.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922060/images/landingpage/saneducenter/sc3_xz2ixu.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -375,11 +375,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-roadshow">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/roadshow/rs3.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922061/images/landingpage/roadshow/rs3_disvcn.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Roadshow</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/roadshow/rs3.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922061/images/landingpage/roadshow/rs3_disvcn.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -388,11 +388,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-tryout">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/tryout/tr2.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922062/images/landingpage/tryout/tr2_txvf4d.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Tryout</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/tryout/tr2.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922062/images/landingpage/tryout/tr2_txvf4d.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -401,11 +401,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-event" data-wow-delay="0.1s">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/event/ev2.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/event/ev2_a9w8mm.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Event</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/event/ev2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922071/images/landingpage/event/ev2_a9w8mm.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -414,11 +414,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-saneducenter" data-wow-delay="0.2s">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/saneducenter/sc2.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922059/images/landingpage/saneducenter/sc2_sayfsf.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Sanedu Center</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/saneducenter/sc2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922059/images/landingpage/saneducenter/sc2_sayfsf.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -427,11 +427,11 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-roadshow">
                         <div class="portfolio-wrap">
-                            <img src="@/static/images/landingpage/roadshow/rs2.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922059/images/landingpage/roadshow/rs2_pyoak2.jpg" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4><a href="#">Roadshow</a></h4>
                                 <div>
-                                    <a href="@/static/images/landingpage/roadshow/rs2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                                    <a href="https://res.cloudinary.com/douzspxoy/image/upload/v1626922059/images/landingpage/roadshow/rs2_pyoak2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
                                     <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                                 </div>
                             </div>
@@ -462,7 +462,7 @@
                         <div class="owl-carousel testimonials-carousel wow fadeInUp">
 
                             <div class="testimonial-item">
-                                <img src="@/static/images/landingpage/testimoni/testi1.jpg" class="testimonial-img" alt="">
+                                <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922064/images/landingpage/testimoni/testi1_scxlvf.jpg" class="testimonial-img" alt="">
                                 <h3>Ubay</h3>
                                 <h4>SMA ALkautsar (FKIP Biologi)</h4>
                                 <p>
@@ -471,7 +471,7 @@
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="@/static/images/landingpage/testimoni/testi2.jpg" class="testimonial-img" alt="">
+                                <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922065/images/landingpage/testimoni/testi2_m3rirn.jpg" class="testimonial-img" alt="">
                                 <h3>Eka</h3>
                                 <h4>SMA 2 Bandar Lampung (Manajemen) </h4>
                                 <p>
@@ -480,7 +480,7 @@
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="@/static/images/landingpage/testimoni/testi3.jpg" class="testimonial-img" alt="">
+                                <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922065/images/landingpage/testimoni/testi3_uujel7.jpg" class="testimonial-img" alt="">
                                 <h3>Cik Rafa</h3>
                                 <h4>SMA 1 Pringsewu (Biologi)</h4>
                                 <p>
@@ -489,7 +489,7 @@
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="@/static/images/landingpage/testimoni/testi4.jpg" class="testimonial-img" alt="">
+                                <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922065/images/landingpage/testimoni/testi4_xqvq4d.jpg" class="testimonial-img" alt="">
                                 <h3>Fika</h3>
                                 <h4>SMA 1 Bandar Sribhawono (Biologi)</h4>
                                 <p>
@@ -498,7 +498,7 @@
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="@/static/images/landingpage/testimoni/testi5.jpg" class="testimonial-img" alt="">
+                                <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922066/images/landingpage/testimoni/testi5_lkusdp.jpg" class="testimonial-img" alt="">
                                 <h3>Widya</h3>
                                 <h4>SMA 5 Bandar Lampung (Konseling) </h4>
                                 <p>
@@ -507,7 +507,7 @@
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="@/static/images/landingpage/testimoni/testi6.jpg" class="testimonial-img" alt="">
+                                <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922065/images/landingpage/testimoni/testi6_e2pr05.jpg" class="testimonial-img" alt="">
                                 <h3>Azalia</h3>
                                 <h4>SMA Alkautsar (Manajemen)</h4>
                                 <p>
@@ -537,7 +537,7 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp">
                         <div class="member">
-                            <img src="@/static/images/landingpage/team/ceo.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922066/images/landingpage/team/ceo_zrhefo.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Than</h4>
@@ -555,7 +555,7 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="member">
-                            <img src="@/static/images/landingpage/team/coo.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922067/images/landingpage/team/coo_wekocu.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Aprilia</h4>
@@ -573,7 +573,7 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="member">
-                            <img src="@/static/images/landingpage/team/cao.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922066/images/landingpage/team/cao_mb011j.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Zelda</h4>
@@ -591,7 +591,7 @@
 
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="member">
-                            <img src="@/static/images/landingpage/team/projectmanager.jpg" class="img-fluid" alt="">
+                            <img src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922067/images/landingpage/team/projectmanager_ex9e2m.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
                                     <h4>Febri</h4>

@@ -1000,7 +1000,7 @@ export default {
       this.payload.profile_image = this.previewImage;
       this.payload.is_teacher = 0;
 
-      this.$axios.setBaseURL("https://api.sanedu.id/");
+      this.$axios.setBaseURL("http://34.117.208.101/");
 
       this.registerAccount(this.payload)
 

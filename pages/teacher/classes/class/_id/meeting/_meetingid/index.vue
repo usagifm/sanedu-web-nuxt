@@ -457,7 +457,7 @@
                  
                         <v-list-item-avatar>
                           <img
-                                src="@/static/images/profile/profile.png"
+                                src="https://res.cloudinary.com/douzspxoy/image/upload/v1626922054/images/profile/profile_tlwd3z.png"
                           />
                         </v-list-item-avatar>
 
@@ -1041,10 +1041,10 @@
                   <validation-provider
                     v-slot="{ errors }"
                     name="Meeting Name"
-                    rules="required"
+                    rules="required|min:2|max:100"
                   >
                     <v-text-field
-                      :counter="35"
+                      :counter="100"
                       :error-messages="errors"
                       label="Quiz Name"
                       required
@@ -1059,11 +1059,11 @@
                   <validation-provider
                           v-slot="{ errors }"
                           name="Quiz Duration"
-                          rules="required|numeric|"
+                          rules="required|numeric|min:1|max:3|min_value:1"
                         >
                   <v-text-field
                     label="Quiz Duration"
-                    :counter="4"
+                    :counter="3"
                     :error-messages="errors"
                     outlined
                     dense
@@ -1130,7 +1130,7 @@
 </template>
 
 <script>
-import { required, numeric } from "vee-validate/dist/rules";
+import { required, numeric,min, max, min_value } from "vee-validate/dist/rules";
 import {
   extend,
   ValidationObserver,
@@ -1148,6 +1148,21 @@ extend("numeric", {
 extend("required", {
   ...required,
   message: "{_field_} can not be empty",
+});
+
+extend("min", {
+  ...min,
+  message: "{_field_} may not be less than {length} characters",
+});
+
+extend("min_value", {
+  ...min_value,
+  message: "{_field_} may not be less than 1 minute",
+});
+
+extend("max", {
+  ...max,
+  message: "{_field_} may not be more than {length} characters",
 });
 
 import { mapActions, mapState } from "vuex";

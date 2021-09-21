@@ -1,7 +1,11 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   target: 'static',
-  ssr: false,
+  ssr: true,
+  buildDir: 'nuxt-dist',
+  static: {
+    prefix: "/static"
+  },
   head: {
     title: 'SANEDU',
     meta: [
@@ -179,7 +183,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: "http://localhost:4000/"
+    baseURL: "http://localhost:4040/"
 
   },
   router:{
@@ -193,8 +197,8 @@ export default {
     transpile: [
       'vee-validate'
     ],
-    vendor: ['external_library']
-
+    vendor: ['external_library'],
+    publicPath: "http://sanedu-318313.et.r.appspot.com/"
     
   },
 

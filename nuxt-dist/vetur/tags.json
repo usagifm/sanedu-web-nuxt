@@ -1,0 +1,68 @@
+{
+  "AboutSection": {
+    "description": "Auto imported from components/AboutSection.vue"
+  },
+  "LazyAboutSection": {
+    "description": "Auto imported from components/AboutSection.vue"
+  },
+  "ContactSection": {
+    "description": "Auto imported from components/ContactSection.vue"
+  },
+  "LazyContactSection": {
+    "description": "Auto imported from components/ContactSection.vue"
+  },
+  "DownloadSection": {
+    "description": "Auto imported from components/DownloadSection.vue"
+  },
+  "LazyDownloadSection": {
+    "description": "Auto imported from components/DownloadSection.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "LazyFooter": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "HomeSection": {
+    "description": "Auto imported from components/HomeSection.vue"
+  },
+  "LazyHomeSection": {
+    "description": "Auto imported from components/HomeSection.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "LazyLogo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/Navigation.vue"
+  },
+  "LazyNavigation": {
+    "description": "Auto imported from components/Navigation.vue"
+  },
+  "PricingSection": {
+    "description": "Auto imported from components/PricingSection.vue"
+  },
+  "LazyPricingSection": {
+    "description": "Auto imported from components/PricingSection.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/layouts/Header.vue"
+  },
+  "LazyHeader": {
+    "description": "Auto imported from components/layouts/Header.vue"
+  },
+  "LandingHeader": {
+    "description": "Auto imported from components/layouts/LandingHeader.vue"
+  },
+  "LazyLandingHeader": {
+    "description": "Auto imported from components/layouts/LandingHeader.vue"
+  },
+  "Sidebar": {
+    "description": "Auto imported from components/layouts/Sidebar.vue"
+  },
+  "LazySidebar": {
+    "description": "Auto imported from components/layouts/Sidebar.vue"
+  }
+}
