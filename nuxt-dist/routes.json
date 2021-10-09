@@ -2,162 +2,139 @@
   {
     "name": "dashboard",
     "path": "/dashboard",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/dashboard/index.vue",
-    "chunkName": "pages/dashboard/index",
-    "_name": "_38003676"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/dashboard/index.vue",
+    "chunkName": "pages/dashboard/index"
   },
   {
     "name": "login",
     "path": "/login",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/login/index.vue",
-    "chunkName": "pages/login/index",
-    "_name": "_a01a1eea"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/login/index.vue",
+    "chunkName": "pages/login/index"
   },
   {
     "name": "register",
     "path": "/register",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/register/index.vue",
-    "chunkName": "pages/register/index",
-    "_name": "_77138357"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/register/index.vue",
+    "chunkName": "pages/register/index"
   },
   {
     "name": "student",
     "path": "/student",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/index.vue",
-    "chunkName": "pages/student/index",
-    "_name": "_2e1a6f1d"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/index.vue",
+    "chunkName": "pages/student/index"
   },
   {
     "name": "teacher",
     "path": "/teacher",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/index.vue",
-    "chunkName": "pages/teacher/index",
-    "_name": "_8691d7f8"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/index.vue",
+    "chunkName": "pages/teacher/index"
   },
   {
     "name": "register-student",
     "path": "/register/student",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/register/student/index.vue",
-    "chunkName": "pages/register/student/index",
-    "_name": "_35833f83"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/register/student/index.vue",
+    "chunkName": "pages/register/student/index"
   },
   {
     "name": "register-teacher",
     "path": "/register/teacher",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/register/teacher/index.vue",
-    "chunkName": "pages/register/teacher/index",
-    "_name": "_77c0372c"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/register/teacher/index.vue",
+    "chunkName": "pages/register/teacher/index"
   },
   {
     "name": "student-classes",
     "path": "/student/classes",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/index.vue",
-    "chunkName": "pages/student/classes/index",
-    "_name": "_56119174"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/index.vue",
+    "chunkName": "pages/student/classes/index"
   },
   {
     "name": "student-profile",
     "path": "/student/profile",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/profile/index.vue",
-    "chunkName": "pages/student/profile/index",
-    "_name": "_2bd5c992"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/profile/index.vue",
+    "chunkName": "pages/student/profile/index"
   },
   {
     "name": "teacher-classes",
     "path": "/teacher/classes",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/index.vue",
-    "chunkName": "pages/teacher/classes/index",
-    "_name": "_298a5f5b"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/classes/index.vue",
+    "chunkName": "pages/teacher/classes/index"
   },
   {
     "name": "teacher-profile",
     "path": "/teacher/profile",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/profile/index.vue",
-    "chunkName": "pages/teacher/profile/index",
-    "_name": "_84e42dc4"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/profile/index.vue",
+    "chunkName": "pages/teacher/profile/index"
   },
   {
     "name": "student-classes-taro dulu",
     "path": "/student/classes/taro%20dulu",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/taro dulu.vue",
-    "chunkName": "pages/student/classes/taro dulu",
-    "_name": "_20ef6b72"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/taro dulu.vue",
+    "chunkName": "pages/student/classes/taro dulu"
   },
   {
     "name": "student-classes-class-id",
     "path": "/student/classes/class/:id",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/index.vue",
-    "chunkName": "pages/student/classes/class/_id/index",
-    "_name": "_296b5e88"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/class/_id/index.vue",
+    "chunkName": "pages/student/classes/class/_id/index"
   },
   {
     "name": "teacher-classes-class-id",
     "path": "/teacher/classes/class/:id",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/index.vue",
-    "chunkName": "pages/teacher/classes/class/_id/index",
-    "_name": "_f73590a2"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/classes/class/_id/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/index"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid",
     "path": "/student/classes/class/:id?/meeting/:meetingid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/index",
-    "_name": "_57e35830"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/class/_id/meeting/_meetingid/index.vue",
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/index"
   },
   {
     "name": "teacher-classes-class-id-meeting-meetingid",
     "path": "/teacher/classes/class/:id?/meeting/:meetingid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/index.vue",
-    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/index",
-    "_name": "_34d38361"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/classes/class/_id/meeting/_meetingid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/index"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-quiz",
     "path": "/student/classes/class/:id?/meeting/:meetingid?/quiz",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/quiz/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/index",
-    "_name": "_6bc2f072"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/class/_id/meeting/_meetingid/quiz/index.vue",
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/index"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-quiz-result",
     "path": "/student/classes/class/:id?/meeting/:meetingid?/quiz/result",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index",
-    "_name": "_2674c7f0"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index.vue",
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index"
   },
   {
     "name": "student-classes-class-id-meeting-meetingid-lesson-lessonid",
     "path": "/student/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue",
-    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index",
-    "_name": "_78ece538"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue",
+    "chunkName": "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index"
   },
   {
     "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid",
     "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue",
-    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index",
-    "_name": "_b392024e"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index"
   },
   {
     "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid-attempt-attemptid",
     "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/attempt/:attemptid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue",
-    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index",
-    "_name": "_8f2aa792"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index"
   },
   {
     "name": "teacher-classes-class-id-meeting-meetingid-quiz-quizid-correct_answer-questionid",
     "path": "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/correct_answer/:questionid",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index.vue",
-    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index",
-    "_name": "_3adc4690"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index.vue",
+    "chunkName": "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/usagifm/Programming/kerja/sanedu-nuxt/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_3c0e261e"
+    "component": "/Users/ibm-jti/Kerja /Nuxt Sanedu/pages/index.vue",
+    "chunkName": "pages/index"
   }
 ]

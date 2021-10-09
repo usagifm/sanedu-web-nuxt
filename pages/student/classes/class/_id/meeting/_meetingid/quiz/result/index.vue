@@ -48,12 +48,9 @@ sub {
             >
 
             <v-fab-transition>
-               <nuxt-link
+               <a
               style="text-decoration: none"
-              :to="{
-                name: 'student-classes-class-id-meeting-meetingid',
-                params: { id: classDetail.id, meetingid: meetingDetail.id },
-              }"
+              v-bind:href="'/student/classes/class/'+ this.$store.state.class.classDetail.id+ '/meeting/' + this.$store.state.class.meetingDetail.id"
             >
                 <v-btn
                   v-show="!hidden"
@@ -67,7 +64,7 @@ sub {
                 >
                   <v-icon>mdi-arrow-left</v-icon>
                 </v-btn>
-                 </nuxt-link>
+                 </a>
               </v-fab-transition>
 
 
@@ -422,7 +419,7 @@ export default {
       if (this.$store.state.class.meetingDetail.attempt) {
         this.$axios
           .get(
-            "/sanquiz/user/attempts/" + this.$store.state.class.meetingDetail.attempt.id
+            "/user/attempts/" + this.$store.state.class.meetingDetail.attempt.id
           )
           .then((response) => {
             self.soals = response.data.quiz.questions;

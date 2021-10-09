@@ -1,11 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  target: 'static',
-  ssr: true,
-  buildDir: 'nuxt-dist',
-  static: {
-    prefix: "/static"
-  },
+  target: 'server',
+  ssr: false,
   head: {
     title: 'SANEDU',
     meta: [
@@ -166,9 +162,9 @@ export default {
     strategies:{
       local:{
           endpoints: {
-              login: { url: '/sanclass/login', method: 'post', propertyName: 'access_token'},
+              login: { url: '/login', method: 'post', propertyName: 'access_token'},
               logout: false,
-              user: { url: '/sanclass/profile', method: 'get',propertyName: '' },
+              user: { url: '/profile', method: 'get',propertyName: '' },
           },
           tokenRequired: true,
           tokenType: 'Bearer'
@@ -183,7 +179,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: "http://localhost:4040/"
+    baseURL: "https://www.api.sanedu.id/"
 
   },
   router:{
@@ -197,8 +193,6 @@ export default {
     transpile: [
       'vee-validate'
     ],
-    vendor: ['external_library'],
-    publicPath: "http://sanedu-318313.et.r.appspot.com/"
     
   },
 

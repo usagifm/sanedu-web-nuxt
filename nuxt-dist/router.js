@@ -4,29 +4,29 @@ import { normalizeURL, decode } from '@nuxt/ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _38003676 = () => interopDefault(import('../pages/dashboard/index.vue' /* webpackChunkName: "pages/dashboard/index" */))
-const _a01a1eea = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
-const _77138357 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
-const _2e1a6f1d = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
-const _8691d7f8 = () => interopDefault(import('../pages/teacher/index.vue' /* webpackChunkName: "pages/teacher/index" */))
-const _35833f83 = () => interopDefault(import('../pages/register/student/index.vue' /* webpackChunkName: "pages/register/student/index" */))
-const _77c0372c = () => interopDefault(import('../pages/register/teacher/index.vue' /* webpackChunkName: "pages/register/teacher/index" */))
-const _56119174 = () => interopDefault(import('../pages/student/classes/index.vue' /* webpackChunkName: "pages/student/classes/index" */))
-const _2bd5c992 = () => interopDefault(import('../pages/student/profile/index.vue' /* webpackChunkName: "pages/student/profile/index" */))
-const _298a5f5b = () => interopDefault(import('../pages/teacher/classes/index.vue' /* webpackChunkName: "pages/teacher/classes/index" */))
-const _84e42dc4 = () => interopDefault(import('../pages/teacher/profile/index.vue' /* webpackChunkName: "pages/teacher/profile/index" */))
-const _20ef6b72 = () => interopDefault(import('../pages/student/classes/taro dulu.vue' /* webpackChunkName: "pages/student/classes/taro dulu" */))
-const _296b5e88 = () => interopDefault(import('../pages/student/classes/class/_id/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/index" */))
-const _f73590a2 = () => interopDefault(import('../pages/teacher/classes/class/_id/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/index" */))
-const _57e35830 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/index" */))
-const _34d38361 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/index" */))
-const _6bc2f072 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/quiz/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/quiz/index" */))
-const _2674c7f0 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index" */))
-const _78ece538 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index" */))
-const _b392024e = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index" */))
-const _8f2aa792 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index" */))
-const _3adc4690 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index" */))
-const _3c0e261e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _ac818e5a = () => interopDefault(import('../pages/dashboard/index.vue' /* webpackChunkName: "pages/dashboard/index" */))
+const _66b8ad30 = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
+const _306c415a = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
+const _3cff368c = () => interopDefault(import('../pages/student/index.vue' /* webpackChunkName: "pages/student/index" */))
+const _701d09a1 = () => interopDefault(import('../pages/teacher/index.vue' /* webpackChunkName: "pages/teacher/index" */))
+const _c3e96af4 = () => interopDefault(import('../pages/register/student/index.vue' /* webpackChunkName: "pages/register/student/index" */))
+const _2ca7ef6d = () => interopDefault(import('../pages/register/teacher/index.vue' /* webpackChunkName: "pages/register/teacher/index" */))
+const _40aa9a11 = () => interopDefault(import('../pages/student/classes/index.vue' /* webpackChunkName: "pages/student/classes/index" */))
+const _56a3b858 = () => interopDefault(import('../pages/student/profile/index.vue' /* webpackChunkName: "pages/student/profile/index" */))
+const _142367f8 = () => interopDefault(import('../pages/teacher/classes/index.vue' /* webpackChunkName: "pages/teacher/classes/index" */))
+const _afb21c8a = () => interopDefault(import('../pages/teacher/profile/index.vue' /* webpackChunkName: "pages/teacher/profile/index" */))
+const _df2e44e2 = () => interopDefault(import('../pages/student/classes/taro dulu.vue' /* webpackChunkName: "pages/student/classes/taro dulu" */))
+const _42c7f236 = () => interopDefault(import('../pages/student/classes/class/_id/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/index" */))
+const _3995e00c = () => interopDefault(import('../pages/teacher/classes/class/_id/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/index" */))
+const _e950e72a = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/index" */))
+const _27c68838 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/index" */))
+const _490791cf = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/quiz/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/quiz/index" */))
+const _2293581a = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/quiz/result/index" */))
+const _c63d39d6 = () => interopDefault(import('../pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index.vue' /* webpackChunkName: "pages/student/classes/class/_id/meeting/_meetingid/lesson/_lessonid/index" */))
+const _33b21994 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/index" */))
+const _bb8dce8c = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/attempt/_attemptid/index" */))
+const _34838013 = () => interopDefault(import('../pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index.vue' /* webpackChunkName: "pages/teacher/classes/class/_id/meeting/_meetingid/quiz/_quizid/correct_answer/_questionid/index" */))
+const _1c68cf8e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -46,95 +46,95 @@ export const routerOptions = {
 
   routes: [{
     path: "/dashboard",
-    component: _38003676,
+    component: _ac818e5a,
     name: "dashboard"
   }, {
     path: "/login",
-    component: _a01a1eea,
+    component: _66b8ad30,
     name: "login"
   }, {
     path: "/register",
-    component: _77138357,
+    component: _306c415a,
     name: "register"
   }, {
     path: "/student",
-    component: _2e1a6f1d,
+    component: _3cff368c,
     name: "student"
   }, {
     path: "/teacher",
-    component: _8691d7f8,
+    component: _701d09a1,
     name: "teacher"
   }, {
     path: "/register/student",
-    component: _35833f83,
+    component: _c3e96af4,
     name: "register-student"
   }, {
     path: "/register/teacher",
-    component: _77c0372c,
+    component: _2ca7ef6d,
     name: "register-teacher"
   }, {
     path: "/student/classes",
-    component: _56119174,
+    component: _40aa9a11,
     name: "student-classes"
   }, {
     path: "/student/profile",
-    component: _2bd5c992,
+    component: _56a3b858,
     name: "student-profile"
   }, {
     path: "/teacher/classes",
-    component: _298a5f5b,
+    component: _142367f8,
     name: "teacher-classes"
   }, {
     path: "/teacher/profile",
-    component: _84e42dc4,
+    component: _afb21c8a,
     name: "teacher-profile"
   }, {
     path: "/student/classes/taro%20dulu",
-    component: _20ef6b72,
+    component: _df2e44e2,
     name: "student-classes-taro dulu"
   }, {
     path: "/student/classes/class/:id",
-    component: _296b5e88,
+    component: _42c7f236,
     name: "student-classes-class-id"
   }, {
     path: "/teacher/classes/class/:id",
-    component: _f73590a2,
+    component: _3995e00c,
     name: "teacher-classes-class-id"
   }, {
     path: "/student/classes/class/:id?/meeting/:meetingid",
-    component: _57e35830,
+    component: _e950e72a,
     name: "student-classes-class-id-meeting-meetingid"
   }, {
     path: "/teacher/classes/class/:id?/meeting/:meetingid",
-    component: _34d38361,
+    component: _27c68838,
     name: "teacher-classes-class-id-meeting-meetingid"
   }, {
     path: "/student/classes/class/:id?/meeting/:meetingid?/quiz",
-    component: _6bc2f072,
+    component: _490791cf,
     name: "student-classes-class-id-meeting-meetingid-quiz"
   }, {
     path: "/student/classes/class/:id?/meeting/:meetingid?/quiz/result",
-    component: _2674c7f0,
+    component: _2293581a,
     name: "student-classes-class-id-meeting-meetingid-quiz-result"
   }, {
     path: "/student/classes/class/:id?/meeting/:meetingid?/lesson/:lessonid",
-    component: _78ece538,
+    component: _c63d39d6,
     name: "student-classes-class-id-meeting-meetingid-lesson-lessonid"
   }, {
     path: "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid",
-    component: _b392024e,
+    component: _33b21994,
     name: "teacher-classes-class-id-meeting-meetingid-quiz-quizid"
   }, {
     path: "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/attempt/:attemptid",
-    component: _8f2aa792,
+    component: _bb8dce8c,
     name: "teacher-classes-class-id-meeting-meetingid-quiz-quizid-attempt-attemptid"
   }, {
     path: "/teacher/classes/class/:id?/meeting/:meetingid?/quiz/:quizid?/correct_answer/:questionid",
-    component: _3adc4690,
+    component: _34838013,
     name: "teacher-classes-class-id-meeting-meetingid-quiz-quizid-correct_answer-questionid"
   }, {
     path: "/",
-    component: _3c0e261e,
+    component: _1c68cf8e,
     name: "index"
   }],
 

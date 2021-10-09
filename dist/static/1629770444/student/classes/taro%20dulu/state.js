@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"http:\u002F\u002Fsanedu-318313.et.r.appspot.com\u002Fstatic\u002F1629770444",layout:"default",error:a,state:a,serverRendered:false,routePath:"\u002Fstudent\u002Fclasses\u002Ftaro%20dulu",config:{}}}(null));
