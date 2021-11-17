@@ -190,12 +190,12 @@ Register As Student
                                   color="white"
                                   item-text="nama"
                                   label="Provinsi"
-                                  @change="chain"
+
                                 ></v-autocomplete>
                               </validation-provider>
                             </v-col>
 
-                            <v-col v-if="cities" cols="12">
+                            <!-- <v-col v-if="cities" cols="12">
                               <validation-provider
                                 v-slot="{ errors }"
                                 name="City"
@@ -213,9 +213,9 @@ Register As Student
                                   label="Kota"
                                 ></v-autocomplete>
                               </validation-provider>
-                            </v-col>
+                            </v-col> -->
 
-                            <v-col v-if="cityData" cols="12">
+                            <v-col cols="12">
                               <v-row>
                                 <v-col cols="6">
                                   <validation-provider
@@ -270,13 +270,13 @@ Register As Student
                           </nuxt-link>
 
                           <v-card-actions>
-                            <!-- 
+                            <!--
                               <NuxtLink   to="/login">
 
                             <a
                             class="ml-2"
                           style="font-size: 14px; color: #2196F3"
-                              
+
                               >
                             Have an Account ? Just Login !
                             </a>
@@ -475,11 +475,11 @@ Register As Student
                                       @change="uploadImage"
                                     />
 
-                                 
+
                                   </v-col>
 
                                   <v-col class="pa-0" cols="12">
-                        
+
                                      <validation-provider
                                       v-slot="{ errors }"
                                       rules="agree"
@@ -489,20 +489,20 @@ Register As Student
                                         v-model="checkbox"
                                         :error-messages="errors"
                                         value="1"
-        
+
                                         type="checkbox"
                                         required
                                       >
                                        <template v-slot:label>
         <div class="caption">
         Dengan Ini saya mendaftar dan menyetujui <a @click="term = true" style="color: #1E88E5">syarat dan ketentuan</a> pengguna
-          
+
         </div>
 
                                        </template>
           </v-checkbox>
                                     </validation-provider>
-               
+
 
                                   </v-col>
                                 </v-col>
@@ -575,7 +575,7 @@ Register As Student
                               REGISTER
                             </v-btn>
 
-        
+
                           </v-card-actions>
                         </form>
                       </validation-observer>
@@ -923,8 +923,7 @@ export default {
         parent_phone_number: null,
         province_id: null,
         province_name: null,
-        city_id: null,
-        city_name: null,
+
         school: null,
         grade_level: null,
         email: null,
@@ -935,7 +934,6 @@ export default {
         is_teacher: null,
       },
       provinceData: null,
-      cityData: null,
       cities: null,
       show1: false,
       show2: false,
@@ -992,8 +990,8 @@ export default {
 
       this.payload.province_id = this.provinceData.id;
       this.payload.province_name = this.provinceData.nama;
-      this.payload.city_id = this.cityData.id;
-      this.payload.city_name = this.cityData.nama;
+      // this.payload.city_id = this.cityData.id;
+      // this.payload.city_name = this.cityData.nama;
 
       this.payload.grade_level = this.grade_level.value;
 
@@ -1059,20 +1057,20 @@ export default {
         }
     },
 
-    chain() {
-      this.isLoading = true;
+    // chain() {
+    //   this.isLoading = true;
 
-      this.$axios.setBaseURL("https://dev.farizdotid.com/");
+    //   this.$axios.setBaseURL("https://dev.farizdotid.com/");
 
-      this.$axios
-        .get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id)
-        .then((response) => {
-          this.isLoading = false;
+    //   this.$axios
+    //     .get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id)
+    //     .then((response) => {
+    //       this.isLoading = false;
 
-          this.cities = response.data.kota_kabupaten;
-        })
-        .catch((error) => {});
-    },
+    //       this.cities = response.data.kota_kabupaten;
+    //     })
+    //     .catch((error) => {});
+    // },
 
     toStep2() {
       this.e1 = 2;

@@ -30,21 +30,21 @@
             style="border-radius: 50%"
             :src="this.$auth.$state.user.profile_image"
 
-            
+
           ></v-img>
 
                     <img
 
 
             v-if="this.$auth.$state.user.profile_image == null"
-            
-  
+
+
             height="120"
             width="120"
             style="border-radius: 50%; height:120px; width:120px;"
 
              src="@/static/images/profile/profile.png"
-         
+
           >
 
 
@@ -152,11 +152,11 @@
                   </v-list-item-content>
 
                   <v-list-item-avatar
-                
+
                     size="50"
                     color="primary"
-                    class="bold text-center" 
-                  
+                    class="bold text-center"
+
                     ><p   style="text-align: center; font-size: 27px; color: white; margin: auto">{{ classes.length }}</p></v-list-item-avatar
                   >
                 </v-list-item>
@@ -166,7 +166,7 @@
                         style="text-decoration: none"
                         :to="{
                           name: 'student-classes',
-                          
+
                         }"
                       >
                   <v-btn outlined rounded text
@@ -505,7 +505,7 @@
 
 
                     <v-col cols="12">
-             
+
 
                       <b-form-file
                         ref="file"
@@ -683,12 +683,12 @@
                     color="white"
                     item-text="nama"
                     label="Province"
-                    @change="chain"
+
                   ></v-autocomplete>
                 </validation-provider>
               </v-col>
 
-              <v-col v-if="cities" cols="12">
+              <!-- <v-col v-if="cities" cols="12">
                 <validation-provider
                   v-slot="{ errors }"
                   name="City"
@@ -706,9 +706,9 @@
                     label="City"
                   ></v-autocomplete>
                 </validation-provider>
-              </v-col>
+              </v-col> -->
 
-              <v-col v-if="cityData" cols="12">
+              <v-col  cols="12">
                 <v-row>
                   <v-col cols="6">
                     <validation-provider
@@ -1045,20 +1045,20 @@ export default {
     }),
   },
   methods: {
-    chain() {
-      this.isLoading = true;
+    // chain() {
+    //   this.isLoading = true;
 
-      this.$axios.setBaseURL("https://dev.farizdotid.com/");
+    //   this.$axios.setBaseURL("https://dev.farizdotid.com/");
 
-      this.$axios
-        .get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id)
-        .then((response) => {
-          this.isLoading = false;
+    //   this.$axios
+    //     .get("api/daerahindonesia/kota?id_provinsi=" + this.provinceData.id)
+    //     .then((response) => {
+    //       this.isLoading = false;
 
-          this.cities = response.data.kota_kabupaten;
-        })
-        .catch((error) => {});
-    },
+    //       this.cities = response.data.kota_kabupaten;
+    //     })
+    //     .catch((error) => {});
+    // },
 
     uploadImage(e) {
       const image = e.target.files[0];
@@ -1105,13 +1105,13 @@ export default {
     },
     regionData() {
 
-      this.$axios.setBaseURL("http://34.117.208.101/");
+      this.$axios.setBaseURL("https://www.api.sanedu.id/");
 
       this.isLoading = true;
       this.regionDataPayload.province_id = this.provinceData.id;
       this.regionDataPayload.province_name = this.provinceData.nama;
-      this.regionDataPayload.city_id = this.cityData.id;
-      this.regionDataPayload.city_name = this.cityData.nama;
+      // this.regionDataPayload.city_id = this.cityData.id;
+      // this.regionDataPayload.city_name = this.cityData.nama;
          this.regionDataPayload.grade_level =  this.regionDataPayload.grade_level.value
 
       this.editRegionData(this.regionDataPayload)
